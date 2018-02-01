@@ -10,18 +10,18 @@
                     <form id="doc" class="layui-form" lay-filter="component-form-group">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input title">
+                                <input id="title" type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input title">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="cat" placeholder="请输入" autocomplete="off" class="layui-input">
+                                <input id="cat" type="text" name="cat" placeholder="请输入" autocomplete="off" class="layui-input">
                             </div>
                         </div>
 
                         <div class="layui-form-item">
                             <div id="markdown">
-                                <textarea name="apidoc" style="display: none;"></textarea>
+                                <textarea id="apidoc" name="apidoc" style="display: none;"></textarea>
                             </div>
                         </div>
 
@@ -50,9 +50,16 @@
         });
     });
     $(document).on('click','#push',function(){
+        if($('#title').val() == ''){
+            layer.msg('文档标题不能为空');
+            return false;
+        }
+        if($('#apidoc').val() == ''){
+            layer.msg('文档内容不能为空');
+            return false;
+        }
         var data = $('#doc').serialize();
-        console.log(data);
-        request("{:url('console/Article/doc')}",data,function(res){
+        request("{:url('console/Article/doc/type/api')}",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});

@@ -1,6 +1,7 @@
 <?php
 
 namespace app\console\logic;
+use app\console\base\Doc;
 
 class ApiDoc extends  Doc
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\console\logic;
+namespace app\console\base;
 
 abstract class Doc
 {

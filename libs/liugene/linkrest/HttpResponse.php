@@ -34,6 +34,7 @@ class HttpResponse
             // 提高页面响应
             fastcgi_finish_request();
         }
+        exit;
     }
 
     public function setStatus($status)

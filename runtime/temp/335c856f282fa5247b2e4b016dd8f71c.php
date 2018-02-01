@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"C:\Object\zuanqun\web/../app/console\view\default\article\apidoc.html";i:1517457559;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517389329;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"C:\Object\zuanqun\web/../app/console\view\default\article\noticedoc.html";i:1517456670;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517389329;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,31 +19,31 @@
 <div class="link-body">
     <div class="link-item">
         <div class="layui-fluid">
-            <div class="layui-card-header">API文档管理</div>
+            <div class="layui-card-header">公告文档管理</div>
             <div class="layui-card-body">
                 <div class="zq-form">
-                    <form id="doc" class="layui-form" lay-filter="component-form-group">
+                    <form id="doc" class="layui-form" action="" lay-filter="component-form-group">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input id="title" type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input title">
+                                <input id="title" type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input title">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input id="cat" type="text" name="cat" placeholder="请输入" autocomplete="off" class="layui-input">
+                                <input id="cat" type="text" name="cat" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
                             </div>
                         </div>
 
                         <div class="layui-form-item">
                             <div id="markdown">
-                                <textarea id="apidoc" name="apidoc" style="display: none;"></textarea>
+                                <textarea id="noticedoc" name="noticedoc" style="display: none;"></textarea>
                             </div>
                         </div>
 
                         <div class="layui-form-item">
                             <div class="layui-input-block">
                                 <div class="link-footer">
-                                    <a class="layui-btn" id="push">立即发布</a>
+                                    <a id="push" class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</a>
                                 </div>
                             </div>
                         </div>
@@ -69,12 +69,12 @@
             layer.msg('文档标题不能为空');
             return false;
         }
-        if($('#apidoc').val() == ''){
+        if($('#hrlpdoc').val() == ''){
             layer.msg('文档内容不能为空');
             return false;
         }
         var data = $('#doc').serialize();
-        request("<?php echo url('console/Article/doc/type/api'); ?>",data,function(res){
+        request("<?php echo url('console/NoticeArticle/doc'); ?>",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});
