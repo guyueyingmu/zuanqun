@@ -1,0 +1,105 @@
+.layui-body {
+    background-color: #f2f2f2;
+}
+
+.layui-nav {
+    background-color: #fff;
+    color: #333;
+}
+
+.link-footer {
+    text-align: center;
+}
+
+.layui-layout-admin .layui-body {
+    top: 108px!important;
+}
+
+.zqTab-box {
+    position: fixed;
+    left: 200px;
+    right: 0;
+}
+
+.layui-tab {
+    margin: 7px 0;
+}
+
+.layui-nav-tree .layui-nav-item a {
+    color: #666!important;
+}
+
+.layui-nav-tree .layui-nav-item a:hover {
+    background-color: #eeeeee!important;
+}
+
+.layui-layout-admin .layui-logo {
+    color: #eeeeee;
+}
+
+.layui-nav-itemed .layui-nav-child {
+    background-color: #fff!important;
+}
+
+.layui-nav-tree .layui-nav-child a {
+    color: #666;
+}
+
+.layui-nav-tree .layui-nav-child a:hover {
+    color: #333;
+}
+
+.layui-footer {
+    background-color: #fff !important;
+}
+
+.layui-layout-admin .layui-header {
+    background-color: #5FB878;
+}
+
+.layui-nav .layui-nav-child dd.layui-this a {
+    background-color: #eeeeee;
+    color: #fff;
+}
+
+.layui-nav-tree .layui-nav-bar {
+    background-color: #5FB878;
+}
+
+.layui-body .zqTab {
+    height: 40px;
+    margin: 0;
+    box-shadow: 0 0 16px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 0 16px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 0 16px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.layui-tab-brief>.layui-tab-title .layui-this {
+    color: #5FB878;
+}
+
+.layui-bg-black {
+    background-color: #fff!important;
+}
+
+.layui-body .zqTab .layui-tab-item {
+    position: absolute;
+    top: 41px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 15px;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+.layui-body .zqTab .layui-tab-item iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    min-width: 320px;
+    position: absolute;
+}

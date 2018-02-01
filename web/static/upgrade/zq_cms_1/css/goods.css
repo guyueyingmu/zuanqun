@@ -1,0 +1,186 @@
+/* center */
+.center {
+    margin-top: 22px;
+    overflow: hidden;
+}
+
+.center .center-list {
+    position: relative;
+}
+
+.center .center-list .center-list-inner {
+    margin-right: -20px;
+    min-height: 500px;
+}
+
+.center .center-list .center-list-inner .goods-item {
+    float: left;
+    width: 260px;
+    margin: 0 17px 17px 0;
+    background-color: #fff;
+    border: 1px solid #f6f6f6;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img a {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 260px;
+    height: 260px;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img .is_new {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 53px;
+    height: 52px;
+    background: url(/static/upgrade/zq_cms_1/img/is-new.png) center no-repeat;
+    background-size: auto auto;
+    background-size: 53px 52px;
+    z-index: 9;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img .goods-lq {
+    position: absolute;
+    width: 82px;
+    height: 73px;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img .goods-lq .goods-lq-price {
+    height: 50px;
+    background-color: #FF2220;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img .goods-lq .goods-lq-price .lq-price-d1 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    height: 20px;
+    color: #fff;
+    padding-top: 3px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img .goods-lq .goods-lq-price .lq-price-d2 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    height: 22px;
+    color: #fff;
+    padding-top: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-img img {
+    position: relative;
+    max-width: 260px;
+    max-height: 260px;
+    opacity: 1;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-title {
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    padding: 10px 10px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-title .tmall-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(/static/index/img/tmall.png) center no-repeat;
+    background-size: cover;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-title .post-free {
+    display: inline-block;
+    height: 16px;
+    padding: 0 2px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: #FFA248;
+    margin-right: 5px;
+    border-radius: 1px;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-price {
+    font-size: 12px;
+    color: #999;
+    line-height: 17px;
+    padding: 15px 10px 0;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-price .goods-sold {
+    float: right;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-info {
+    height: 32px;
+    padding: 6px 0;
+    overflow: hidden;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-info .goods-q-price {
+    float: left;
+    width: 130px;
+    padding-left: 10px;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-info .goods-q-price  .price-info {
+    position: relative;
+    color: #FF2B22;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-info .goods-q-price  .price-info .number-font {
+    ont-family: Arial;
+    font-weight: 700;
+    font-size: 26px;
+    font-style: normal;
+    padding-left: 2px;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-info .goods-q-price  .price-info .decimal {
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.center .center-list .center-list-inner .goods-item .goods-info .buy-btn {
+    display: block;
+    float: right;
+    width: 78px;
+    height: 20px;
+    margin: 6px 10px 0 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    background-color: #F20;
+    border-radius: 2px;
+    text-align: center;
+    -webkit-font-smoothing: auto;
+    cursor: pointer;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>优惠券二合一解密-淘客工具-钻群联盟开放平台</title>
+    <link rel="stylesheet" href="__COM__/util.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/common.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/header.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/footer.css">
+    <link rel="stylesheet" href="/static/open/default/css/tool.css">
+    <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+</head>
+<body>
+
+<div class="body">
+
+    <!-- header -->
+    {include file="default/common/header" /}
+
+    <!-- 工具栏 -->
+    {include file="default/common/tool-bar" /}
+
+    <!-- center -->
+    <div class="center">
+        <div class="layui-fluid tool-form">
+            <div class="layui-card-header">优惠券二合一解密</div>
+            <div class="layui-card-body">
+                <form class="layui-form" action="" lay-filter="component-form-group">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">二合一链接</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入二合一加密链接" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <div class="link-footer">
+                                <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    {include file="default/common/footer" /}
+</div>
+
+<script src="__COM__/layui/layui.js"></script>
+
+</body>
+</html>

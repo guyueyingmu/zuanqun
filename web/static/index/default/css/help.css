@@ -1,0 +1,69 @@
+.body {
+    background: #f8f9fb;
+}
+
+.banner {
+    height: 380px;
+    position: relative;
+    z-index: 1;
+    top: -157px;
+}
+
+.banner-bg {
+    background-image: url(/index/default/img/banner_bg.jpg),linear-gradient(to bottom,#5FB878,#2D77EE);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 200px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    padding-top: 278px;
+}
+
+.center {
+    margin-top: 0px;
+    margin-bottom: 65px;
+    min-height: auto;
+    border: none;
+    border-radius: 10px;
+}
+
+.center .col-main {
+    height: auto;
+    padding-bottom: 112px;
+}
+
+.center .col-side .side-menu dt {
+    border: none;
+    font-size: 16px;
+    color: #666;
+}
+
+.center .col-side .side-menu dd img {
+    width: 100%;
+    height: 68px;
+    margin-bottom: 20px;
+}
+
+.header-inner:hover {
+    background-color: rgba(99,177,156,.9);
+}
+
+.col-main-container {
+    margin: 38px 32px;
+}
+
+.col-main-container .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0289cd;
+}
+
+.col-main-container p {
+    margin: 10px auto;
+    font-size: 13px;
+    color: #666;
+    line-height: 20px;
+}

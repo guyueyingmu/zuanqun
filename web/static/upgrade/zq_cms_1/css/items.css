@@ -1,0 +1,273 @@
+.center {
+    margin-top: 10px;
+    position: relative;
+}
+
+.center .goods-items {
+    position: relative;
+    float: left;
+    width: 820px;
+}
+
+.center .goods-items .items-content {
+    width: 780px;
+    height: 260px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+
+.center .goods-items .items-content .items-logo {
+    float: left;
+    width: 260px;
+    height: 260px;
+    background-color: #f4f4f4;
+}
+
+.center .goods-items .items-content .items-logo img {
+    width: 100%;
+}
+
+.center .goods-items .items-content .items-info {
+    float: left;
+    width: 500px;
+    padding-left: 20px;
+}
+
+.center .goods-items .items-content .items-info .title {
+    font-size: 24px;
+    line-height: 34px;
+    max-height: 68px;
+    overflow: hidden;
+    color: #444;
+    font-weight: 400;
+}
+
+.center .goods-items .items-content .items-info .desc {
+    font-size: 16px;
+    line-height: 18px;
+    height: 18px;
+    padding-top: 5px;
+    color: #f40;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap {
+    position: absolute;
+    bottom: 24px;
+    width: 500px;
+    height: 85px;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .coupon-price {
+    float: left;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .coupon-price .ori-price {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    height: 16px;
+    color: #999;
+    padding-top: 10px;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .coupon-price .price {
+    position: relative;
+    display: block;
+    font-family: Arial;
+    color: #FF2B22;
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 700;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .coupon-price .price em.int {
+    font-style: normal;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .coupon-price .price em.decimal {
+    font-style: normal;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .buy-area {
+    float: right;
+    width: 230px;
+    height: 84px;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .buy-area .desc {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 0 5px;
+    color: #787878;
+    text-align: center;
+    height:18px;
+}
+
+.center .goods-items .items-content .items-info .coupon-wrap .buy-area .buy-btn {
+    position: relative;
+    display: block;
+    width: 214px;
+    height: 52px;
+    background-color: #FF2220;
+    background: -prefix-linear-zgradient(top,#ff7438,#ff1f1f);
+    background: linear-gradient(to right,#ff7438,#ff1f1f);
+    font-size: 20px;
+    line-height: 48px;
+    color: #fff;
+    font-weight: 700;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.center .goods-online {
+    float: right;
+    width: 260px;
+}
+
+.center .goods-online .online-box {
+    overflow: hidden;
+}
+
+.center .goods-online .online-box .head {
+    height: 40px;
+    border-bottom: 2px solid #FF7438;
+}
+
+.center .goods-online .online-box .head span {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    background-color: #fff;
+}
+
+.center .goods-online .online-box .head .more-his {
+    float: right;
+    font-size: 14px;
+    color: #FF2220;
+    line-height: 40px;
+}
+
+.center .goods-online .online-box .online-list {
+    width: 262px;
+    height: 258px;
+    overflow: hidden;
+}
+
+.center .goods-online .online-box .online-list .goods-mini {
+    position: relative;
+    height: 85px;
+    background-color: #fff;
+    margin-bottom: 2px;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info {
+    padding: 0 6px 0 92px;
+    height: 85px;
+    overflow: hidden;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-title {
+    font-size: 13px;
+    line-height: 20px;
+    color: #444;
+    padding-top: 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .area {
+    height: 18px;
+    margin-top: 6px;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-price {
+    height: 20px;
+    line-height: 20px;
+    padding-top: 10px;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-price .price {
+    float: left;
+    color: #FF2220;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-price .price em.number-font {
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 22px;
+    font-style: normal;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-price .price em.decimal {
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-price .price .raw-price {
+    float: left;
+    color: #666;
+    font-size: 12px;
+    padding-left: 8px;
+    text-decoration: line-through;
+    line-height: 22px;
+}
+
+.center .goods-online .online-box .online-list .goods-mini .goods-mini-info .goods-mini-price .price month-sales {
+    float: right;
+    color: #999;
+    font-size: 12px;
+}
+
+.like .like-container {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.like .like-container .like-container-header {
+    height: 40px;
+    border-bottom: 2px solid #FF7438;
+}
+
+.like .like-container .like-container-header span {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+    background-color: #fff;
+}

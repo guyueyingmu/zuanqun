@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页-钻群招商中心</title>
+    <link rel="stylesheet" href="__SELLER_CSS__/common.css">
+    <link rel="stylesheet" href="__SELLER_CSS__/auth.css">
+    <link rel="stylesheet" href="__SELLER_CSS__/index.css">
+    <link rel="stylesheet" href="__COM__/swiper-4.1.0.min.css">
+</head>
+<body>
+
+<div class="body">
+    <div class="zq-union-container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">{include file="default/include/home" /}</div>
+                <div class="swiper-slide">{include file="default/include/data" /}</div>
+                <div class="swiper-slide">{include file="default/include/info" /}</div>
+                <div class="swiper-slide">{include file="default/include/more" /}</div>
+                <div class="swiper-slide">{include file="default/include/line" /}</div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/swiper-4.1.0.min.js"></script>
+
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'vertical',
+        mousewheel: true,
+
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination'
+        }
+    })
+</script>
+
+</body>
+</html>

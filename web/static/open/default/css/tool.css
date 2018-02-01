@@ -1,0 +1,57 @@
+.body {
+    background: #fff;
+}
+
+.tool-bar {
+    width: 100%;
+    box-shadow: 0 3px 10px rgba(101, 101, 101, 0.4);
+}
+
+.tool-bar .tool-bar-warp {
+    width: 1221px;
+    min-width: 1200px;
+    height: 52px;
+    margin: 0 auto;
+    line-height: 52px;
+}
+
+.tool-bar .tool-bar-warp .active {
+    color: #333;
+    box-shadow: 0 3px 10px rgba(101, 101, 101, 0.4);
+    width: auto;
+    height: 52px;
+    line-height: 52px;
+    display: inline-block;
+    padding: 0 17px;
+    transition: color .2s;
+    border-radius: 2px;
+}
+
+.tool-bar .tool-bar-warp a {
+    color: #666;
+    width: auto;
+    height: 52px;
+    line-height: 52px;
+    display: inline-block;
+    padding: 0 17px;
+    transition: color .2s;
+}
+
+.center {
+    min-height: 630px;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: #fff;
+    width: 1221px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 38px;
+    box-shadow: 0 2px 5px rgba(101, 101, 101, 0.4);
+}
+
+.center .tool-form {
+    margin-top: 68px;
+    padding: 0 68px;
+}

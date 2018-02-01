@@ -1,0 +1,11 @@
+.content {
+    width: auto;
+    height: auto;
+}
+
+.content .content-top {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}

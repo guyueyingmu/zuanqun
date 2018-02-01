@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钻群-管理中心</title>
+    <link rel="stylesheet" href="__OPEN_CSS__/common.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/header.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/footer.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/manager.css">
+    <link rel="stylesheet" href="/static/common/layui/css/layui.css">
+</head>
+<body>
+
+<div class="body">
+
+    <!-- header -->
+    {include file="default/common/header" /}
+
+    <!-- center -->
+    <div class="center">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">网站设置</li>
+                <li>用户管理</li>
+                <li>权限分配</li>
+                <li>商品管理</li>
+                <li>订单管理</li>
+            </ul>
+            <div class="layui-tab-content"></div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    {include file="default/common/footer" /}
+</div>
+
+<script src="/static/common/jquery.js"></script>
+<script src="/static/common/layui/layui.js"></script>
+</body>
+</html>

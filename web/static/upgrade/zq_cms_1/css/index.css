@@ -1,0 +1,57 @@
+.banner {
+    height: 370px;
+}
+
+.banner .banner-cate {
+    float: left;
+    width: 220px;
+    height: 360px;
+    padding: 5px 0;
+    background-color: #fff;
+}
+
+.banner .banner-cate .cate-line {
+    height: 44px;
+    line-height: 44px;
+    padding-left: 30px;
+}
+
+.banner .banner-cate .cate-line i {
+    color: #231815;
+    font-size: 20px;
+    padding-right: 12px;
+    vertical-align: middle;
+    font-style: normal;
+    -webkit-text-stroke-width: .2px;
+}
+
+.banner .banner-cate .cate-line .cate-item {
+    font-size: 14px;
+    color: #5E4F4F;
+}
+
+.banner .banner-box {
+    width: 880px;
+    -webkit-flex-shrink: 0;
+    -ms-flex: 0 0 auto;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+.banner .banner-box .banner-bg1 {
+    background-image: url(/upgrade/zq_cms_1/img/banner_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.banner .banner-box .banner-bg2 {
+    background-image: url(/upgrade/zq_cms_1/img/banner_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+

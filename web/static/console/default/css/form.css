@@ -1,0 +1,18 @@
+.zq-form {
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
+.layui-input-block {
+    margin-left: 0px;
+}
+
+.title {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+}

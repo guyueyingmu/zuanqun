@@ -1,0 +1,77 @@
+<div class="header">
+    <div class="header-inner">
+        <div class="header-container">
+            <div class="nav-logo">
+                <img src="__IMG__/logo.png" alt="钻群，一个专业的内容导购联盟" width="212" height="42">
+            </div>
+            <div class="nav-menu">
+                <div class="nav-menu-box">
+                    <div class="nav-menu-inner">
+                        <ul class="menu">
+                            <li class="menu-item"><a href="/">首页</a></li>
+                            <li class="menu-item"><a href="{:url('hot/index/index')}" target="_blank">选品库</a></li>
+                            <li class="menu-item drop-menu">
+                                <a href="javascript:;">导购产品</a>
+                            </li>
+                            <li class="menu-item"><a href="{:url('open/index/index')}" target="_blank">开放平台</a></li>
+                            <li class="menu-item">
+                                <a href="{:url('seller/index/index')}" target="_blank">钻群号</a>
+                            </li>
+                            <li class="menu-item"><a href="{:url('index/help/index')}">帮助中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-account">
+                <a href="{:url('auth/login/index')}" target="_blank" class="nav-auth">登入</a>
+                <a href="{:url('auth/register/index')}" target="_blank" class="nav-auth">注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu-drop" style="display: none;">
+    <div class="drop-list">
+        <div class="list-item">
+            <dt>网站cms解决方案</dt>
+            <dd class="list-item-img"></dd>
+            <dd class="list-item-desc">钻群CMS淘客系统</dd>
+        </div>
+        <div class="list-item">
+            <dt>微信公众号解决方案</dt>
+            <dd class="list-item-img"></dd>
+            <dd class="list-item-desc">公众号淘客系统</dd>
+        </div>
+        <div class="list-item">
+            <dt>小程序解决方案</dt>
+            <dd class="list-item-img"></dd>
+            <dd class="list-item-desc">小程序淘客系统</dd>
+        </div>
+        <div class="list-item">
+            <dt>浏览器解决方案</dt>
+            <dd class="list-item-img"></dd>
+            <dd class="list-item-desc">好助手淘客系统</dd>
+        </div>
+        <div class="list-item">
+            <dt>APP解决方案</dt>
+            <dd class="list-item-img"></dd>
+            <dd class="list-item-desc">钻群app淘客系统</dd>
+        </div>
+    </div>
+</div>
+
+<script src="__COM__/jquery.js"></script>
+
+<script>
+    $(document).on('mouseenter','.drop-menu',function () {
+        $('.menu-drop').css('display','block');
+    });
+    $(document).on('mouseleave','.drop-menu',function () {
+        $('.menu-drop').hover(function () {
+            $('.menu-drop').css('display','block');
+        },
+        function () {
+            $('.menu-drop').css('display','none');
+        });
+        $('.menu-drop').css('display','none');
+    });
+</script>

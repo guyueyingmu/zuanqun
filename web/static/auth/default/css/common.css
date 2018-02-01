@@ -1,0 +1,16 @@
+body{
+    padding: 0 0;
+    margin: 0 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.box{
+    padding: 10px;
+    background: #f8f9fb;
+    margin: 12px;
+    border-radius: 4px;
+}

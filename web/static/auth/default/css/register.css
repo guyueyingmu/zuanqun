@@ -1,0 +1,146 @@
+body {
+    background-color: #f5f5f5;
+}
+
+#content {
+    background: #f5f5f5;
+}
+
+.reg-header {
+    background: #e8e8e8;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.reg-header .header-content {
+    margin: 0 auto;
+    width: 700px;
+}
+
+.reg-header .header-content .switch-login {
+    color: #7d7d7d;
+    float: right;
+    font-size: 14px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.reg-header .header-content .reg {
+    background: url(http://static.zuanqun.com/index/default/img/logo.png);
+    height: 29px;
+    margin-right: 25px;
+    width: 158px;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 158px;
+}
+
+.reg-content {
+    min-height: 540px;
+    width: 700px;
+    margin: 72px auto 0;
+}
+
+.reg-content .reg-main {
+    min-height: 540px;
+    width: 700px;
+}
+
+.reg-content .reg-main .reg-title {
+    background: #fff;
+    border-bottom: 2px solid #f5f5f5;
+    color: #222;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.reg-content .reg-main .reg-box {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: auto;
+    height: auto;
+    background: #fff;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box {
+    border: 0;
+    box-shadow: none;
+    float: none;
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 380px;
+    list-style: none;
+    height: auto;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box .reg-input-field {
+    background: #fff;
+    border: 2px solid #e6e6e6;
+    margin-bottom: 18px;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box .submit {
+    border: none;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box .reg-input-field .reg-icon {
+    margin-left: 6px;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box .reg-input-field .reg-input-bg {
+    height: 48px;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box .reg-input-field .reg-input-bg .input-bg {
+    background: none;
+    border: 0;
+    font-size: 16px;
+    margin: 4px 4px 3px;
+    outline: none;
+    width: 230px;
+    height: 21px;
+    padding: 6px 7px;
+    line-height: 20px;
+}
+
+.reg-content .reg-main .reg-box .reg-input-box .reg-input-field .reg-submit {
+    background: #5FB878;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 0;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.reg-footer {
+    padding: 20px 0;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+}
+
+.reg-footer .footer-content {
+    margin: 0 auto;
+    width: 1180px;
+}
+
+.reg-footer .footer-content .footer-text {
+    text-align: center;
+}
+
+.reg-footer .footer-content .footer-text p {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #666;
+}

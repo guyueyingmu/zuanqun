@@ -1,0 +1,13 @@
+.banner {
+    height: 570px;
+    position: relative;
+    z-index: 1;
+    top: -157px;
+}
+
+.banner-bg {
+    background-image: url(/index/default/img/banner-bg.png),linear-gradient(to bottom,#5FB878,#2D77EE);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

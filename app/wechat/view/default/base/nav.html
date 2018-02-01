@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    $(document).on('click','.goods',function(){
+        alert(1)
+        var html = '<ul class="layui-nav layui-nav-tree"  lay-filter="test">'+
+                '<li class="layui-nav-item layui-nav-itemed">'+
+                '<a class="" href="javascript:;">商品管理中心</a>'+
+                '<dl class="layui-nav-child">'+
+                '<dd class="layui-this"><a href="/console"><i class="layui-icon">&#xe68e;</i>&nbsp;主页</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;公众号基本设置</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;小程序设置</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;模板设置</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;海报设置</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;域名设置</a></dd>'+
+                '</dl>'+
+                '</li>'+
+                '<li class="layui-nav-item">'+
+                '<a href="javascript:;">账号授权</a>'+
+                '<dl class="layui-nav-child">'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;微信账号授权</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;淘宝账号授权</a></dd>'+
+                '</dl>'+
+                '</li>'+
+                '<li class="layui-nav-item">'+
+                '<a href="javascript:;">公众号管理</a>'+
+                '<dl class="layui-nav-child">'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;菜单管理</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;自动回复</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;素材管理</a></dd>'+
+                '<dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;消息推送</a></dd>'+
+                '</dl>'+
+                '</li>'+
+                '</ul>';
+        $('.layui-side-scroll').html(html);
+    })
+</script>
+</body>
+</html>

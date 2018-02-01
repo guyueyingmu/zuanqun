@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zq_cms_1</title>
+    <link rel="stylesheet" href="__UPGRADE__/zq_cms_1/css/common.css">
+    <link rel="stylesheet" href="__UPGRADE__/zq_cms_1/css/header.css">
+    <link rel="stylesheet" href="__UPGRADE__/zq_cms_1/css/index.css">
+    <link rel="stylesheet" href="__UPGRADE__/zq_cms_1/css/goods.css">
+    <link rel="stylesheet" href="__UPGRADE__/zq_cms_1/css/footer.css">
+    <link rel="stylesheet" href="__COM__/web_page.css">
+    <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+</head>
+<body>
+
+<div class="body">
+    <!-- header -->
+    {include file="zq_cms_1/common/header" /}
+
+    <!-- banner -->
+
+    <div class="banner header-notice">
+        <div class="banner-cate">
+            <div class="cate-line">
+                <i></i>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+            </div>
+            <div class="cate-line">
+                <i></i>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+            </div>
+            <div class="cate-line">
+                <i></i>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+            </div>
+            <div class="cate-line">
+                <i></i>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+            </div>
+            <div class="cate-line">
+                <i></i>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+                <span>/</span>
+                <a class="cate-item">女装</a>
+            </div>
+        </div>
+        <div class="banner-box">
+            <div class="layui-carousel" id="zq-banner">
+                <div carousel-item>
+                    <div class="banner-bg1"></div>
+                    <div class="banner-bg2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- center -->
+    <div class="center header-notice">
+        <div class="center-list">
+            <div class="center-list-inner">
+                {volist name="list" id="vo"}
+                <div class="goods-item">
+                    <div class="goods-img">
+                        <a href="/" target="_blank">
+                            <div class="is_new"></div>
+                            <div class="goods-lq">
+                                <div class="goods-lq-price">
+                                    <p class="lq-price-d1">领券立减</p><p class="lq-price-d2">¥<span>80</span></p>
+                                </div>
+                            </div>
+                            <img alt="" class="lazy" src="{$vo.pict_url}_400x400">
+                        </a>
+                    </div>
+                    <p class="goods-title">
+                        <i class="tmall-icon"></i>
+                        <span class="post-free">包邮</span>
+                        {$vo.title}
+                    </p>
+                    <div class="goods-price">
+                        现价：119
+                        <p class="goods-sold">销量 {$vo.volume}</p>
+                    </div>
+                    <div class="goods-info">
+                        <div class="goods-q-price">
+                            <span class="price-info">券后价：¥<em class="number-font">39</em><em class="decimal"></em></span>
+                        </div>
+                        <a href="/" class="buy-btn" target="_blank">立即抢购</a>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        {$list->render()}
+    </div>
+
+    <!-- footer -->
+    {include file="zq_cms_1/common/footer" /}
+
+</div>
+
+
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/layui/layui.js"></script>
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#zq-banner'
+            ,width: '880' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            ,height: '370'
+            //,anim: 'updown' //切换动画方式
+        });
+    });
+</script>
+</body>
+</html>

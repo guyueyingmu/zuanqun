@@ -1,0 +1,515 @@
+.center {
+    width: 100%;
+    background-color: #f8f9fb;
+}
+
+.center .center-container {
+    font-size: 14px;
+    font-family: "Microsoft Yahei";
+    width: 1200px;
+    margin: 20px auto 0;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 20px;
+    padding-top: 28px;
+}
+
+.center .center-container .center-left {
+    width: 400px;
+    height: 100%;
+    float: left;
+}
+
+.center .center-container .center-left .center-left-main {
+    transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -webkit-transition: all .4s ease-out 0s;
+    transform-origin: center;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img {
+    width: 360px;
+    padding: 20px 20px 15px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img .main-big-img {
+    width: 360px;
+    height: 360px;
+    text-align: center;
+    line-height: 360px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img .main-big-img img {
+    max-width: 360px;
+    max-height: 360px;
+    margin-top: -2px;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img .main-small-img {
+    width: 360px;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img .main-small-img ul {
+    max-height: 141px;
+    overflow: hidden;
+    width: 405px;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img .main-small-img ul li {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    cursor: pointer;
+    margin-right: 5px;
+    line-height: 68px;
+    margin-bottom: 5px;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+}
+
+.center .center-container .center-left .center-left-main .left-main-img .main-small-img ul li img {
+    max-height: 68px;
+    max-width: 68px;
+    margin-top: -2px;
+}
+
+.center .center-container .center-left .center-left-main .main-info {
+    width: 360px;
+    height: 140px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.center .center-container .center-left .center-left-main .main-info .info-container {
+    padding: 22px 16px 22px 36px;
+    overflow: hidden;
+    position: relative;
+}
+
+.center .center-container .center-right {
+    margin-left: 420px;
+    width: 780px;
+}
+
+.center .center-container .center-right .center-right-main {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.center .center-container .center-left .center-right-main .goods-title {
+    position: relative;
+    padding: 10px 10px 25px;
+    line-height: 20px;
+}
+
+.center .center-container .center-left .center-right-main .goods-title .goods-title-text {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    position: relative;
+}
+
+.center .center-container .center-left .center-right-main .goods-title .goods-title-text p {
+    color: #f79a9a;
+    line-height: 20px;
+    margin-top: 12px;
+}
+
+.center .center-container .center-right .center-right-main .goods-price {
+    width: 730px;
+    height: 40px;
+    padding: 20px 10px;
+    overflow: hidden;
+    background: url(/images/live-img.png) 0 -1510px no-repeat;
+    position: relative;
+    margin-bottom: 15px;
+    line-height: 46px;
+}
+
+.center .center-container .center-right .center-right-main .goods-price .goods-coupon-price {
+    margin-right: 55px;
+    line-height: 38px;
+    margin-left: 2px;
+    float: left;
+}
+
+.center .center-container .center-right .center-right-main .goods-price .goods-coupon-price .goods-price-small {
+    font-size: 14px;
+    color: #787878;
+}
+
+.center .center-container .center-right .center-right-main .goods-price .goods-coupon-price .goods-price-small b {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 8px;
+    font-family: Arial;
+    color: #db3a00;
+}
+
+.center .center-container .center-right .center-right-main .goods-coupon {
+    height: 48px;
+    padding: 10px;
+    border-left: none;
+    border-right: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.center .center-container .center-right .center-right-main .goods-coupon .coupon-amount {
+    margin-right: 80px;
+    float: left;
+}
+
+.center .center-container .center-right .center-right-main .goods-coupon .coupon-amount span {
+    height: 28px;
+    line-height: 28px;
+    color: #333;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+.center .center-container .center-right .center-right-main .goods-coupon .coupon-amount span b {
+    font-size: 20px;
+    font-family: Arial;
+    padding-left: 10px;
+    color: #218ACB;
+}
+
+.center .center-container .center-right .center-right-main .goods-ad {
+    padding: 30px 10px 15px;
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+}
+
+.center .center-container .center-right .center-right-main .goods-ad .goods-btn {
+    width: 220px;
+    height: 46px;
+    background: #595959;
+    border-radius: 2px;
+    position: relative;
+    cursor: default;
+    color: #fff;
+}
+
+.center .center-container .center-right .center-right-main .goods-ad .goods-ad-btn {
+    height: 42px;
+    width: 470px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.center .center-container .center-right .center-right-main .goods-ad .goods-ad-btn .goods-ad-btn-group span{
+    height: 20px;
+    position: relative;
+    line-height: 20px;
+    padding-left: 26px;
+}
+
+.center .center-container .center-right .center-right-main .goods-ad .goods-ad-btn1 {
+    cursor: default;
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+    background: #FBE9E7;
+    border-radius: 2px;
+    border-bottom: #FF8E7F 2px solid;
+    position: relative;
+    color: #FF8E7F;
+}
+
+.center .center-container .center-right .center-right-main .goods-ad .goods-ad-btn2 {
+    cursor: default;
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+    background: #FBE9E7;
+    border-radius: 2px;
+    border-bottom: #FF8E7F 2px solid;
+    position: relative;
+    color: #FF8E7F;
+}
+
+.recommend {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+}
+
+.recommend .recommend-title {
+    font-size: 24px;
+    padding: 16px;
+    color: #ff5a8c;
+}
+
+/*商品开始*/
+.list_inner{
+    width:1200px;
+    margin:0 auto;
+    margin-top:32px;
+}
+.list_inner::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.list_inner .list{
+    float:left;
+    width:19%;
+    margin-right:15px;
+    padding-left:3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom:15px;
+    -moz-box-shadow: 0 1px 3px 0 rgba(32,32,64,.04);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(32,32,64,.04);
+    -ms-box-shadow: 0 1px 3px 0 rgba(32,32,64,.04);
+    -o-box-shadow: 0 1px 3px 0 rgba(32,32,64,.04);
+    box-shadow: 0 1px 3px 0 rgba(32,32,64,.04);
+    -moz-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+}
+.list_inner .list:hover{
+    border-color: #d3d3db;
+    -moz-box-shadow: 0 2px 4px 0 rgba(32,32,64,.16);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(32,32,64,.16);
+    -ms-box-shadow: 0 2px 4px 0 rgba(32,32,64,.16);
+    -o-box-shadow: 0 2px 4px 0 rgba(32,32,64,.16);
+    box-shadow: 0 2px 4px 0 rgba(32,32,64,.16);
+}
+.list_inner .list:nth-child(5n){
+    margin-right:0px;
+}
+.list_inner .list .img_logo{
+    width:218px;
+    height:218px;
+    margin-bottom:10px;
+}
+.list_inner .list .img_logo img {
+    width:218px;
+    height:218px;
+}
+.list_inner .list .p_title{
+    width:90%;
+    margin:0 auto;
+    margin-bottom:5px;
+}
+.list_inner .list .p_title a{
+    width: 195px;
+    display: block;
+    line-height: 20px;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+    color:#666;
+    font-size: 12px;
+}
+.list_inner .list .p_title a:hover{
+    color:#5FB878;
+}
+.list_inner .list .price{
+    width:90%;
+    margin:0 auto;
+    margin-bottom: 5px;
+    margin-top:10px;
+}
+.list_inner .list .price .p_left{
+    float:left;
+}
+.list_inner .list .price .p_left span{
+    color:#212121;
+    font-size: 12px;
+}
+.list_inner .list .price .p_left .number{
+    font-size: 16px;
+    font-weight:bold;
+}
+.list_inner .list .price .p_left .numbers{
+    font-weight:bold;
+}
+.list_inner .list .price .p_right{
+    float:right;
+}
+.list_inner .list .price .p_right span{
+    color:#212121;
+    font-size: 12px;
+}
+.list_inner .list .price .p_right .spe{
+    color:#666;
+    font-size: 12px;
+}
+.list_inner .list .price::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.list_inner .list .cout{
+    width:90%;
+    margin:0 auto;
+    margin-bottom:10px;
+    margin-top:8px;
+}
+.list_inner .list .cout .c_left{
+    float:left;
+}
+.list_inner .list .cout .c_left span{
+    font-size: 12px;
+    color:#5FB878;
+}
+.list_inner .list .cout .c_left .number{
+    font-size: 16px;
+    font-weight:bold;
+}
+.list_inner .list .cout .c_left .numbers{
+    font-weight: bold;
+}
+.list_inner .list .cout .c_right{
+    float:right;
+}
+.list_inner .list .cout .c_right span{
+    font-size:12px;
+}
+.list_inner .list .cout .c_right .spe{
+    color:#666;
+    font-size: 12px;
+}
+.list_inner .list .cout .c_right .number{
+    font-size: 16px;
+}
+.list_inner .list .cout::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.list_inner .list .store{
+    width:100%;
+    height:35px;
+    margin-top:8px;
+    background:#fcfcfc;
+    margin-bottom:0px;
+}
+.list_inner .list .store:after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.list_inner .list .store .store_box{
+    width:100%;
+    height:35px;
+    margin:0 auto;
+}
+.list_inner .list .store .store_left{
+    float:left;
+    width:50%;
+    cursor: pointer;
+    padding-left:10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.list_inner .list .store .store_left .sl_box{
+    width:100%;
+    height:35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list_inner .list .store .store_left .sl_box p{
+    width:100%;
+    height:35px;
+    line-height: 35px;
+}
+.list_inner .list .store .store_left .sl_box p span{
+    font-size: 12px;
+    color:#666;
+    line-height: 35px;
+    display: inline-block;
+}
+.list_inner .list .store .store_left .sl_box p .spe img{
+    vertical-align: middle;
+    margin-right:5px;
+    margin-top:-2px;
+}
+.list_inner .list .store .store_left span{
+    font-size: 12px;
+    height:35px;
+    line-height: 35px;
+}
+.list_inner .list .store .store_right{
+    float:right;
+    padding-right:10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.list_inner .list .store .store_right span{
+    font-size: 12px;
+    height:35px;
+    line-height: 35px;
+}
+.list_inner .list .store .store_right img{
+    margin-top:10px;
+}
+.list_inner .list .store .store_box::after{
+    content:'';
+    display: block;
+    clear:both;
+}
+.list_inner .list .store .store_left:hover{
+    background:#f5f5f5;
+}
+.list_inner .list .chance{
+    width:223px;
+    margin-top:-3px;
+}
+.list_inner .list .chance::before{
+    content:'';
+    display: block;
+    clear:both;
+}
+.list_inner .list .chance .chan_left{
+    display: inline-block;
+    width:109px;
+    height:40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color:#666;
+    cursor: pointer;
+}
+.list_inner .list .chance .chan_left:hover{
+    background:#f5f5f5;
+}
+.list_inner .list .chance .chan_right{
+    display: inline-block;
+    width:109px;
+    height:40px;
+    line-height: 40px;
+    font-size: 12px;
+    text-align: center;
+    color:#666;
+    cursor: pointer;
+}
+.list_inner .list .chance .chan_right:hover{
+    background:#f5f5f5;
+}
+.list_inner .list .chance::after{
+    content:'';
+    display: block;
+    clear:both;
+}
