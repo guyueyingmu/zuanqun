@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"C:\Object\zuanqun\web/../app/open\view\default\wiki\apiinfo.html";i:1517393696;s:54:"C:\Object\zuanqun\app\open\view\default\base\base.html";i:1517395062;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"C:\Object\zuanqun\web/../app/open\view\default\wiki\apiinfo.html";i:1517531928;s:54:"C:\Object\zuanqun\app\open\view\default\base\base.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
