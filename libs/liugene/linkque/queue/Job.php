@@ -2,4 +2,13 @@
 
 namespace liugene\linkque\queue;
 
-class Job{}
+abstract class Job
+{
+
+    protected $job_handle;
+
+    protected $job;
+
+    public function handle(){}
+
+}

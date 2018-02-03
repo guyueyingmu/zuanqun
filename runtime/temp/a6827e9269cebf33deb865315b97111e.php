@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/tool/index.html";i:1517225971;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517225971;s:78:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/tool-bar.html";i:1517225971;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1516708550;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/tool/index.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:78:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/tool-bar.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="__OPEN_CSS__/common.css">
     <link rel="stylesheet" href="__OPEN_CSS__/header.css">
     <link rel="stylesheet" href="__OPEN_CSS__/footer.css">
-    <link rel="stylesheet" href="/static/open/default/css/tool.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/tool.css">
     <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+    <link rel="stylesheet" href="__COM__/form.css">
 </head>
 <body>
 
@@ -86,21 +87,18 @@
             <div class="layui-card-body">
                 <form class="layui-form" action="" lay-filter="component-form-group">
                     <div class="layui-form-item">
-                        <label class="layui-form-label">优惠券链接</label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入优惠券链接" class="layui-input">
+                            <input id="active-link" type="text" name="active-link" placeholder="请输入优惠券链接" class="layui-input title">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">商品链接</label>
                         <div class="layui-input-block">
-                            <input type="text" name="username" lay-verify="required" placeholder="请输入商品链接" autocomplete="off" class="layui-input">
+                            <input type="text" name="username" lay-verify="required" placeholder="请输入商品链接" autocomplete="off" class="layui-input title">
                         </div>
                     </div>
                     <div class="layui-form-item">
-                        <label class="layui-form-label">淘宝pid</label>
                         <div class="layui-input-block">
-                            <input type="text" name="username" lay-verify="required" placeholder="请输入淘宝pid" autocomplete="off" class="layui-input">
+                            <input type="text" name="username" lay-verify="required" placeholder="请输入淘宝pid" autocomplete="off" class="layui-input title">
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -113,8 +111,7 @@
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <div class="link-footer">
-                                <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
-                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                <a id="push" class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即生成</a>
                             </div>
                         </div>
                     </div>
@@ -138,7 +135,32 @@
 </div>
 </div>
 
-<script src="__COM__/layui/layui.js"></script>
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+
+<script>
+    $(document).on('click','#push',function(){
+        if($('#active-link').val() == ''){
+            layer.msg('优惠券链接不能为空');
+            return false;
+        }
+        if($('#apidoc').val() == ''){
+            layer.msg('文档内容不能为空');
+            return false;
+        }
+        var data = $('#doc').serialize();
+        request("<?php echo url('open/tool/doc/type/api'); ?>",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

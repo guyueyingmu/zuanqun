@@ -21,7 +21,7 @@ class Container
     /**
      * 获得所有绑定的实例结果
      */
-    public function getContainerElement()
+    public function getContainerInstance()
     {
         return $this->definition_map;
     }
@@ -77,12 +77,33 @@ class Container
         }
     }
 
-    public function __set($alias, $service)
+    public function __set($alias, InstanceDefinition $definition)
     {
-        if(!isset($this->definition_map[$alias])){
-            $this->definition_map[$alias] = $service;
-        }
+        $definition->setAlias($alias);
+        /**
+         * 断言别名是否合法
+         */
+        $this->assertAliasNameAvailable($definition->getAlias());
+
+        /**
+         * 保存至私有属性统一管理
+         */
+        $this->definition_map[$definition->getAlias()] = $definition;
+
+        /**
+         * 初始化需要立即实例化的类
+         */
+        $this->initEagerDefinition($definition);
     }
+
+//    public function get($alias)
+//    {
+//        $definition = $this->definition_map[$alias];
+//        if($definition->isInstance()){
+//            return $this->getByAlias($alias);
+//        }
+//        return $definition->getInstance();
+//    }
 
     /**
      * @param string $alias
@@ -122,7 +143,29 @@ class Container
      */
     public function __get($alias)
     {
-        $instance = $this->build($alias);
+        /**
+         * 判断别名是否为ReflectionParameter实例对象
+         *
+         */
+        if($alias instanceof ReflectionParameter){
+            /**
+             * true
+             * 执行循环依赖注入所需要的类
+             */
+            $this->bind((new InstanceDefinition())
+                ->setAlias($alias->getName())
+                ->setIsEager(true)
+                ->setClassName($alias->getClass()->getName())
+                ->setIsSingleton(true)
+            );
+            $instance = $this->build($alias->getName());
+        } else {
+            /**
+             * false
+             * 执行普通的实例化类
+             */
+            $instance = $this->build($alias);
+        }
         return $instance;
     }
 
