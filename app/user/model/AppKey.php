@@ -4,7 +4,7 @@ namespace app\user\model;
 use think\Db;
 use think\Exception;
 
-class AppKeyInfo
+class AppKey
 {
 
     //获取用户appkey信息

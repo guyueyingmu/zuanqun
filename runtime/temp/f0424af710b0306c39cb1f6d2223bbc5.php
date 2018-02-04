@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/welcome.html";i:1516708550;s:75:"/Users/liujun/workspace/php/zuanqun/app/console/view/default/base/base.html";i:1517230428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/welcome.html";i:1517484840;s:75:"/Users/liujun/workspace/php/zuanqun/app/console/view/default/base/base.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="__CONSOLE__/default/common/css/common.css">
     <link href="__COM__/editor.md/css/editormd.min.css" type="text/css" rel="stylesheet" />
     <script src="__COM__/jquery.js"></script>
+    <script src="__COM__/layer/layer.js"></script>
     <script src="__COM__/layui/layui.js"></script>
+    <script src="__COM__/util.js"></script>
     <script src="__COM__/editor.md/editormd.min.js"></script>
 </head>
 <body>

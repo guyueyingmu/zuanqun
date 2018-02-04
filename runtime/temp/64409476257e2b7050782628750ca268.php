@@ -1,44 +1,39 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/app_key/manage.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>验证信息</title>
+    <title>appkey</title>
     <link rel="stylesheet" href="__USER_CSS__/common.css">
     <link rel="stylesheet" href="__COM__/layui/css/layui.css">
-    <link rel="stylesheet" href="__COM__/form.css">
 </head>
 <body>
 
 <div class="link-body">
     <div class="link-item">
         <div class="layui-fluid">
-            <div class="layui-card-header">添加阿里妈妈pid管理</div>
+            <div class="layui-card-header">AppKey管理</div>
             <div class="layui-card-body">
                 <form class="layui-form" action="" lay-filter="component-form-group">
 
                     <div class="layui-form-item">
+                        <label class="layui-form-label">AppKey</label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入推广位名称" class="layui-input title">
+                            <input type="text" name="AppKey" autocomplete="off" class="layui-input input-none" value="<?php echo $appkey; ?>" disabled>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
+                        <label class="layui-form-label">AppSecret</label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入阿里妈妈pid" class="layui-input title">
-                        </div>
-                    </div>
-
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入阿里妈妈pid" class="layui-input title">
+                            <input type="text" name="AppSecret" autocomplete="off" class="layui-input input-none" disabled>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <div class="link-footer">
-                                <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
-                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                <a class="layui-btn">重置AppSecret</a>
                             </div>
                         </div>
                     </div>
@@ -46,7 +41,7 @@
             </div>
         </div>
         <div class="layui-fluid link-box">
-            <div class="layui-card-header">阿里妈妈pid管理</div>
+            <div class="layui-card-header">开放平台使用说明</div>
             <div class="layui-card-body">
                 <div class="link-info-box">
                     <div class="link-info">

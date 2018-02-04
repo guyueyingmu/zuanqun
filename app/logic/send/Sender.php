@@ -6,5 +6,6 @@ abstract class Sender
 {
 
     public function send(){}
+    public function verify(){}
 
 }

@@ -2,24 +2,36 @@
 
 namespace app\user\controller;
 use app\auth\controller\AppKeyAuth;
-use think\Loader;
-use think\Session;
+use app\user\container\Component;
+use app\user\container\Definition;
+use app\user\model\AppKey as AppKeyModel;
+use app\user\logic\AppKey as AppKeyLogic;
 
 class AppKey
 {
+
+    public function __construct()
+    {
+        Component::getInstance()
+            ->bind((new Definition())
+                ->setAlias('appkey')
+                ->setIsSingleton(true)
+                ->setCallBack(function(){
+                    $appkey = new AppKeyLogic();
+                    $appkey->set('appkey',function(){
+                        return new AppKeyModel();
+                    });
+                    return $appkey;
+                })
+        );
+    }
 
     //appkey管理界面
     public function manage()
     {
         return view('default/app_key/manage',[
-            'appkey' => $this->getAppKeyInfo(),
+            'appkey' => Component::getInstance()->get('appkey')->getAppKeyInfo(),
         ]);
-    }
-
-    //获取用户appkey信息
-    public function getAppKeyInfo()
-    {
-        return Loader::model('AppKeyInfo')->getUserAppKey(Session::get('uid'));
     }
 
     //appkey申请

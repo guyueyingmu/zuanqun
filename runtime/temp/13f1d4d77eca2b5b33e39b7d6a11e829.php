@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/channel/template.html";i:1516708550;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/channel/template.html";i:1517751724;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +6,7 @@
     <title>推广文案</title>
     <link rel="stylesheet" href="__USER_CSS__/common.css">
     <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+    <link rel="stylesheet" href="__COM__/form.css">
 </head>
 <body>
 
@@ -17,16 +18,14 @@
                 <form class="layui-form" action="" lay-filter="component-form-group">
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">推广位名称</label>
                         <div class="layui-input-block">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入推广位名称" class="layui-input">
+                            <input type="text" name="title" placeholder="请输入推广位名称" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item layui-form-text">
-                        <label class="layui-form-label">文案模板</label>
                         <div class="layui-input-block">
-                            <textarea name="text" class="layui-textarea"></textarea>
+                            <textarea name="text" class="layui-textarea title" placeholder="文案模板"></textarea>
                         </div>
                     </div>
 

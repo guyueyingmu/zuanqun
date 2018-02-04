@@ -7,6 +7,7 @@ use app\open\Logic\ApiDoc;
 use liugene\linkque\Queue;
 use liugene\linkque\Job;
 use liugene\alisms\Sms;
+use app\logic\Send;
 
 class Tool
 {
@@ -65,18 +66,43 @@ class Tool
 //                    echo 2;
 //                }));
 //        dump(Queue::getInstance()->size());
+//        $SignatureNonce = rand(10000,99999);
+//        Sms::getInstance()
+//            ->setAccessKeyId('LTAImI0YrC7yf9iF')
+//            ->setAccessKeyToken('VGwZJ71YQwgqH7JiCfus0HaJ2JebSm')
+//            ->setSignatureNonce($SignatureNonce)
+//            ->setService('SmsSend')
+//            ->setPhoneNumbers('13175091583')
+//            ->setSignName('嘉诺商城')
+//            ->setTemplateCode('SMS_105015092')
+//            ->setTemplateParam("{'number':$SignatureNonce}");
+//        dump(Sms::getInstance()->send());
+//        Send::getInstance()->sender('sms');
+//        dump(uniqid('zq'));
+//        $rand = rand(10000,99999);
+//        $phone = 13879337614;
+//        dump(ceil(time()/$rand*100+$phone/10000));
+//        $SignatureNonce = rand(10000,99999);
+//        dump(Sms::getInstance()
+//            ->setAccessKeyId('LTAImI0YrC7yf9iF')
+//            ->setAccessKeyToken('VGwZJ71YQwgqH7JiCfus0HaJ2JebSm')
+//            ->setSignatureNonce($SignatureNonce)
+//            ->setService('QuerySms')
+//            ->setPhoneNumbers('13175091583')
+//            ->setSignName('嘉诺商城')
+//            ->setTemplateCode('SMS_105015092')
+//            ->setTemplateParam("{'number':$SignatureNonce}"));
         $SignatureNonce = rand(10000,99999);
-        Sms::getInstance()
+        dump(Sms::getInstance()
             ->setAccessKeyId('LTAImI0YrC7yf9iF')
             ->setAccessKeyToken('VGwZJ71YQwgqH7JiCfus0HaJ2JebSm')
             ->setSignatureNonce($SignatureNonce)
-            ->setService('SmsSend')
-            ->setPhoneNumbers('13175091583')
-            ->setSignName('嘉诺商城')
-            ->setTemplateCode('SMS_105015092')
-            ->setTemplateParam("{'number':$SignatureNonce}");
+            ->setService('QuerySms')
+            ->setPhoneNumber('13175091583')
+            ->setPageSize('10')
+            ->setCurrentPage("1")->setSendDate('20180204'));
         dump(Sms::getInstance()->send());
-
+//        Send::getInstance()->sender('sms');
     }
 
     //二合一转链页面

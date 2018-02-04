@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/index.html";i:1517230964;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/index.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +51,9 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">文档管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" class="console" c-view="/console/Article/helpDoc"><i class="layui-icon">&#xe613;</i>&nbsp;帮助文档</a></dd>
-                        <dd><a href="javascript:;" class="console" c-view="/console/Article/apiDoc"><i class="layui-icon">&#xe613;</i>&nbsp;API文档</a></dd>
-                        <dd><a href="javascript:;" class="console" c-view="/console/Article/noticeDoc"><i class="layui-icon">&#xe613;</i>&nbsp;公告文档</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Article_Temp/helpDoc"><i class="layui-icon">&#xe613;</i>&nbsp;帮助文档</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Article_Temp/apiDoc"><i class="layui-icon">&#xe613;</i>&nbsp;API文档</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Article_Temp/noticeDoc"><i class="layui-icon">&#xe613;</i>&nbsp;公告文档</a></dd>
                     </dl>
                 </li>
             </ul>

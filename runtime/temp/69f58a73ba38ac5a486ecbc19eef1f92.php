@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/auth/view/default/register/register.html";i:1517141202;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/auth/view/default/register/register.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

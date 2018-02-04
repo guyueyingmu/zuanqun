@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/article/apidoc.html";i:1517230319;s:75:"/Users/liujun/workspace/php/zuanqun/app/console/view/default/base/base.html";i:1517230428;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/article/apidoc.html";i:1517484840;s:75:"/Users/liujun/workspace/php/zuanqun/app/console/view/default/base/base.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="__CONSOLE__/default/common/css/common.css">
     <link href="__COM__/editor.md/css/editormd.min.css" type="text/css" rel="stylesheet" />
     <script src="__COM__/jquery.js"></script>
+    <script src="__COM__/layer/layer.js"></script>
     <script src="__COM__/layui/layui.js"></script>
+    <script src="__COM__/util.js"></script>
     <script src="__COM__/editor.md/editormd.min.js"></script>
 </head>
 <body>
@@ -20,29 +22,28 @@
             <div class="layui-card-header">API文档管理</div>
             <div class="layui-card-body">
                 <div class="zq-form">
-                    <form class="layui-form" action="" lay-filter="component-form-group">
+                    <form id="doc" class="layui-form" lay-filter="component-form-group">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input title">
+                                <input id="title" type="text" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input title">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                <input id="cat" type="text" name="cat" placeholder="请输入" autocomplete="off" class="layui-input">
                             </div>
                         </div>
 
                         <div class="layui-form-item">
                             <div id="markdown">
-                                <textarea name="apidoc" style="display: none;"></textarea>
+                                <textarea id="apidoc" name="apidoc" style="display: none;"></textarea>
                             </div>
                         </div>
 
                         <div class="layui-form-item">
                             <div class="layui-input-block">
                                 <div class="link-footer">
-                                    <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
-                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    <a class="layui-btn" id="push">立即发布</a>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +62,27 @@
             height  : 380,
             syncScrolling : "single",
             path    : "__COM__/editor.md/lib/"
+        });
+    });
+    $(document).on('click','#push',function(){
+        if($('#title').val() == ''){
+            layer.msg('文档标题不能为空');
+            return false;
+        }
+        if($('#apidoc').val() == ''){
+            layer.msg('文档内容不能为空');
+            return false;
+        }
+        var data = $('#doc').serialize();
+        request("<?php echo url('console/Article/doc/type/api'); ?>",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
         });
     });
 </script>
