@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/index/view/default/help/index.html";i:1517225971;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/header.html";i:1517128673;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/footer.html";i:1516964952;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/index/view/default/help/index.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/header.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/footer.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

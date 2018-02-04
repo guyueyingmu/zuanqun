@@ -8,7 +8,7 @@ use app\open\model\ApiDoc as ApiModel;
 class Wiki
 {
 
-    public function __construct(ApiDoc $apidoc)
+    public function __construct()
     {
         Doc::getInstance()->set('api',function(){
             $api = new ApiDoc();

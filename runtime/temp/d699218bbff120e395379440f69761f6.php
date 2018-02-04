@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/manager/index.html";i:1516708550;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517225971;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1516708550;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/manager/index.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,11 +70,9 @@
     <div class="center">
         <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
             <ul class="layui-tab-title">
-                <li class="layui-this">网站设置</li>
-                <li>用户管理</li>
-                <li>权限分配</li>
-                <li>商品管理</li>
-                <li>订单管理</li>
+                <li class="layui-this">应用管理</li>
+                <li>开发者管理</li>
+                <li>授权中心</li>
             </ul>
             <div class="layui-tab-content"></div>
         </div>

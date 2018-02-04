@@ -6,6 +6,7 @@ use liugene\linkdi\InstanceDefinition;
 use app\open\Logic\ApiDoc;
 use liugene\linkque\Queue;
 use liugene\linkque\Job;
+use liugene\alisms\Sms;
 
 class Tool
 {
@@ -39,19 +40,42 @@ class Tool
 //            ->setJobHandle(function (){
 //                echo 123;
 //            }));
-        Queue::getInstance()->push(
-            (new Job())
-                ->setJob('test')
-                ->setJobHandle(function (){
-                    echo 1;
-                }));
-        Queue::getInstance()->push(
-            (new Job())
-                ->setJob('test1')
-                ->setJobHandle(function (){
-                    echo 2;
-                }));
-        dump(Queue::getInstance()->size());
+//        Queue::getInstance()->push(
+//            (new Job())
+//                ->setJob('test')
+//                ->setJobHandle(function (){
+//                    echo 1;
+//                }));
+//        Queue::getInstance()->push(
+//            (new Job())
+//                ->setJob('tes')
+//                ->setJobHandle(function (){
+//                    echo 2;
+//                }));
+//        Queue::getInstance()->push(
+//            (new Job())
+//                ->setJob('tes12')
+//                ->setJobHandle(function (){
+//                    echo 2;
+//                }));
+//        Queue::getInstance()->push(
+//            (new Job())
+//                ->setJob('this')
+//                ->setJobHandle(function (){
+//                    echo 2;
+//                }));
+//        dump(Queue::getInstance()->size());
+        $SignatureNonce = rand(10000,99999);
+        Sms::getInstance()
+            ->setAccessKeyId('LTAImI0YrC7yf9iF')
+            ->setAccessKeyToken('VGwZJ71YQwgqH7JiCfus0HaJ2JebSm')
+            ->setSignatureNonce($SignatureNonce)
+            ->setService('SmsSend')
+            ->setPhoneNumbers('13175091583')
+            ->setSignName('嘉诺商城')
+            ->setTemplateCode('SMS_105015092')
+            ->setTemplateParam("{'number':$SignatureNonce}");
+        dump(Sms::getInstance()->send());
 
     }
 
