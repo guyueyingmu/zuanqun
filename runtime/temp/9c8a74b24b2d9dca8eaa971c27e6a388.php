@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/reset/password.html";i:1517757984;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/reset/password.html";i:1517830384;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,31 +15,30 @@
         <div class="layui-fluid">
             <div class="layui-card-header">重置密码</div>
             <div class="layui-card-body">
-                <form class="layui-form" action="" lay-filter="component-form-group">
+                <form class="layui-form" id="form">
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入旧密码" class="layui-input title">
+                            <input type="text" id="old_password" name="old_password" placeholder="请输入旧密码" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入新密码" class="layui-input title">
+                            <input type="password" id="password" name="password" placeholder="请输入新密码" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入确认密码" class="layui-input title">
+                            <input type="password" id="password2" name="password2" placeholder="请输入确认密码" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <div class="link-footer">
-                                <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
-                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                <a class="layui-btn" id="push">立即修改</a>
                             </div>
                         </div>
                     </div>
@@ -52,5 +51,34 @@
 </body>
 
 <script src="__COM__/jquery.js"></script>
-<script src="__COM__/layui/layui.js"></script>
+<script src="__COM__/util.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+
+<script>
+    $(document).on('click','#push',function(){
+        if($('#old_password').val() == ''){
+            layer.msg('旧密码不能为空!');
+            return false;
+        }
+        if($('#password').val() == ''){
+            layer.msg('新密码不能为空！');
+            return false;
+        }
+        if($('#password2').val() == ''){
+            layer.msg('确认密码不能为空！');
+            return false;
+        }
+        var data = $('#form').serialize();
+        request("<?php echo url('user/Reset/edit'); ?>",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
 </html>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/verify_info/index.html";i:1517758505;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/verify_info/index.html";i:1517830384;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,24 +15,24 @@
         <div class="layui-fluid">
             <div class="layui-card-header">淘客身份认证</div>
             <div class="layui-card-body">
-                <form class="layui-form" action="" lay-filter="component-form-group">
+                <form class="layui-form" id="form">
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input id="team_name" type="text" name="title" placeholder="请输入团队名称" class="layui-input title">
+                            <input id="team_name" type="text" name="team_name" placeholder="请输入团队名称" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入团队名称" class="layui-input title">
+                            <input type="text" id="chat_info" name="chat_info" placeholder="请输入联系方式" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-inline inline-logo">
                             <div class="layui-input-inline">
-                                <input type="text" name="number" autocomplete="off" class="layui-input input-logo" readonly>
+                                <input type="text" autocomplete="off" class="layui-input input-logo" readonly>
                             </div>
                             <a type="button" class="layui-btn" id="logo">
                                 <i class="layui-icon">&#xe67c;</i>上传团队logo
@@ -40,7 +40,7 @@
                         </div>
                         <div class="layui-inline inline-logo">
                             <div class="layui-input-inline">
-                                <input type="text" name="number" autocomplete="off" class="layui-input input-logo" readonly>
+                                <input type="text" autocomplete="off" class="layui-input input-logo" readonly>
                             </div>
                             <a type="button" class="layui-btn" id="verify">
                                 <i class="layui-icon">&#xe67c;</i>上传实力证明
@@ -50,13 +50,13 @@
 
                     <div class="layui-form-item layui-form-text">
                         <div class="layui-input-block">
-                            <textarea name="text" class="layui-textarea title" placeholder="请输入团队简介"></textarea>
+                            <textarea id="team_info" name="team_info" class="layui-textarea title" placeholder="请输入团队简介"></textarea>
                         </div>
                     </div>
 
                     <div class="layui-form-item layui-form-text">
                         <div class="layui-input-block">
-                            <textarea name="text" class="layui-textarea title" placeholder="请输入推广渠道"></textarea>
+                            <textarea id="ad_info" name="ad_info" class="layui-textarea title" placeholder="请输入推广渠道"></textarea>
                         </div>
                     </div>
 
@@ -76,6 +76,7 @@
 </body>
 
 <script src="__COM__/jquery.js"></script>
+<script src="__COM__/util.js"></script>
 <script src="__COM__/layui/layui.js"></script>
 <script>
     layui.use('upload', function(){
@@ -111,12 +112,12 @@
             layer.msg('团队名称不能为空!');
             return false;
         }
-        if($('#apidoc').val() == ''){
-            layer.msg('文档内容不能为空');
+        if($('#chat_info').val() == ''){
+            layer.msg('联系方式不能为空！');
             return false;
         }
-        var data = $('#doc').serialize();
-        request("<?php echo url('console/Article/doc/type/api'); ?>",data,function(res){
+        var data = $('#form').serialize();
+        request("<?php echo url('user/Team/team'); ?>",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});

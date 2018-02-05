@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/wechat/view/default/wx_app/index.html";i:1516794494;s:74:"/Users/liujun/workspace/php/zuanqun/app/wechat/view/default/base/base.html";i:1516793318;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/wechat/view/default/wx_app/index.html";i:1517484840;s:74:"/Users/liujun/workspace/php/zuanqun/app/wechat/view/default/base/base.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

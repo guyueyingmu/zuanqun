@@ -156,3 +156,7 @@ a {
 .link-table thead tr {
     background-color: #fff!important;
 }
+
+.layui-table-header {
+    border-color: #f2f2f2;
+}

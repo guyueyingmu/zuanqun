@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/user/index.html";i:1517751086;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/user/index.html";i:1517830384;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +26,6 @@
                         <li><a class="wiki-src" href="javascript:;" c-view="/user/info">&nbsp;&nbsp;&nbsp;&nbsp;基本信息</a></li>
                         <li><a class="wiki-src" href="javascript:;" c-view="/verify_info/index">&nbsp;&nbsp;&nbsp;&nbsp;认证中心</a></li>
                         <li><a class="wiki-src" href="javascript:;" c-view="/zcard/index">&nbsp;&nbsp;&nbsp;&nbsp;点券管理</a></li>
-                        <li><a class="wiki-src" href="javascript:;" c-view="/channel/index">&nbsp;&nbsp;&nbsp;&nbsp;优惠券管理</a></li>
                     </ul>
                 </div>
                 <div class="wiki-box">
@@ -37,7 +36,7 @@
                     </span>
                     <ul class="wiki-active">
                         <li><a class="wiki-src" href="javascript:;" c-view="/cms_base/index">&nbsp;&nbsp;&nbsp;&nbsp;CMS网站</a></li>
-                        <li><a class="wiki-src" href="javascript:;" c-view="/wechat/index">&nbsp;&nbsp;&nbsp;&nbsp;微信公众号</a></li>
+                        <li><a class="wiki-src" href="http://www.zuanqun.com:8080/wechat/main" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;微信公众号</a></li>
                     </ul>
                 </div>
                 <div class="wiki-box">
@@ -47,8 +46,8 @@
                         <i class="layui-icon icon icon-active">&nbsp;&nbsp;&#xe602;</i>&nbsp;&nbsp;账号管理</a>
                     </span>
                     <ul class="wiki-none">
-                        <li><a class="wiki-src" href="javascript:;" c-view="/reset/password">&nbsp;&nbsp;&nbsp;&nbsp;重置密码</a></li>
-                        <li><a class="wiki-src" href="javascript:;" c-view="/reset/mobile">&nbsp;&nbsp;&nbsp;&nbsp;修改手机号</a></li>
+                        <li><a class="wiki-src" href="javascript:;" c-view="/reset_info/password">&nbsp;&nbsp;&nbsp;&nbsp;重置密码</a></li>
+                        <li><a class="wiki-src" href="javascript:;" c-view="/reset_info/mobile">&nbsp;&nbsp;&nbsp;&nbsp;修改手机号</a></li>
                     </ul>
                 </div>
                 <div class="wiki-box">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/channel/template.html";i:1517751724;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/channel/template.html";i:1517830384;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,21 +19,20 @@
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="title" placeholder="请输入推广位名称" class="layui-input title">
+                            <input type="text" id="ad_name" name="ad_name" placeholder="请输入推广位名称" class="layui-input title">
                         </div>
                     </div>
 
                     <div class="layui-form-item layui-form-text">
                         <div class="layui-input-block">
-                            <textarea name="text" class="layui-textarea title" placeholder="文案模板"></textarea>
+                            <textarea id="channel" name="channel" class="layui-textarea title" placeholder="文案模板"></textarea>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <div class="link-footer">
-                                <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</button>
-                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                <a class="layui-btn" id="push">立即提交</a>
                             </div>
                         </div>
                     </div>
@@ -50,7 +49,7 @@
                         </p>
                     </div>
                     <div class="link-down">
-                        <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1"><i class="layui-icon">&#xe601;</i>点此下载程序文件</button>
+
                     </div>
                 </div>
             </div>
@@ -61,5 +60,30 @@
 </body>
 
 <script src="__COM__/jquery.js"></script>
-<script src="__COM__/layui/layui.js"></script>
+<script src="__COM__/util.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+
+<script>
+    $(document).on('click','#push',function(){
+        if($('#ad_name').val() == ''){
+            layer.msg('推广位名称不能为空!');
+            return false;
+        }
+        if($('#channel').val() == ''){
+            layer.msg('文案模板不能为空！');
+            return false;
+        }
+        var data = $('#form').serialize();
+        request("<?php echo url('user/Reset/edit'); ?>",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
 </html>

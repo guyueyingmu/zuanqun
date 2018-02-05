@@ -1,7 +1,6 @@
 <?php
 
 namespace app\user\controller;
-use app\auth\controller\AppKeyAuth;
 use app\user\container\Component;
 use app\user\container\Definition;
 use app\user\model\AppKey as AppKeyModel;
@@ -32,12 +31,6 @@ class AppKey
         return view('default/app_key/manage',[
             'appkey' => Component::getInstance()->get('appkey')->getAppKeyInfo(),
         ]);
-    }
-
-    //appkey申请
-    static public function applyKey($id)
-    {
-        return AppKeyAuth::create($id);
     }
 
 }

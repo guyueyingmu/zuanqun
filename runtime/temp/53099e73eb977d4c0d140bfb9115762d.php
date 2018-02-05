@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/index.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/index.html";i:1517840811;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,6 +40,7 @@
                     <dl class="layui-nav-child">
                         <dd class="layui-this"><a href="/console"><i class="layui-icon">&#xe68e;</i>&nbsp;主页</a></dd>
                         <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;网站设置</a></dd>
+                        <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;菜单管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">

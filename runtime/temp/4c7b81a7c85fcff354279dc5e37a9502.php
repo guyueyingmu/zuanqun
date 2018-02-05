@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"/Users/liujun/workspace/php/zuanqun/web/../app/wechat/view/default/index/index.html";i:1516794208;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:83:"/Users/liujun/workspace/php/zuanqun/web/../app/wechat/view/default/index/index.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
