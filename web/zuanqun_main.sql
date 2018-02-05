@@ -1,21 +1,19 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : localhost
- Source Server Type    : MySQL
- Source Server Version : 50721
- Source Host           : localhost:3306
- Source Schema         : zuanqun_main
+Source Server         : localhost
+Source Server Version : 50617
+Source Host           : localhost:3306
+Source Database       : zuanqun_main
 
- Target Server Type    : MySQL
- Target Server Version : 50721
- File Encoding         : 65001
+Target Server Type    : MYSQL
+Target Server Version : 50617
+File Encoding         : 65001
 
- Date: 04/02/2018 23:41:53
+Date: 2018-02-05 17:57:05
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for zq_admin
@@ -29,6 +27,10 @@ CREATE TABLE `zq_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of zq_admin
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for zq_alimama
 -- ----------------------------
 DROP TABLE IF EXISTS `zq_alimama`;
@@ -39,7 +41,12 @@ CREATE TABLE `zq_alimama` (
   `posttime` varchar(30) NOT NULL,
   `zq_user_id` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_alimama
+-- ----------------------------
+INSERT INTO `zq_alimama` VALUES ('1', 'mm58888_888', '钻群联盟', '1517798114', '11');
 
 -- ----------------------------
 -- Table structure for zq_apidoc
@@ -60,10 +67,8 @@ CREATE TABLE `zq_apidoc` (
 -- ----------------------------
 -- Records of zq_apidoc
 -- ----------------------------
-BEGIN;
-INSERT INTO `zq_apidoc` VALUES (1, 1, 16777215, 1, '###测试内容\r\n>test', 1, 65535, '测试api文档');
-INSERT INTO `zq_apidoc` VALUES (2, 1, 16777215, 1, '###测试内容\r\n>test', 1, 65535, '测试api文档');
-COMMIT;
+INSERT INTO `zq_apidoc` VALUES ('1', '1', '16777215', '1', '###测试内容\r\n>test', '1', '65535', '测试api文档');
+INSERT INTO `zq_apidoc` VALUES ('2', '1', '16777215', '1', '###测试内容\r\n>test', '1', '65535', '测试api文档');
 
 -- ----------------------------
 -- Table structure for zq_apidoc_content
@@ -78,6 +83,10 @@ CREATE TABLE `zq_apidoc_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of zq_apidoc_content
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for zq_appkey
 -- ----------------------------
 DROP TABLE IF EXISTS `zq_appkey`;
@@ -89,19 +98,22 @@ CREATE TABLE `zq_appkey` (
   `posttime` varchar(20) NOT NULL DEFAULT '0' COMMENT '申请时间',
   `app_id` mediumint(8) unsigned NOT NULL,
   `is_on` tinyint(2) unsigned NOT NULL DEFAULT '1',
+  `open_id` mediumint(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_appkey
 -- ----------------------------
-BEGIN;
-INSERT INTO `zq_appkey` VALUES (5, 11, 'zq4d28f8e450527d366f5b539c02aca4f5', '514515151', '1515482870', 0, 1);
-INSERT INTO `zq_appkey` VALUES (6, 12, 'zq02a91a95713d123d7c479049754d5865', '', '1516584427', 0, 1);
-INSERT INTO `zq_appkey` VALUES (7, 13, 'zqbf70a5379a1ec90faba95a649ad8de4d', '', '1516584429', 0, 1);
-INSERT INTO `zq_appkey` VALUES (8, 14, 'zqa4f604b1844f098fbf22b7fc75aa19b0', '', '1516873420', 0, 1);
-INSERT INTO `zq_appkey` VALUES (9, 15, 'zq46c0c6e9854ce382096cfabfbbf48c8a', '', '1516873425', 0, 1);
-COMMIT;
+INSERT INTO `zq_appkey` VALUES ('5', '11', 'zq4d28f8e450527d366f5b539c02aca4f5', '514515151', '1515482870', '0', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('6', '12', 'zq02a91a95713d123d7c479049754d5865', '', '1516584427', '0', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('7', '13', 'zqbf70a5379a1ec90faba95a649ad8de4d', '', '1516584429', '0', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('8', '14', 'zqa4f604b1844f098fbf22b7fc75aa19b0', '', '1516873420', '0', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('9', '15', 'zq46c0c6e9854ce382096cfabfbbf48c8a', '', '1516873425', '0', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('10', '11', '7024675', 'NmJiNTFmOTZkN2VlMmZiMGU4ZjUwMDg1YjNjYWFmYTliNDNjMWRjNA', '1517821469', '294292', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('11', '11', 'zq2398353', 'ODBkODM5NDM5ZTdkNjE2YzkyNWE1Yjc2OWFiMmNlNDRjYTY5ZDBmMg', '1517821579', '231237', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('12', '11', 'zq2091615', 'NGYxY2FkOTdkZGE3NmY1Nzg1ZjUxZjA1MWM3MTc3N2NiOWQzZDg2ZQ', '1517821627', '33197', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('13', '11', 'zq4472601', 'NmJjYWJmNjUyNmZmMDNkYWUxNTMzMWQ4ZTk5MzcwYzE0YzMyYTI2YQ', '1517821668', '16777215', '1', '0');
 
 -- ----------------------------
 -- Table structure for zq_cms
@@ -111,8 +123,20 @@ CREATE TABLE `zq_cms` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `website` varchar(50) NOT NULL COMMENT '网站名',
   `logo` varchar(255) NOT NULL DEFAULT '0' COMMENT '网站logo',
+  `domain` varchar(64) DEFAULT NULL,
+  `beian` varchar(20) DEFAULT NULL,
+  `posttime` varchar(10) DEFAULT NULL,
+  `zq_uid` mediumint(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_cms
+-- ----------------------------
+INSERT INTO `zq_cms` VALUES ('1', '钻群联盟', '0', 'http://zuanqun.cn', '2017', '1517796630', '11');
+INSERT INTO `zq_cms` VALUES ('2', '钻群联盟', '0', 'http://zuanqun.cn', '2017', '1517796639', '11');
+INSERT INTO `zq_cms` VALUES ('3', '钻群联盟', '0', 'http://zuanqun.cn', '2017', '1517807714', '11');
+INSERT INTO `zq_cms` VALUES ('4', '钻群联盟', '0', 'http://zuanqun.cn', '20180205', '1517807726', '11');
 
 -- ----------------------------
 -- Table structure for zq_doc_cat
@@ -127,6 +151,10 @@ CREATE TABLE `zq_doc_cat` (
   `sort` smallint(5) unsigned NOT NULL DEFAULT '65535',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_doc_cat
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for zq_goods
@@ -152,28 +180,26 @@ CREATE TABLE `zq_goods` (
 -- ----------------------------
 -- Records of zq_goods
 -- ----------------------------
-BEGIN;
-INSERT INTO `zq_goods` VALUES (1, 2147483647, '2017新款女装冬装宽松大码中长款外套女显瘦连帽毛领毛毛大衣加厚', 'https://img.alicdn.com/tfscom/i2/2507973110/TB28Jm7dtHO8KJjSZFtXXchfXXa_!!2507973110.jpg', 888, 358, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=563134733822', 2147483647, 24061, 'chaoming528', 0);
-INSERT INTO `zq_goods` VALUES (2, 2147483647, '2017冬季新款韩版加厚宽松时尚女装连帽过膝长款羽绒服超长外套女', 'https://img.alicdn.com/tfscom/i2/196599007/TB2NUWJhgnH8KJjSspcXXb3QFXa_!!196599007.jpg', 1028, 488, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=562598307082', 196599007, 6165, '落叶风_1988', 0);
-INSERT INTO `zq_goods` VALUES (3, 2147483647, '欧洲站2017冬季新款女装棉衣韩版宽松中长款羽绒棉服外套棉袄女潮', 'https://img.alicdn.com/tfscom/i4/1753682892/TB2p0MAi0nJ8KJjSszdXXaxuFXa_!!1753682892.jpg', 488, 218, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=562852346505', 1753682892, 14197, '海豚湾821', 0);
-INSERT INTO `zq_goods` VALUES (4, 2147483647, '2018新款女装春装冬裙背带裙子两件套2017秋冬季金丝绒连衣裙女春', 'https://img.alicdn.com/tfscom/i3/2075384612/TB15hCdn22H8KJjy1zkXXXr7pXa_!!0-item_pic.jpg', 279, 227, 1, '广东 东莞', 'http://item.taobao.com/item.htm?id=560721225474', 2075384612, 3698, '欧惑旗舰店', 0);
-INSERT INTO `zq_goods` VALUES (5, 2147483647, '秋冬季女装学生卫衣长款毛衣裙子过膝及踝长裙针织内搭打底连衣裙', 'https://img.alicdn.com/tfscom/i3/2575200001/TB2rnpviMfH8KJjy1zcXXcTzpXa_!!2575200001.jpg', 338, 148, 0, '广东 深圳', 'http://item.taobao.com/item.htm?id=562752704342', 2147483647, 7317, 'momo高端店', 0);
-INSERT INTO `zq_goods` VALUES (6, 2147483647, '2017秋冬季新款女装赫本小黑裙内搭厚冬裙子名媛小香风打底连衣裙', 'https://img.alicdn.com/tfscom/i2/2575200001/TB2QxERhMvD8KJjy0FlXXagBFXa_!!2575200001.jpg', 338, 148, 0, '广东 深圳', 'http://item.taobao.com/item.htm?id=562798419804', 2147483647, 7284, 'momo高端店', 0);
-INSERT INTO `zq_goods` VALUES (7, 2147483647, '加厚毛呢大衣女中长款2017冬季女装新款森系格子加绒皮毛一体外套', 'https://img.alicdn.com/tfscom/i3/2000231797/TB2aDoSe6nD8KJjSspbXXbbEXXa_!!2000231797.jpg', 1099, 278, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=562015234309', 2000231797, 2703, '叁小姐ms', 0);
-INSERT INTO `zq_goods` VALUES (8, 2147483647, '黑色毛呢外套中长款韩国女装2017冬装新款宽松显瘦茧型呢子大衣潮', 'https://img.alicdn.com/tfscom/i1/587451667/TB2c.XZdMDD8KJjy0FdXXcjvXXa_!!587451667.jpg', 698, 248, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=561009546638', 587451667, 994, '德国人家', 0);
-INSERT INTO `zq_goods` VALUES (9, 2147483647, '2017秋冬装韩版女装加厚毛呢外套女中长款廓形呢子大衣显瘦潮冬季', 'https://img.alicdn.com/tfscom/i4/2984548975/TB1IbL.mGigSKJjSsppXXabnpXa_!!0-item_pic.jpg', 798, 155, 1, '上海', 'http://item.taobao.com/item.htm?id=560365000704', 2147483647, 5390, '柯睐沃旗舰店', 0);
-INSERT INTO `zq_goods` VALUES (10, 2147483647, '气质女装2017秋冬新款修身显瘦打底针织连衣裙长袖V领名媛时尚潮', 'https://img.alicdn.com/tfscom/i2/2057678929/TB1oULadMDD8KJjy0FdXXcjvXXa_!!0-item_pic.jpg', 588, 128, 1, '广东 深圳', 'http://item.taobao.com/item.htm?id=561592189849', 2057678929, 2468, 'qe旗舰店', 0);
-INSERT INTO `zq_goods` VALUES (11, 2147483647, '棉衣女中长款2017冬装新款韩版女装加厚连帽宽松羽绒棉服外套棉袄', 'https://img.alicdn.com/tfscom/i4/1753682892/TB2deDdbPgy_uJjSZLeXXaPlFXa_!!1753682892.jpg', 489, 218, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=561850598607', 1753682892, 1629, '海豚湾821', 0);
-INSERT INTO `zq_goods` VALUES (12, 2147483647, '2017秋冬装新款女装名媛小香风针织裙子矮个子搭配内搭打底连衣裙', 'https://img.alicdn.com/tfscom/i2/2575200001/TB2tA7bb3DD8KJjy0FdXXcjvXXa_!!2575200001.jpg', 368, 128, 0, '广东 深圳', 'http://item.taobao.com/item.htm?id=561287286333', 2147483647, 3894, 'momo高端店', 0);
-INSERT INTO `zq_goods` VALUES (13, 2147483647, '2017冬装新款韩版女装羽绒棉衣女中长款金丝绒连帽假两件棉服外套', 'https://img.alicdn.com/tfscom/i3/TB1JkLKb8LN8KJjSZFpYXHZaVXa_M2.SS2', 998, 268, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=562151233259', 2147483647, 1384, '王波波19891118', 0);
-INSERT INTO `zq_goods` VALUES (14, 2147483647, '冬季毛呢外套女中长款韩版2017新款女装加厚过膝chic呢子大衣韩国', 'https://img.alicdn.com/tfscom/i4/3097226476/TB1qfjqf_nI8KJjSszbXXb4KFXa_!!0-item_pic.jpg', 499, 278, 1, '广东 东莞', 'http://item.taobao.com/item.htm?id=562234106781', 2147483647, 1014, 'hooskon晓珂旗舰店', 0);
-INSERT INTO `zq_goods` VALUES (15, 2147483647, '2017秋装新款女装V领金丝绒挂脖性感长袖裙裤丝绒显瘦系腰连衣裙', 'https://img.alicdn.com/tfscom/i1/116538553/TB2Nj0cd5pnpuFjSZFIXXXh2VXa_!!116538553.jpg', 316, 158, 0, '海外', 'http://item.taobao.com/item.htm?id=557854987076', 116538553, 1010, 'lsmenghao', 0);
-INSERT INTO `zq_goods` VALUES (16, 2147483647, '欧洲站大毛领加厚欧货秋冬中长款羽绒棉服棉袄工装宽松棉衣女装潮', 'https://img.alicdn.com/tfscom/i1/1583349179/TB2JD7me0uO.eBjSZFCXXXULFXa_!!1583349179.jpg', 458, 428, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=542303649234', 1583349179, 501, '1929赫本', 0);
-INSERT INTO `zq_goods` VALUES (17, 2147483647, '2018年新款女装春装潮连衣裙红色名媛小香风内搭针织打底裙秋冬季', 'https://img.alicdn.com/tfscom/i2/2967049126/TB1PT_an3fH8KJjy1zcXXcTzpXa_!!0-item_pic.jpg', 278, 178, 1, '广东 深圳', 'http://item.taobao.com/item.htm?id=563320754081', 2147483647, 2321, 'musecx旗舰店', 0);
-INSERT INTO `zq_goods` VALUES (18, 2147483647, '2017秋冬季新款女装毛呢冬裙子2018春装中长款名媛小香风连衣裙女', 'https://img.alicdn.com/tfscom/i4/2075384612/TB1padYn6nD8KJjSspbXXbbEXXa_!!0-item_pic.jpg', 399, 255, 1, '广东 东莞', 'http://item.taobao.com/item.htm?id=560624204695', 2075384612, 353, '欧惑旗舰店', 0);
-INSERT INTO `zq_goods` VALUES (19, 2147483647, '短款棉服女装2018冬春新款韩版宽松加厚连帽棉衣外套小个子面包服', 'https://img.alicdn.com/tfscom/i2/825236775/TB2Hik2aM685uJjSZFCXXXzlXXa_!!825236775.jpg', 289, 186, 0, '广东 广州', 'http://item.taobao.com/item.htm?id=560321390575', 825236775, 1282, '言若言诺', 0);
-INSERT INTO `zq_goods` VALUES (20, 2147483647, '2017新款女装中长款韩版修身轻薄高端奢华超长过膝羽绒服外套冬潮', 'https://img.alicdn.com/tfscom/i8/TB1M50wjv6H8KJjSspmYXH2WXXa_M2.SS2', 698, 368, 0, '浙江 杭州', 'http://item.taobao.com/item.htm?id=563135286299', 192699001, 30304, 'zhangpei12', 0);
-COMMIT;
+INSERT INTO `zq_goods` VALUES ('1', '2147483647', '2017新款女装冬装宽松大码中长款外套女显瘦连帽毛领毛毛大衣加厚', 'https://img.alicdn.com/tfscom/i2/2507973110/TB28Jm7dtHO8KJjSZFtXXchfXXa_!!2507973110.jpg', '888', '358', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=563134733822', '2147483647', '24061', 'chaoming528', '0');
+INSERT INTO `zq_goods` VALUES ('2', '2147483647', '2017冬季新款韩版加厚宽松时尚女装连帽过膝长款羽绒服超长外套女', 'https://img.alicdn.com/tfscom/i2/196599007/TB2NUWJhgnH8KJjSspcXXb3QFXa_!!196599007.jpg', '1028', '488', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=562598307082', '196599007', '6165', '落叶风_1988', '0');
+INSERT INTO `zq_goods` VALUES ('3', '2147483647', '欧洲站2017冬季新款女装棉衣韩版宽松中长款羽绒棉服外套棉袄女潮', 'https://img.alicdn.com/tfscom/i4/1753682892/TB2p0MAi0nJ8KJjSszdXXaxuFXa_!!1753682892.jpg', '488', '218', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=562852346505', '1753682892', '14197', '海豚湾821', '0');
+INSERT INTO `zq_goods` VALUES ('4', '2147483647', '2018新款女装春装冬裙背带裙子两件套2017秋冬季金丝绒连衣裙女春', 'https://img.alicdn.com/tfscom/i3/2075384612/TB15hCdn22H8KJjy1zkXXXr7pXa_!!0-item_pic.jpg', '279', '227', '1', '广东 东莞', 'http://item.taobao.com/item.htm?id=560721225474', '2075384612', '3698', '欧惑旗舰店', '0');
+INSERT INTO `zq_goods` VALUES ('5', '2147483647', '秋冬季女装学生卫衣长款毛衣裙子过膝及踝长裙针织内搭打底连衣裙', 'https://img.alicdn.com/tfscom/i3/2575200001/TB2rnpviMfH8KJjy1zcXXcTzpXa_!!2575200001.jpg', '338', '148', '0', '广东 深圳', 'http://item.taobao.com/item.htm?id=562752704342', '2147483647', '7317', 'momo高端店', '0');
+INSERT INTO `zq_goods` VALUES ('6', '2147483647', '2017秋冬季新款女装赫本小黑裙内搭厚冬裙子名媛小香风打底连衣裙', 'https://img.alicdn.com/tfscom/i2/2575200001/TB2QxERhMvD8KJjy0FlXXagBFXa_!!2575200001.jpg', '338', '148', '0', '广东 深圳', 'http://item.taobao.com/item.htm?id=562798419804', '2147483647', '7284', 'momo高端店', '0');
+INSERT INTO `zq_goods` VALUES ('7', '2147483647', '加厚毛呢大衣女中长款2017冬季女装新款森系格子加绒皮毛一体外套', 'https://img.alicdn.com/tfscom/i3/2000231797/TB2aDoSe6nD8KJjSspbXXbbEXXa_!!2000231797.jpg', '1099', '278', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=562015234309', '2000231797', '2703', '叁小姐ms', '0');
+INSERT INTO `zq_goods` VALUES ('8', '2147483647', '黑色毛呢外套中长款韩国女装2017冬装新款宽松显瘦茧型呢子大衣潮', 'https://img.alicdn.com/tfscom/i1/587451667/TB2c.XZdMDD8KJjy0FdXXcjvXXa_!!587451667.jpg', '698', '248', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=561009546638', '587451667', '994', '德国人家', '0');
+INSERT INTO `zq_goods` VALUES ('9', '2147483647', '2017秋冬装韩版女装加厚毛呢外套女中长款廓形呢子大衣显瘦潮冬季', 'https://img.alicdn.com/tfscom/i4/2984548975/TB1IbL.mGigSKJjSsppXXabnpXa_!!0-item_pic.jpg', '798', '155', '1', '上海', 'http://item.taobao.com/item.htm?id=560365000704', '2147483647', '5390', '柯睐沃旗舰店', '0');
+INSERT INTO `zq_goods` VALUES ('10', '2147483647', '气质女装2017秋冬新款修身显瘦打底针织连衣裙长袖V领名媛时尚潮', 'https://img.alicdn.com/tfscom/i2/2057678929/TB1oULadMDD8KJjy0FdXXcjvXXa_!!0-item_pic.jpg', '588', '128', '1', '广东 深圳', 'http://item.taobao.com/item.htm?id=561592189849', '2057678929', '2468', 'qe旗舰店', '0');
+INSERT INTO `zq_goods` VALUES ('11', '2147483647', '棉衣女中长款2017冬装新款韩版女装加厚连帽宽松羽绒棉服外套棉袄', 'https://img.alicdn.com/tfscom/i4/1753682892/TB2deDdbPgy_uJjSZLeXXaPlFXa_!!1753682892.jpg', '489', '218', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=561850598607', '1753682892', '1629', '海豚湾821', '0');
+INSERT INTO `zq_goods` VALUES ('12', '2147483647', '2017秋冬装新款女装名媛小香风针织裙子矮个子搭配内搭打底连衣裙', 'https://img.alicdn.com/tfscom/i2/2575200001/TB2tA7bb3DD8KJjy0FdXXcjvXXa_!!2575200001.jpg', '368', '128', '0', '广东 深圳', 'http://item.taobao.com/item.htm?id=561287286333', '2147483647', '3894', 'momo高端店', '0');
+INSERT INTO `zq_goods` VALUES ('13', '2147483647', '2017冬装新款韩版女装羽绒棉衣女中长款金丝绒连帽假两件棉服外套', 'https://img.alicdn.com/tfscom/i3/TB1JkLKb8LN8KJjSZFpYXHZaVXa_M2.SS2', '998', '268', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=562151233259', '2147483647', '1384', '王波波19891118', '0');
+INSERT INTO `zq_goods` VALUES ('14', '2147483647', '冬季毛呢外套女中长款韩版2017新款女装加厚过膝chic呢子大衣韩国', 'https://img.alicdn.com/tfscom/i4/3097226476/TB1qfjqf_nI8KJjSszbXXb4KFXa_!!0-item_pic.jpg', '499', '278', '1', '广东 东莞', 'http://item.taobao.com/item.htm?id=562234106781', '2147483647', '1014', 'hooskon晓珂旗舰店', '0');
+INSERT INTO `zq_goods` VALUES ('15', '2147483647', '2017秋装新款女装V领金丝绒挂脖性感长袖裙裤丝绒显瘦系腰连衣裙', 'https://img.alicdn.com/tfscom/i1/116538553/TB2Nj0cd5pnpuFjSZFIXXXh2VXa_!!116538553.jpg', '316', '158', '0', '海外', 'http://item.taobao.com/item.htm?id=557854987076', '116538553', '1010', 'lsmenghao', '0');
+INSERT INTO `zq_goods` VALUES ('16', '2147483647', '欧洲站大毛领加厚欧货秋冬中长款羽绒棉服棉袄工装宽松棉衣女装潮', 'https://img.alicdn.com/tfscom/i1/1583349179/TB2JD7me0uO.eBjSZFCXXXULFXa_!!1583349179.jpg', '458', '428', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=542303649234', '1583349179', '501', '1929赫本', '0');
+INSERT INTO `zq_goods` VALUES ('17', '2147483647', '2018年新款女装春装潮连衣裙红色名媛小香风内搭针织打底裙秋冬季', 'https://img.alicdn.com/tfscom/i2/2967049126/TB1PT_an3fH8KJjy1zcXXcTzpXa_!!0-item_pic.jpg', '278', '178', '1', '广东 深圳', 'http://item.taobao.com/item.htm?id=563320754081', '2147483647', '2321', 'musecx旗舰店', '0');
+INSERT INTO `zq_goods` VALUES ('18', '2147483647', '2017秋冬季新款女装毛呢冬裙子2018春装中长款名媛小香风连衣裙女', 'https://img.alicdn.com/tfscom/i4/2075384612/TB1padYn6nD8KJjSspbXXbbEXXa_!!0-item_pic.jpg', '399', '255', '1', '广东 东莞', 'http://item.taobao.com/item.htm?id=560624204695', '2075384612', '353', '欧惑旗舰店', '0');
+INSERT INTO `zq_goods` VALUES ('19', '2147483647', '短款棉服女装2018冬春新款韩版宽松加厚连帽棉衣外套小个子面包服', 'https://img.alicdn.com/tfscom/i2/825236775/TB2Hik2aM685uJjSZFCXXXzlXXa_!!825236775.jpg', '289', '186', '0', '广东 广州', 'http://item.taobao.com/item.htm?id=560321390575', '825236775', '1282', '言若言诺', '0');
+INSERT INTO `zq_goods` VALUES ('20', '2147483647', '2017新款女装中长款韩版修身轻薄高端奢华超长过膝羽绒服外套冬潮', 'https://img.alicdn.com/tfscom/i8/TB1M50wjv6H8KJjSspmYXH2WXXa_M2.SS2', '698', '368', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=563135286299', '192699001', '30304', 'zhangpei12', '0');
 
 -- ----------------------------
 -- Table structure for zq_goods_cat
@@ -188,6 +214,10 @@ CREATE TABLE `zq_goods_cat` (
   `sort` smallint(5) unsigned NOT NULL DEFAULT '65535',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_goods_cat
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for zq_goods_images
@@ -205,6 +235,10 @@ CREATE TABLE `zq_goods_images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of zq_goods_images
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for zq_helpdoc
 -- ----------------------------
 DROP TABLE IF EXISTS `zq_helpdoc`;
@@ -220,6 +254,10 @@ CREATE TABLE `zq_helpdoc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of zq_helpdoc
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for zq_helpdoc_content
 -- ----------------------------
 DROP TABLE IF EXISTS `zq_helpdoc_content`;
@@ -230,6 +268,10 @@ CREATE TABLE `zq_helpdoc_content` (
   `posttime` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_helpdoc_content
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for zq_noticedoc
@@ -247,6 +289,10 @@ CREATE TABLE `zq_noticedoc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
+-- Records of zq_noticedoc
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for zq_noticedoc_content
 -- ----------------------------
 DROP TABLE IF EXISTS `zq_noticedoc_content`;
@@ -257,6 +303,69 @@ CREATE TABLE `zq_noticedoc_content` (
   `posttime` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_noticedoc_content
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for zq_open
+-- ----------------------------
+DROP TABLE IF EXISTS `zq_open`;
+CREATE TABLE `zq_open` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `zq_uid` mediumint(10) unsigned NOT NULL,
+  `reg_time` varchar(10) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `mobile` mediumint(11) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_open
+-- ----------------------------
+INSERT INTO `zq_open` VALUES ('1', '11', '1517815264', '刘俊', '16777215');
+
+-- ----------------------------
+-- Table structure for zq_open_app
+-- ----------------------------
+DROP TABLE IF EXISTS `zq_open_app`;
+CREATE TABLE `zq_open_app` (
+  `id` mediumint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `app_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_open_app
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for zq_open_web
+-- ----------------------------
+DROP TABLE IF EXISTS `zq_open_web`;
+CREATE TABLE `zq_open_web` (
+  `id` mediumint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `web_name` varchar(20) NOT NULL,
+  `web_domain` varchar(64) NOT NULL,
+  `beian` varchar(20) NOT NULL,
+  `web_info` varchar(255) NOT NULL,
+  `posttime` mediumint(10) unsigned NOT NULL,
+  `zq_uid` mediumint(10) unsigned NOT NULL,
+  `open_id` mediumint(10) unsigned NOT NULL,
+  `status` tinyint(2) unsigned NOT NULL DEFAULT '1',
+  `app_id` mediumint(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_open_web
+-- ----------------------------
+INSERT INTO `zq_open_web` VALUES ('1', '钻群联盟', 'www.zuanqun.cn', '123', '钻群联盟', '16777215', '11', '1', '1', '0');
+INSERT INTO `zq_open_web` VALUES ('2', '钻群联盟1', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '294292');
+INSERT INTO `zq_open_web` VALUES ('3', '钻群联盟2', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '231237');
+INSERT INTO `zq_open_web` VALUES ('4', '钻群联盟3', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '33197');
+INSERT INTO `zq_open_web` VALUES ('5', '钻群联盟3', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '16777215');
 
 -- ----------------------------
 -- Table structure for zq_team_info
@@ -271,7 +380,13 @@ CREATE TABLE `zq_team_info` (
   `ad` varchar(255) NOT NULL COMMENT '推广渠道',
   `posttime` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_team_info
+-- ----------------------------
+INSERT INTO `zq_team_info` VALUES ('1', '钻群联盟', '', '15558040535', '钻群联盟', '钻群联盟', '1517795215');
+INSERT INTO `zq_team_info` VALUES ('2', '钻群联盟', '', '15558040535', '钻群联盟', '钻群联盟', '1517795325');
 
 -- ----------------------------
 -- Table structure for zq_user
@@ -291,13 +406,11 @@ CREATE TABLE `zq_user` (
 -- ----------------------------
 -- Records of zq_user
 -- ----------------------------
-BEGIN;
-INSERT INTO `zq_user` VALUES (11, 'zuanqun_1515482870', '15558040535', '14e1b600b1fd579f47433b88e8d85291', '1515482870', '0', '');
-INSERT INTO `zq_user` VALUES (12, 'zuanqun_1516584427', '', '74be16979710d4c4e7c6647856088456', '1516584427', '0', '');
-INSERT INTO `zq_user` VALUES (13, 'zuanqun_1516584429', '', '74be16979710d4c4e7c6647856088456', '1516584429', '0', '');
-INSERT INTO `zq_user` VALUES (14, 'zuanqun_1516873420', '', '74be16979710d4c4e7c6647856088456', '1516873420', '0', '');
-INSERT INTO `zq_user` VALUES (15, 'zuanqun_1516873425', '', '74be16979710d4c4e7c6647856088456', '1516873425', '0', '');
-COMMIT;
+INSERT INTO `zq_user` VALUES ('11', 'zuanqun_1515482870', '15558040535', 'd9b1d7db4cd6e70935368a1efb10e377', '1515482870', '0', '');
+INSERT INTO `zq_user` VALUES ('12', 'zuanqun_1516584427', '', '74be16979710d4c4e7c6647856088456', '1516584427', '0', '');
+INSERT INTO `zq_user` VALUES ('13', 'zuanqun_1516584429', '', '74be16979710d4c4e7c6647856088456', '1516584429', '0', '');
+INSERT INTO `zq_user` VALUES ('14', 'zuanqun_1516873420', '', '74be16979710d4c4e7c6647856088456', '1516873420', '0', '');
+INSERT INTO `zq_user` VALUES ('15', 'zuanqun_1516873425', '', '74be16979710d4c4e7c6647856088456', '1516873425', '0', '');
 
 -- ----------------------------
 -- Table structure for zq_web_key
@@ -313,4 +426,6 @@ CREATE TABLE `zq_web_key` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-SET FOREIGN_KEY_CHECKS = 1;
+-- ----------------------------
+-- Records of zq_web_key
+-- ----------------------------
