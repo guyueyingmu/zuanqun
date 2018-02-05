@@ -1,0 +1,60 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"C:\Object\zuanqun\web/../app/user\view\default\user\info.html";i:1517791605;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改手机号</title>
+    <link rel="stylesheet" href="__USER_CSS__/common.css">
+    <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+    <link rel="stylesheet" href="__COM__/form.css">
+</head>
+<body>
+
+<div class="link-body">
+    <div class="link-item">
+        <div class="layui-fluid">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <form class="layui-form" action="" lay-filter="component-form-group">
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="text" name="username" value="<?php echo $info['z_username']; ?>" class="layui-input title" readonly>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <input type="text" name="mobile" value="<?php echo $info['z_mobile']; ?>" class="layui-input title" readonly>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline inline-logo">
+                            <div class="layui-input-inline">
+                                <input type="text" name="number" autocomplete="off" class="layui-input input-logo" readonly>
+                            </div>
+                            <a type="button" class="layui-btn" id="logo">
+                                <i class="layui-icon">&#xe67c;</i>上传头像
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <div class="link-footer">
+                                <a class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即提交</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/layui/layui.js"></script>
+</html>

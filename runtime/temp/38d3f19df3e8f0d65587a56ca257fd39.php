@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:66:"C:\Object\zuanqun\web/../app/console\view\default\index\index.html";i:1517469229;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:66:"C:\Object\zuanqun\web/../app/console\view\default\index\index.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

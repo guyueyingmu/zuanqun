@@ -46,3 +46,113 @@ fieldset {
     margin-top: 68px;
     padding: 0 68px;
 }
+
+.layui-tab-content .layui-table-view {
+    margin: 0;
+}
+
+body{
+    padding: 0 0;
+    margin: 0 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.layui-card-header {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.layui-card-body {
+    padding: 20px 15px!important;
+}
+
+.link-body {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    z-index: 998;
+    width: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    left: 0;
+    padding: 15px;
+}
+
+.link-body .link-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.layui-fluid {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.link-footer {
+    background-color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 -1px 2px 0 rgba(0,0,0,.05);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+}
+
+.box{
+    padding: 10px;
+    background: #f8f9fb;
+    margin: 12px;
+    border-radius: 4px;
+}
+
+.input-none {
+    border: none!important;
+}
+
+.input-logo {
+    height: 190px!important;
+}
+
+.inline-logo {
+    line-height: 190px!important;
+}
+
+.link-info-box {
+    text-align: center;
+}
+
+.link-info-box .link-info {
+    width: 60%;
+    margin: 26px auto;
+}
+
+.link-box {
+    margin-top: 16px!important;
+}
+
+.link-table-header {
+    background-color: #fff!important;
+}
+
+.link-table {
+    width: 100%!important;
+}
+
+.link-table thead tr {
+    background-color: #fff!important;
+}

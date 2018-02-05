@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\Object\zuanqun\web/../app/open\view\default\manager\index.html";i:1517821887;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\Object\zuanqun\web/../app/open\view\default\open\owner.html";i:1517815567;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>钻群-管理中心</title>
+    <title>开发者管理</title>
     <link rel="stylesheet" href="__OPEN_CSS__/common.css">
     <link rel="stylesheet" href="__OPEN_CSS__/header.css">
     <link rel="stylesheet" href="__OPEN_CSS__/footer.css">
@@ -14,7 +14,6 @@
 <body>
 
 <div class="body">
-
     <!-- header -->
     <div class="header">
     <div class="global-bar">
@@ -69,28 +68,38 @@
 
     <!-- center -->
     <div class="center">
-        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <div class="layui-tab layui-tab-brief">
             <ul class="layui-tab-title">
-                <a href="<?php echo url('open/Manager/index'); ?>"><li class="layui-this">应用管理</li></a>
-                <a href="<?php echo url('open/open/owner'); ?>"><li>开发者管理</li></a>
+                <a href="<?php echo url('open/Manager/index'); ?>"><li>应用管理</li></a>
+                <a href="<?php echo url('open/open/owner'); ?>"><li class="layui-this">开发者管理</li></a>
             </ul>
             <div class="layui-tab-content">
-                <div class="LAY-app-message-btns" style="margin-bottom: 10px;">
-                    <a class="layui-btn layui-btn-primary layui-btn-sm">删除</a>
-                    <a class="layui-btn layui-btn-primary layui-btn-sm" id="create_web">创建应用</a>
-                </div>
-                <div class="layui-form layui-border-box layui-table-view">
-                    <div class="layui-table-box">
-                        <div class="layui-table-header link-table-header">
+                <div class="link-item">
+                    <div class="layui-fluid">
+                        <div class="layui-card-body">
+                            <form class="layui-form" id="form">
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="text" id="open_name" value="<?php echo $info['name']; ?>" name="open_name" placeholder="请输入开发者姓名" class="layui-input title">
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="text" id="open_chat" value="<?php echo $info['mobile']; ?>" name="open_chat" placeholder="请输入开发者联系方式" class="layui-input title">
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <div class="link-footer">
+                                            <a class="layui-btn" id="push">立即提交</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="layui-table-body layui-table-main">
-                            <table id="app"></table>
-                        </div>
-                        <style>
-                            .laytable-cell-3-0{ width: 48px; }
-                            .laytable-cell-3-title{ width: 830px; }
-                            .laytable-cell-3-time{ width: 170px; }
-                        </style>
                     </div>
                 </div>
             </div>
@@ -111,43 +120,38 @@
     </div>
 </div>
 </div>
+</body>
 
-<script src="/static/common/jquery.js"></script>
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/util.js"></script>
 <script src="__COM__/layer/layer.js"></script>
 <script src="/static/common/layui/layui.js"></script>
 
 <script>
-    layui.use(['table','element'], function(){
-        var table = layui.table;
+    layui.use(['element'], function(){
         var element = layui.element;
 
-        //第一个实例
-        table.render({
-            elem: '#app'
-            ,height: 488
-            ,url: '/create/application/' //数据接口
-            ,page: true //开启分页
-            ,cols: [[ //表头
-                {field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}
-                ,{field: 'web_name', title: '网站名称', width:280}
-                ,{field: 'web_domain', title: '网站域名', width:280, sort: true}
-                ,{field: 'beian', title: '备案信息', width:380}
-                ,{field: 'status', title: '提交状态', width: 173}
-            ]]
-        });
-
     });
-
-    $(document).on('click','#create_web',function () {
-        layer.open({
-            type: 2,
-            title: '创建网站应用',
-//            maxmin: true,
-            shadeClose: true, //点击遮罩关闭层
-            area : ['680px' , '520px'],
-            content: "<?php echo url('open/CreateInfo/createWeb'); ?>"
+    $(document).on('click','#push',function(){
+        if($('#open_name').val() == ''){
+            layer.msg('开发者姓名不能为空!');
+            return false;
+        }
+        if($('#open_chat').val() == ''){
+            layer.msg('开发者联系方式不能为空！');
+            return false;
+        }
+        var data = $('#form').serialize();
+        request("<?php echo url('open/Open/add'); ?>",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
         });
     });
 </script>
-</body>
 </html>

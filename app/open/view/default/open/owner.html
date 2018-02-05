@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开发者管理</title>
+    <link rel="stylesheet" href="__OPEN_CSS__/common.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/header.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/footer.css">
+    <link rel="stylesheet" href="__OPEN_CSS__/manager.css">
+    <link rel="stylesheet" href="/static/common/layui/css/layui.css">
+    <link rel="stylesheet" href="__COM__/form.css">
+</head>
+<body>
+
+<div class="body">
+    <!-- header -->
+    {include file="default/common/header" /}
+
+    <!-- center -->
+    <div class="center">
+        <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+                <a href="{:url('open/Manager/index')}"><li>应用管理</li></a>
+                <a href="{:url('open/open/owner')}"><li class="layui-this">开发者管理</li></a>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="link-item">
+                    <div class="layui-fluid">
+                        <div class="layui-card-body">
+                            <form class="layui-form" id="form">
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="text" id="open_name" value="{$info['name']}" name="open_name" placeholder="请输入开发者姓名" class="layui-input title">
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="text" id="open_chat" value="{$info['mobile']}" name="open_chat" placeholder="请输入开发者联系方式" class="layui-input title">
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <div class="link-footer">
+                                            <a class="layui-btn" id="push">立即提交</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    {include file="default/common/footer" /}
+</div>
+</body>
+
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/util.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+<script src="/static/common/layui/layui.js"></script>
+
+<script>
+    layui.use(['element'], function(){
+        var element = layui.element;
+
+    });
+    $(document).on('click','#push',function(){
+        if($('#open_name').val() == ''){
+            layer.msg('开发者姓名不能为空!');
+            return false;
+        }
+        if($('#open_chat').val() == ''){
+            layer.msg('开发者联系方式不能为空！');
+            return false;
+        }
+        var data = $('#form').serialize();
+        request("{:url('open/Open/add')}",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("{:url('user/user/index')}");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
+</html>

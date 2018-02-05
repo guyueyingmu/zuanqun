@@ -5,7 +5,7 @@ namespace app\auth\model;
 use think\Db;
 use think\Exception;
 
-class RegUserInfo
+class Reg
 {
 
     /**
@@ -17,7 +17,6 @@ class RegUserInfo
         Db::startTrans();
         try{
             $res = Db::table('zq_user')->insertGetId($param);
-            AppKeyInfo::addKey(['zq_user_id' => $res, 'app_key' => 'zq' . md5($res.time()), 'app_secret' => '', 'posttime' => time()]);
             Db::commit();
             return $res;
         } catch (Exception $e) {

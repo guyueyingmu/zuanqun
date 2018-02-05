@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:65:"C:\Object\zuanqun\web/../app/wechat\view\default\index\index.html";i:1516766491;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:65:"C:\Object\zuanqun\web/../app/wechat\view\default\index\index.html";i:1517531929;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +15,7 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item layui-this"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="javascript:;" class="wxapp">小程序管理</a></li>
             <li class="layui-nav-item"><a href="javascript:;" class="active">活动管理</a></li>
             <li class="layui-nav-item"><a href="javascript:;" class="website">站点管理</a></li>
         </ul>
@@ -42,7 +43,6 @@
                     <dl class="layui-nav-child">
                         <dd class="layui-this"><a href="/wechat/main"><i class="layui-icon">&#xe68e;</i>&nbsp;主页</a></dd>
                         <dd><a href="javascript:;" class="console" c-view="/wechat/wx_app"><i class="layui-icon">&#xe620;</i>&nbsp;公众号基本设置</a></dd>
-                        <dd><a href="javascript:;" class="console" c-view="/wechat/wx_app"><i class="layui-icon">&#xe620;</i>&nbsp;小程序设置</a></dd>
                         <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;模板设置</a></dd>
                         <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;海报设置</a></dd>
                         <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe620;</i>&nbsp;域名设置</a></dd>
@@ -79,6 +79,22 @@
                     </dl>
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <div class="layui-side layui-bg-black wxapp-tree" style="display: none;">
+        <div class="layui-side-scroll">
+
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item  layui-nav-itemed">
+                    <a href="javascript:;">小程序管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="console" c-view="/wechat/wx_app"><i class="layui-icon">&#xe620;</i>&nbsp;小程序生成</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/wechat/wx_app"><i class="layui-icon">&#xe613;</i>&nbsp;公告列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
         </div>
     </div>
 
@@ -262,13 +278,22 @@
 //                '</ul>';
         $('.manager').css('display','none');
         $('.website-tree').css('display','none');
+        $('.wxapp-tree').css('display','none');
         $('.active-tree').css('display','block');
     });
 
     $(document).on('click','.website',function(){
         $('.manager').css('display','none');
         $('.active-tree').css('display','none');
+        $('.wxapp-tree').css('display','none');
         $('.website-tree').css('display','block');
+    });
+
+    $(document).on('click','.wxapp',function(){
+        $('.manager').css('display','none');
+        $('.active-tree').css('display','none');
+        $('.website-tree').css('display','none');
+        $('.wxapp-tree').css('display','block');
     });
 </script>
 </body>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"C:\Object\zuanqun\web/../app/user\view\default\user\index.html";i:1517798243;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"C:\Object\zuanqun\web/../app/user\view\default\user\index.html";i:1517808208;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,7 @@
                     </span>
                     <ul class="wiki-active">
                         <li><a class="wiki-src" href="javascript:;" c-view="/cms_base/index">&nbsp;&nbsp;&nbsp;&nbsp;CMS网站</a></li>
-                        <li><a class="wiki-src" href="javascript:;" c-view="/wechat/index">&nbsp;&nbsp;&nbsp;&nbsp;微信公众号</a></li>
+                        <li><a class="wiki-src" href="http://www.zuanqun.com:8080/wechat/main" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;微信公众号</a></li>
                     </ul>
                 </div>
                 <div class="wiki-box">
