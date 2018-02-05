@@ -61,7 +61,7 @@ class WebAuth
     }
 
     //签名
-    private function sign($string_to_sign)
+    public function sign($string_to_sign)
     {
         return sha1($this->zq_app_key . $string_to_sign);
     }

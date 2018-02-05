@@ -15,11 +15,11 @@ class WebKey
     {
         Component::getInstance()
             ->bind((new Definition())
-                ->setAlias('reg')
+                ->setAlias('web')
                 ->setIsSingleton(true)
                 ->setCallBack(function(){
                     $app = new WebKeyLogic();
-                    $app->set('reg',function(){
+                    $app->set('web',function(){
                         return new WebKeyModel();
                     });
                     return $app;
@@ -27,6 +27,9 @@ class WebKey
             );
     }
 
-    public function create(){}
+    public function create()
+    {
+        Component::getInstance()->get('web')->create();
+    }
 
 }
