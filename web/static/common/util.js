@@ -107,7 +107,7 @@ function wordLimit(input){
 
 //设置cookie
 function setCookie(name,data) {
-    document.cookie = name + '=' + data + ';domain=.zuanqun.com' + ';path=/';
+    document.cookie = name + '=' + data + ';domain=.zuanqun.com:8080' + ';path=/';
 }
 
 //动态给iframe复值高度

@@ -1,7 +1,8 @@
 <?php
-namespace app\user\base;
 
-abstract class Logic
+namespace app\auth\base;
+
+class Logic
 {
 
     protected $_logic_model = [];

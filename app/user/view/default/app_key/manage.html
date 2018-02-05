@@ -16,23 +16,23 @@
                 <form class="layui-form" action="" lay-filter="component-form-group">
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">AppKey</label>
+                        <label class="layui-form-label">AppId</label>
                         <div class="layui-input-block">
-                            <input type="text" name="AppKey" autocomplete="off" class="layui-input input-none" value="{$appkey}" disabled>
+                            <input type="text" name="AppKey" autocomplete="off" class="layui-input input-none" value="{$appkey}" readonly>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
-                        <label class="layui-form-label">AppSecret</label>
+                        <label class="layui-form-label">AppKey</label>
                         <div class="layui-input-block">
-                            <input type="text" name="AppSecret" autocomplete="off" class="layui-input input-none" disabled>
+                            <input type="text" name="AppSecret" autocomplete="off" class="layui-input input-none" readonly>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <div class="link-footer">
-                                <a class="layui-btn">重置AppSecret</a>
+                                <a class="layui-btn">重置AppKey</a>
                             </div>
                         </div>
                     </div>
@@ -40,16 +40,16 @@
             </div>
         </div>
         <div class="layui-fluid link-box">
-            <div class="layui-card-header">开放平台使用说明</div>
+            <div class="layui-card-header">AppKey使用说明</div>
             <div class="layui-card-body">
                 <div class="link-info-box">
                     <div class="link-info">
                         <p>
-                            要正常使用CMS需要在此下载index.php文件并上传到您自己的服务器
+                            AppId与AppKey作为网站cms、小程序、微信公众号等与钻群联盟主站通信校验凭证，请妥善保管请勿泄露
                         </p>
                     </div>
                     <div class="link-down">
-                        <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1"><i class="layui-icon">&#xe601;</i>点此下载程序文件</button>
+
                     </div>
                 </div>
             </div>

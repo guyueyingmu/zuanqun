@@ -34,7 +34,10 @@ class Jwt
         if (function_exists('hash_equals')) {
             return hash_equals($data['signature'], $sign);
         }
-        return strcmp($data['signature'],$sign);
+        if(strcmp($data['signature'],$sign) == 0){
+            return true;
+        }
+        return false;
     }
 
     //数据编码

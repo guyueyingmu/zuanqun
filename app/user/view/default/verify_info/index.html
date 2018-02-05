@@ -75,6 +75,7 @@
 </body>
 
 <script src="__COM__/jquery.js"></script>
+<script src="__COM__/util.js"></script>
 <script src="__COM__/layui/layui.js"></script>
 <script>
     layui.use('upload', function(){
@@ -115,7 +116,7 @@
             return false;
         }
         var data = $('#form').serialize();
-        request("{:url('user/VerifyInfo/doc/type/api')}",data,function(res){
+        request("{:url('user/Team/team')}",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});

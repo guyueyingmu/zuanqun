@@ -4,36 +4,32 @@ namespace app\user\controller;
 
 use app\user\container\Component;
 use app\user\container\Definition;
-use app\user\model\Reset as ResetModel;
-use app\user\logic\Reset as ResetLogic;
-use app\auth\controller\User;
+use app\user\model\Team as TeamModel;
+use app\user\logic\Team as TeamLogic;
 use liugene\linkrest\Restful;
 
-class Reset
+class Team
 {
 
     public function __construct()
     {
         Component::getInstance()
             ->bind((new Definition())
-                ->setAlias('reset')
+                ->setAlias('team')
                 ->setIsSingleton(true)
                 ->setCallBack(function(){
-                    $team = new ResetLogic();
-                    $team->set('reset',function(){
-                        return new ResetModel();
-                    });
-                    $team->set('user',function(){
-                        return new User();
+                    $team = new TeamLogic();
+                    $team->set('team',function(){
+                        return new TeamModel();
                     });
                     return $team;
                 })
             );
     }
 
-    public function edit()
+    public function team()
     {
-        $data = Component::getInstance()->get('reset')->edit();
+        $data = Component::getInstance()->get('team')->put();
         Restful::request()
             ->setData(['code' => 1, 'msg' => $data])
             ->send();

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"C:\Object\zuanqun\web/../app/user\view\default\zcard\index.html";i:1516671700;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"C:\Object\zuanqun\web/../app/user\view\default\zcard\index.html";i:1517803185;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div class="link-down">
-                        <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1"><i class="layui-icon">&#xe601;</i>点此下载程序文件</button>
+
                     </div>
                 </div>
             </div>
