@@ -5,7 +5,7 @@ namespace app\auth\center;
 class WebAuth
 {
 
-    private $zq_app_key;
+    private $zq_app_key = 'www.zuanqun.cn.2018.02.06';
 
     private $app_id;
 

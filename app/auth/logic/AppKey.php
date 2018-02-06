@@ -20,4 +20,14 @@ class AppKey extends Logic
         return $this->get('app')->addAppKey($data);
     }
 
+    public function resetSecret()
+    {
+        $rand = rand(100000,999999);
+        $date = time();
+        $phone = 13879337614;
+        $secret = base64_encode(hash_hmac('sha1', $rand . $phone, $date));
+        $str = substr($secret,0,-2);
+        return $str;
+    }
+
 }

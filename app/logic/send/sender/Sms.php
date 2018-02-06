@@ -28,7 +28,7 @@ class Sms extends Sender
         dump($this->setSmsParam()->send());
     }
 
-    public function verify()
+    public function verify($code,$phone)
     {
         $SignatureNonce = rand(10000,99999);
         $this->setSmsParam()
@@ -36,11 +36,22 @@ class Sms extends Sender
             ->setAccessKeyToken('VGwZJ71YQwgqH7JiCfus0HaJ2JebSm')
             ->setSignatureNonce($SignatureNonce)
             ->setService('SmsSend')
-            ->setPhoneNumbers('13175091583')
+            ->setPhoneNumbers($phone)
             ->setSignName('嘉诺商城')
             ->setTemplateCode('SMS_105015092')
-            ->setTemplateParam("{'number':$SignatureNonce}");
-        dump($this->setSmsParam()->send());
+            ->setTemplateParam("{'number':$code}");
+        return $this->response($this->setSmsParam()->send());
+    }
+
+    //统一返回格式
+    public function response($input)
+    {
+        $response = json_decode($input,true);
+        if($response['Code'] == 'OK'){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

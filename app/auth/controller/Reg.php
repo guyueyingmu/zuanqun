@@ -23,6 +23,12 @@ class Reg
                     $app->set('reg',function(){
                         return new RegModel();
                     });
+                    $app->set('webkey',function(){
+                        return new WebKey();
+                    });
+                    $app->set('sendVerify',function(){
+                        return new Send();
+                    });
                     return $app;
                 })
             );

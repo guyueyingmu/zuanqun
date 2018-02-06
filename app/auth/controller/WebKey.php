@@ -6,7 +6,6 @@ use app\auth\container\Component;
 use app\auth\container\Definition;
 use app\auth\model\WebKey as WebKeyModel;
 use app\auth\logic\WebKey as WebKeyLogic;
-use liugene\linkrest\Restful;
 
 class WebKey
 {
@@ -18,18 +17,18 @@ class WebKey
                 ->setAlias('web')
                 ->setIsSingleton(true)
                 ->setCallBack(function(){
-                    $app = new WebKeyLogic();
-                    $app->set('web',function(){
+                    $web = new WebKeyLogic();
+                    $web->set('web',function(){
                         return new WebKeyModel();
                     });
-                    return $app;
+                    return $web;
                 })
             );
     }
 
-    public function create()
+    public function create($use_id)
     {
-        Component::getInstance()->get('web')->create();
+        return Component::getInstance()->get('web')->create($use_id);
     }
 
 }

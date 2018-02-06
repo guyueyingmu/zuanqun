@@ -160,3 +160,18 @@ a {
 .layui-table-header {
     border-color: #f2f2f2;
 }
+
+.send-btn {
+    background: #e6e6e6;
+    border: 0;
+    font-size: 16px;
+    margin: 4px 4px 3px 14px;
+    outline: none;
+    width: 230px;
+    height: 21px;
+    padding: 6px 7px;
+    line-height: 20px;
+    border-radius: 6px;
+    color: #666;
+    cursor: pointer;
+}

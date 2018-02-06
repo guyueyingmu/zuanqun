@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"C:\Object\zuanqun\web/../app/auth\view\default\register\register.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"C:\Object\zuanqun\web/../app/auth\view\default\register\register.html";i:1517891810;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +6,7 @@
     <title>钻群-注册</title>
     <link href="__CSS1__/common.css" type="text/css" rel="stylesheet" />
     <link href="__CSS1__/register.css" type="text/css" rel="stylesheet" />
+    <link href="__COM__/form.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="__COM__/layui/css/layui.css">
 </head>
 <body>
@@ -33,6 +34,11 @@
                         <span class="reg-input-bg reg-icon"><label><i class="layui-icon icon">&#xe617;</i></label></span>
                         <span class="reg-input-bg"><input type="password" class="input-bg" name="password" id="password" placeholder="请输入密码"></span>
                     </div>
+                    <div class="reg-input-field">
+                        <span class="reg-input-bg reg-icon"><label><i class="layui-icon icon">&#xe617;</i></label></span>
+                        <span class="reg-input-bg"><input type="text" class="input-bg" name="password" id="verify" placeholder="请输入验证码"></span>
+                        <span><a class="send-btn" id="send">点击发送</a></span>
+                    </div>
                     <div class="reg-input-field submit">
                         <div id="register" class="reg-submit">立即登入</div>
                     </div>
@@ -55,12 +61,26 @@
 <script src="__COM__/layui/layui.js"></script>
 <script>
     $(document).on('click','#register',function(){
-        var data = {phone:$('#phone').val(),password:$('#password').val()};
-        request("<?php echo url('auth/register/register'); ?>",data,function(res){
+        var data = {phone:$('#phone').val(),password:$('#password').val(),verify:$('#verify').val()};
+        request("<?php echo url('auth/reg/register'); ?>",data,function(res){
             console.log(res);
             if (res.code == 1) {
                 layer.msg(res.msg, {icon: res.code});
-                redirect("<?php echo url('user/user/index'); ?>");
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+
+    //验证码发送
+
+    $(document).on('click','#send',function(){
+        var data = {phone:$('#phone').val(),password:$('#password').val()};
+        request("<?php echo url('auth/Send/send'); ?>",data,function(res){
+            console.log(res);
+            if (res.code == 1) {
+                layer.msg(res.msg, {icon: res.code});
             } else {
                 layer.msg(res.msg, {icon: res.code});
             }

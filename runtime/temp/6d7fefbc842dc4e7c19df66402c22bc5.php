@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\Object\zuanqun\web/../app/open\view\default\manager\index.html";i:1517821887;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\Object\zuanqun\web/../app/open\view\default\manager\index.html";i:1517878199;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,20 +79,7 @@
                     <a class="layui-btn layui-btn-primary layui-btn-sm">删除</a>
                     <a class="layui-btn layui-btn-primary layui-btn-sm" id="create_web">创建应用</a>
                 </div>
-                <div class="layui-form layui-border-box layui-table-view">
-                    <div class="layui-table-box">
-                        <div class="layui-table-header link-table-header">
-                        </div>
-                        <div class="layui-table-body layui-table-main">
-                            <table id="app"></table>
-                        </div>
-                        <style>
-                            .laytable-cell-3-0{ width: 48px; }
-                            .laytable-cell-3-title{ width: 830px; }
-                            .laytable-cell-3-time{ width: 170px; }
-                        </style>
-                    </div>
-                </div>
+                <table id="app"></table>
             </div>
         </div>
     </div>
@@ -134,6 +121,7 @@
                 ,{field: 'beian', title: '备案信息', width:380}
                 ,{field: 'status', title: '提交状态', width: 173}
             ]]
+            ,skin: 'nob' //行边框风格
         });
 
     });

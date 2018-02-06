@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"C:\Object\zuanqun\web/../app/auth\view\default\login\login.html";i:1517793123;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"C:\Object\zuanqun\web/../app/auth\view\default\login\login.html";i:1517793183;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +63,7 @@
                 layer.msg(res.msg, {icon: res.code});
                 localStorage.setItem('token', res.token);
                 setCookie('token',res.token);
-                console.log(document.cookie);
+//                console.log(document.cookie);
 //                redirect("<?php echo url('user/user/index'); ?>");
             } else {
                 layer.msg(res.msg, {icon: res.code});
