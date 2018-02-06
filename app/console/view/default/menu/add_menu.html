@@ -1,0 +1,86 @@
+{extend name="default/base/base" /}
+{block name="main"}
+
+<link rel="stylesheet" href="/static/common/layui/css/layui.css">
+<link rel="stylesheet" href="__COM__/form.css">
+
+<div class="link-body">
+    <div class="link-item">
+        <div class="layui-fluid">
+            <div class="layui-card-header">添加菜单</div>
+            <div class="layui-card-body">
+                <div class="zq-form">
+                    <form id="form" class="layui-form">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input id="class_name" type="text" name="class_name" placeholder="请输入标题" class="layui-input title">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <select name="interest" lay-filter="aihao">
+                                    <option value=""></option>
+                                    <option value="0">写作</option>
+                                    <option value="1" selected="">阅读</option>
+                                    <option value="2">游戏</option>
+                                    <option value="3">音乐</option>
+                                    <option value="4">旅行</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <div class="link-footer">
+                                    <a class="layui-btn" id="push">立即添加</a>
+                                    <a class="layui-btn" id="back">返回</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/common/jquery.js"></script>
+<script src="__COM__/layui/layui.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+<script type="text/html" id="app_bar">
+    <div class="layui-btn-group">
+        <a class="layui-btn layui-btn-xs" lay-event="detail">查看权限</a>
+    </div>
+</script>
+
+<script>
+
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //各种基于事件的操作，下面会有进一步介绍
+    });
+
+    $(document).on('click','#push',function () {
+        if($('#class_name').val() == ''){
+            layer.msg('菜单名不能为空');
+            return false;
+        }
+        if($('#apidoc').val() == ''){
+            layer.msg('文档内容不能为空');
+            return false;
+        }
+        var data = $('#form').serialize();
+        request("{:url('console/Menu/Menu')}",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("{:url('user/user/index')}");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
+{/block}
