@@ -46,4 +46,11 @@ class Create
             ->send();
     }
 
+    public function getAppKey()
+    {
+        return view('default/manager/app_key',[
+            'app_info' => Component::getInstance()->get('create')->getApplicationKey(input('app_id'))
+        ]);
+    }
+
 }

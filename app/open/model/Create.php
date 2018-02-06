@@ -34,4 +34,9 @@ class Create
         return Db::table('zq_open_web')->where('open_id = 1')->select();
     }
 
+    public function getApplicationKeyByAppId($app_id)
+    {
+        return Db::table('zq_appkey')->field('app_key,app_secret,app_id')->where('app_id = ' . $app_id)->find();
+    }
+
 }

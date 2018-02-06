@@ -7,6 +7,7 @@ use app\auth\container\Definition;
 use app\auth\model\Reg as RegModel;
 use app\auth\logic\Reg as RegLogic;
 use liugene\linkrest\Restful;
+use app\validate\center\Register;
 
 
 class Reg
@@ -28,6 +29,9 @@ class Reg
                     });
                     $app->set('sendVerify',function(){
                         return new Send();
+                    });
+                    $app->set('regValidate',function(){
+                        return new Register();
                     });
                     return $app;
                 })

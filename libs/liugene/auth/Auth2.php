@@ -2,9 +2,13 @@
 
 namespace liugene\auth;
 use liugene\auth\model\Access;
+use liugene\linkrest\Restful;
 
 class Auth2
 {
+
+    //API接口请求方式
+    private $action = 'Get';
 
     //API接口名称
     private $method;
@@ -38,11 +42,12 @@ class Auth2
         10001  => 'request method must be get/post',
         20001  => 'client_id is empty',
         20002  => 'app_key is empty',
-        20003  => 'method is empty',
+        20003  => 'action is empty',
         20004  => 'timestamp is empty',
         20005  => 'sign is empty',
         20006  => 'format is empty',
         20007  => 'v is empty',
+        20008  => 'method is empty',
         30000  => 'OAUTH SERVER ERROR:xxxxx',
         30001  => 'Can not find the client_id:xxxxx',
     ];
@@ -52,8 +57,8 @@ class Auth2
         $this->request_param = $request;
         $this->app_key = $this->existsParam('app_key',20002);
         $this->param['app_key'] = $this->app_key;
-        $this->method = $this->existsParam('method',20003);
-        $this->param['method'] = $this->method;
+        $this->action = $this->existsParam('action',20003);
+        $this->param['action'] = $this->action;
         $this->sign = $this->existsParam('sign',20005);
         $this->format = $this->existsParam('format',20006);
         $this->param['format'] = $this->format;
@@ -61,8 +66,9 @@ class Auth2
         $this->param['timestamp'] = $this->timestamp;
         $this->v = $this->existsParam('v',20007);
         $this->param['v'] = $this->v;
+        $this->method = $this->existsParam('method',20008);
+        $this->param['method'] = $this->method;
         $this->app_secret = $this->getSecret();
-        $this->param['app_secret'] = $this->app_secret;
         return $this->verifySign($this->sign($this->generate_sign()));
     }
 
@@ -108,7 +114,9 @@ class Auth2
     //错误返回
     private function errorCode($code)
     {
-        return ['code' => $code, 'error_msg' => $this->error[$code]];
+        Restful::request()
+            ->setData(['code' => $code, 'error_msg' => $this->error[$code]])
+            ->send();
     }
 
     //判断是否存在必要参数
@@ -118,11 +126,11 @@ class Auth2
         if(array_key_exists($param,$this->request_param)){
             //判断参数是否为空
             if($this->request_param[$param] == '' || is_null($this->request_param[$param])){
-                exit(json_encode($this->errorCode($code)));
+                $this->errorCode($code);
             }
             return $this->request_param[$param];
         } else {
-            exit(json_encode($this->errorCode(10000)));
+            $this->errorCode(10000);
         }
     }
 
@@ -141,12 +149,12 @@ class Auth2
         try{
             $secret = Access::getAppSecret($this->app_key);
             if(!$secret){
-                exit(json_encode($this->errorCode(30001)));
+                $this->errorCode(30001);
             }
             return $secret;
         } catch(AccessException $e) {
             //
-            exit(json_encode($this->errorCode(30000)));
+            $this->errorCode(30000);
         }
     }
 

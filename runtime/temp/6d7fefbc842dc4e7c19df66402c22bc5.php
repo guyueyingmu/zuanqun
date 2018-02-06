@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\Object\zuanqun\web/../app/open\view\default\manager\index.html";i:1517878199;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\Object\zuanqun\web/../app/open\view\default\manager\index.html";i:1517902152;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +79,7 @@
                     <a class="layui-btn layui-btn-primary layui-btn-sm">删除</a>
                     <a class="layui-btn layui-btn-primary layui-btn-sm" id="create_web">创建应用</a>
                 </div>
-                <table id="app"></table>
+                <table id="app" lay-filter="app"></table>
             </div>
         </div>
     </div>
@@ -102,6 +102,11 @@
 <script src="/static/common/jquery.js"></script>
 <script src="__COM__/layer/layer.js"></script>
 <script src="/static/common/layui/layui.js"></script>
+<script type="text/html" id="app_bar">
+    <div class="layui-btn-group">
+        <a class="layui-btn layui-btn-xs" lay-event="detail">查看权限</a>
+    </div>
+</script>
 
 <script>
     layui.use(['table','element'], function(){
@@ -111,17 +116,45 @@
         //第一个实例
         table.render({
             elem: '#app'
-            ,height: 488
+            ,height: 460
             ,url: '/create/application/' //数据接口
             ,page: true //开启分页
-            ,cols: [[ //表头
-                {field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}
-                ,{field: 'web_name', title: '网站名称', width:280}
-                ,{field: 'web_domain', title: '网站域名', width:280, sort: true}
-                ,{field: 'beian', title: '备案信息', width:380}
-                ,{field: 'status', title: '提交状态', width: 173}
+            ,cols: [[
+                {checkbox: true}
+                ,{field: 'id', title: 'ID', width:75, sort: true, align:'center'}
+                ,{field: 'web_name', title: '网站名称', width:200, align:'center'}
+                ,{field: 'web_domain', title: '网站域名', width:230, align:'center'}
+                ,{field: 'app_id', title: 'AppId', width:120, align:'center'}
+                ,{field: 'beian', title: '备案信息', width:250, align:'center'}
+                ,{field: 'status', title: '提交状态', width: 120 ,align:'center'}
+                ,{fixed: 'right', width:150, align:'center', toolbar: '#app_bar'}
             ]]
             ,skin: 'nob' //行边框风格
+        });
+
+        //监听工具条
+        table.on('tool(app)', function(obj){
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+
+            if(layEvent === 'detail'){ //查看
+                layer.open({
+                    type: 2,
+                    title: '创建网站应用',
+                    shadeClose: true, //点击遮罩关闭层
+                    area : ['780px' , '380px'],
+                    content: "<?php echo url('open/Create/getAppKey'); ?>?app_id="+data.app_id
+                });
+            } else if(layEvent === 'edit'){ //编辑
+                //do something
+
+                //同步更新缓存对应的值
+                obj.update({
+                    username: '123'
+                    ,title: 'xxx'
+                });
+            }
         });
 
     });

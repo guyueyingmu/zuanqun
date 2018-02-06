@@ -33,4 +33,9 @@ class Create extends Logic
         return $this->get('create')->getApplicationCount();
     }
 
+    public function getApplicationKey($app_id)
+    {
+        return $this->get('create')->getApplicationKeyByAppId($app_id);
+    }
+
 }

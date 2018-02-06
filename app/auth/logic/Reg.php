@@ -29,6 +29,10 @@ class Reg extends Logic
 
     private function verifyInput()
     {
+        $validate = $this->get('regValidate');
+        if(!$validate->check(input())){
+            return ['code' => false, 'msg' => $validate->getError()];
+        }
         if(!$this->verify(input('verify'),input('phone'))){
             return ['code' => false, 'msg' => '验证码错误'];
         }
