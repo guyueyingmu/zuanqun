@@ -22,4 +22,9 @@ class Menu
         return Db::table('zq_class')->insert($data);
     }
 
+    public function getAllMenu()
+    {
+        return Db::table('zq_class')->select();
+    }
+
 }

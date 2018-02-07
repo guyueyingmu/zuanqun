@@ -1,5 +1,20 @@
-{extend name="default/base/base" /}
-{block name="main"}
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:64:"C:\Object\zuanqun\web/../app/console\view\default\menu\menu.html";i:1517978902;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公共继承标题</title>
+    <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+    <link rel="stylesheet" href="__CONSOLE__/default/common/css/common.css">
+    <link href="__COM__/editor.md/css/editormd.min.css" type="text/css" rel="stylesheet" />
+    <script src="__COM__/jquery.js"></script>
+    <script src="__COM__/layer/layer.js"></script>
+    <script src="__COM__/layui/layui.js"></script>
+    <script src="__COM__/util.js"></script>
+    <script src="__COM__/editor.md/editormd.min.js"></script>
+</head>
+<body>
+
 
 <link rel="stylesheet" href="/static/common/layui/css/layui.css">
 <link rel="stylesheet" href="__COM__/form.css">
@@ -12,7 +27,7 @@
                 <div class="zq-form">
                     <div class="LAY-app-message-btns" style="margin-bottom: 10px;">
                         <a class="layui-btn layui-btn-primary layui-btn-sm">删除</a>
-                        <a href="{:url('console/menu_temp/addMenu')}" class="layui-btn layui-btn-primary layui-btn-sm">新增菜单</a>
+                        <a href="<?php echo url('console/menu_temp/addMenu'); ?>" class="layui-btn layui-btn-primary layui-btn-sm">新增菜单</a>
                     </div>
                     <table id="app" lay-filter="app"></table>
                 </div>
@@ -63,7 +78,7 @@
                     title: '创建网站应用',
                     shadeClose: true, //点击遮罩关闭层
                     area : ['780px' , '380px'],
-                    content: "{:url('open/Create/getAppKey')}?app_id="+data.app_id
+                    content: "<?php echo url('open/Create/getAppKey'); ?>?app_id="+data.app_id
                 });
             } else if(layEvent === 'edit'){ //编辑
                 //do something
@@ -85,8 +100,10 @@
 //            maxmin: true,
             shadeClose: true, //点击遮罩关闭层
             area : ['680px' , '520px'],
-            content: "{:url('open/CreateInfo/createWeb')}"
+            content: "<?php echo url('open/CreateInfo/createWeb'); ?>"
         });
     });
 </script>
-{/block}
+
+</body>
+</html>

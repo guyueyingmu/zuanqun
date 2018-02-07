@@ -16,7 +16,6 @@ class ApiDoc extends  Doc
         $data['uid'] = 1;
         $data['cid'] = input('cat');
         $data['api_title'] = input('title');
-        $data['s_content'] = input('apidoc');
         $data['posttime'] = time();
         return $this->get('api')->addDoc($data);
     }

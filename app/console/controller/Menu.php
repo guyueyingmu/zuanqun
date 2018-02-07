@@ -52,7 +52,22 @@ class Menu
 
     private function addMenu()
     {
-        $data = Component::getInstance()->get('menu')->
+        $data = Component::getInstance()->get('menu')->addMenu();
+        Restful::request()
+            ->setData(['code' => 1, 'msg' => $data])
+            ->send();
+    }
+
+    //获取菜单树
+    public function getMenuTree()
+    {
+        $menu = Component::getInstance()->get('menu');
+        $data = $menu->getMenuTreeData();
+        $data = $menu->getMenuTree($data);
+        dump($data);die;
+        foreach($data as $k => $v){
+            echo $v['cat_name'];
+        }
         Restful::request()
             ->setData(['code' => 1, 'msg' => $data])
             ->send();

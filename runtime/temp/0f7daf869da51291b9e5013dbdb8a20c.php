@@ -1,5 +1,20 @@
-{extend name="default/base/base" /}
-{block name="main"}
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"C:\Object\zuanqun\web/../app/console\view\default\menu\add_menu.html";i:1517988636;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公共继承标题</title>
+    <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+    <link rel="stylesheet" href="__CONSOLE__/default/common/css/common.css">
+    <link href="__COM__/editor.md/css/editormd.min.css" type="text/css" rel="stylesheet" />
+    <script src="__COM__/jquery.js"></script>
+    <script src="__COM__/layer/layer.js"></script>
+    <script src="__COM__/layui/layui.js"></script>
+    <script src="__COM__/util.js"></script>
+    <script src="__COM__/editor.md/editormd.min.js"></script>
+</head>
+<body>
+
 
 <link rel="stylesheet" href="/static/common/layui/css/layui.css">
 <link rel="stylesheet" href="__COM__/form.css">
@@ -69,16 +84,18 @@
             return false;
         }
         var data = $('#form').serialize();
-        request("{:url('console/Menu/Menu')}",data,function(res){
+        request("<?php echo url('console/Menu/Menu'); ?>",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});
 //                console.log(document.cookie);
-//                redirect("{:url('user/user/index')}");
+//                redirect("<?php echo url('user/user/index'); ?>");
             } else {
                 layer.msg(res.msg, {icon: res.code});
             }
         });
     });
 </script>
-{/block}
+
+</body>
+</html>

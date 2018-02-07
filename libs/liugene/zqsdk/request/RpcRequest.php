@@ -23,7 +23,6 @@ class RpcRequest
         }
         unset($k, $v);
         $string_to_be_signed .= $profile->getAppSecret();
-        dump($string_to_be_signed);die;
         $param['sign'] = CreateMd5Sign::sign($string_to_be_signed);
         $profile->setSign($param['sign']);
         return $param;

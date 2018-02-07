@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"C:\Object\zuanqun\web/../app/console\view\default\article\apidoc.html";i:1517531928;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:69:"C:\Object\zuanqun\web/../app/console\view\default\article\apidoc.html";i:1517995443;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,10 @@
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input id="cat" type="text" name="cat" placeholder="请输入" autocomplete="off" class="layui-input">
+                                <select name="cat" id="menu_tree">
+                                    <option value=""></option>
+                                    <option value="6">API使用教程</option>
+                                </select>
                             </div>
                         </div>
 
@@ -55,6 +58,11 @@
 </div>
 
 <script>
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //各种基于事件的操作，下面会有进一步介绍
+    });
     $(document).ready(function () {
         var markdown;
         markdown = editormd("markdown", {
@@ -74,7 +82,7 @@
             return false;
         }
         var data = $('#doc').serialize();
-        request("<?php echo url('console/Article/doc/type/api'); ?>",data,function(res){
+        request("<?php echo url('console/Article/doc',['type' => 'api']); ?>",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});

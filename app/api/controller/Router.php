@@ -37,8 +37,8 @@ class Router
     public function index()
     {
         Zq::getInstance()
-            ->setAppKey('zq9112694')
-            ->setAppSecret('NDg5ZjQ0NDRhMDY0YTczMWY1YTliOTQwYWNhNzMxMWYxNzIzYmY2Yg')
+            ->setAppKey('zq151798590')
+            ->setAppSecret('ODAyZjRlYmVlYjdlYjAyNmNjODcyMDk2ZWIyYTcyMzUyMWY4NWNiZg')
             ->setTimestamp('123')
             ->setService('ZqGoodsGetService')->setMethod('ZqGoodsGet');
         dump(Zq::getInstance()->execute());
@@ -49,11 +49,11 @@ class Router
         $auth = Component::getInstance()->get('auth2');
         if($auth->verify(input()) === 0){
             Restful::request()
-                ->setData(['code' => 1, 'msg' => '', 'data' => $auth->request()])
+                ->setData(['code' => 'OK', 'request' => ['msg' => 'request success!', 'data' => $auth->request()]])
                 ->send();
         }
         Restful::request()
-            ->setData(['code' => 1, 'msg' => ['code' => 10000, 'msg' => '验证失败']])
+            ->setData(['code' => 'false', 'request' => ['code' => 10000, 'msg' => '验证失败']])
             ->send();
     }
 

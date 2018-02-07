@@ -9,9 +9,9 @@ class AppKey extends Logic
 
     public function create($uid,$app_id,$secret)
     {
-        $rand = rand(10000,99999);
+        $rand = rand(10000000,9999999);
         $date = time();
-        $app_key = 'zq' . ceil($date/$rand*100+input('phone')/10000);
+        $app_key = 'zq' . ceil($date*1000000/$rand+input('phone')/10000);
         $data['app_secret'] = $secret;
         $data['app_key'] = $app_key;
         $data['app_id'] = $app_id;
