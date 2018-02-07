@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2018-02-05 17:57:05
+Date: 2018-02-07 17:49:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -55,20 +55,21 @@ DROP TABLE IF EXISTS `zq_apidoc`;
 CREATE TABLE `zq_apidoc` (
   `id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT,
   `cid` smallint(6) unsigned NOT NULL,
-  `posttime` mediumint(9) unsigned NOT NULL,
+  `posttime` int(11) unsigned NOT NULL,
   `uid` mediumint(9) unsigned NOT NULL,
   `s_content` varchar(120) NOT NULL,
   `is_on` tinyint(2) unsigned NOT NULL DEFAULT '1',
   `sort` smallint(6) unsigned NOT NULL DEFAULT '65535',
   `api_title` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_apidoc
 -- ----------------------------
 INSERT INTO `zq_apidoc` VALUES ('1', '1', '16777215', '1', '###测试内容\r\n>test', '1', '65535', '测试api文档');
 INSERT INTO `zq_apidoc` VALUES ('2', '1', '16777215', '1', '###测试内容\r\n>test', '1', '65535', '测试api文档');
+INSERT INTO `zq_apidoc` VALUES ('3', '6', '16777215', '1', '', '1', '65535', 'API调用使用规范');
 
 -- ----------------------------
 -- Table structure for zq_apidoc_content
@@ -78,13 +79,14 @@ CREATE TABLE `zq_apidoc_content` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `api_id` mediumint(8) unsigned NOT NULL,
   `content` text NOT NULL,
-  `posttime` mediumint(9) NOT NULL,
+  `posttime` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_apidoc_content
 -- ----------------------------
+INSERT INTO `zq_apidoc_content` VALUES ('1', '3', '>1、调用环境入口\r\n\r\n环境入口释义：调用API时，需要传入如下地址，获取相应环境下的数据。\r\n\r\nhttps调用入口地址（即request_url）：https://api.zuanqun.cn/router/rest\r\n\r\n> 2、调用参数\r\n一、系统级别参数\r\n\r\n| 名称  | 类型 | 是否必须 | 描述\r\n| ------ |:---:| -----:| -----:\r\n| app_key | string | 是 | 由钻群开放平台提供、注册应用后自动生成\r\n| action | string | 是 | 请求方式;例如:\'Get\'\r\n| format | are neat | 是 | 返回格式：可选值\"json\"\r\n| timestamp | datetime | 是 | 时间戳，格式为yyyy-MM-ddHH:mm:ss，例如：2011-06-16 13:23:30。钻群联盟API服务端允许客户端请求时间误差为6分钟\r\n| v | string | 是 | API协议版本，可选值:2.0.\r\n| sign | string | 是 | 签名后的签名串\r\n\r\n>调用参数\r\n二、业务级别参数\r\n\r\n| 名称  | 类型 | 是否必须 | 描述\r\n| ------ |:---:| -----:| -----:\r\n| method | string | 是 | 调用的具体业务方法，如：ZqGoodsGet,具体见每个api方法提供的名称\r\n\r\n> 3、API签名\r\n\r\n调用API时需要对请求参数进行签名，钻群联盟服务器端会验证请求参数是否合法。\r\n\r\n加密规则\r\n\r\n① 所有请求参数按照字母先后顺序排列\r\n\r\n例如：将app_key,action,format,method,timestamp,sign,v 排序为action,app_key,format,method,timestamp,sign,v\r\n\r\n② 把所有参数名和参数值进行拼装\r\n\r\n例如：actionxxxapp_keyxxxmethodxxxxxxtimestampxxxxxxvx\r\n\r\n③ 把app_secret夹在字符串的两端\r\n\r\n例如：app_secret+XXXX+app_secret\r\n\r\n④ 使用MD5进行加密，再转化成大写\r\n\r\n示例（以下示例只体现逻辑）\r\n\r\n  > 排序后的参数\r\n\r\n  \'action\' => string \'Get\' (length=3)\r\n  \'app_key\' => string \'zq151798590\' (length=11)\r\n  \'format\' => string \'json\' (length=4)\r\n  \'method\' => string \'ZqGoodsGet\' (length=10)\r\n  \'timestamp\' => string \'123\' (length=3)\r\n  \'v\' => string \'2.0\' (length=3)\r\n  \r\n  > 构造待签名串\r\n  \r\n      ODAyZjRlYmVlYjdlYjAyNmNjODcyMDk2ZWIyYTcyMzUyMWY4NWNiZgactionGetapp_keyzq151798590formatjsonmethodZqGoodsGettimestamp123v2.0ODAyZjRlYmVlYjdlYjAyNmNjODcyMDk2ZWIyYTcyMzUyMWY4NWNiZg\r\n\r\n  > MD5加密并全部转换大写\r\n  \r\n  5B7067E810482B12067A5386ABD7EC50\r\n  \r\n  > 拼装成http请求url\r\n  \r\n  https://api.zuanqun.cn/router/rest?action=Get&app_key=zq151798590&format=json&method=ZqGoodsGet&timestamp=123&v=2.0&sign=5B7067E810482B12067A5386ABD7EC50\r\n  \r\n  > 返回结果(事例)\r\n  \r\n  {\"code\":\"OK\",\"request\":{\"msg\":\"request success!\",\"data\":[]]}}', '8388607');
 
 -- ----------------------------
 -- Table structure for zq_appkey
@@ -96,11 +98,11 @@ CREATE TABLE `zq_appkey` (
   `app_key` varchar(64) NOT NULL,
   `app_secret` varchar(128) NOT NULL,
   `posttime` varchar(20) NOT NULL DEFAULT '0' COMMENT '申请时间',
-  `app_id` mediumint(8) unsigned NOT NULL,
+  `app_id` int(20) unsigned NOT NULL,
   `is_on` tinyint(2) unsigned NOT NULL DEFAULT '1',
-  `open_id` mediumint(10) unsigned NOT NULL,
+  `open_id` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_appkey
@@ -114,6 +116,31 @@ INSERT INTO `zq_appkey` VALUES ('10', '11', '7024675', 'NmJiNTFmOTZkN2VlMmZiMGU4
 INSERT INTO `zq_appkey` VALUES ('11', '11', 'zq2398353', 'ODBkODM5NDM5ZTdkNjE2YzkyNWE1Yjc2OWFiMmNlNDRjYTY5ZDBmMg', '1517821579', '231237', '1', '0');
 INSERT INTO `zq_appkey` VALUES ('12', '11', 'zq2091615', 'NGYxY2FkOTdkZGE3NmY1Nzg1ZjUxZjA1MWM3MTc3N2NiOWQzZDg2ZQ', '1517821627', '33197', '1', '0');
 INSERT INTO `zq_appkey` VALUES ('13', '11', 'zq4472601', 'NmJjYWJmNjUyNmZmMDNkYWUxNTMzMWQ4ZTk5MzcwYzE0YzMyYTI2YQ', '1517821668', '16777215', '1', '0');
+INSERT INTO `zq_appkey` VALUES ('14', '11', 'zq151798590', 'ODAyZjRlYmVlYjdlYjAyNmNjODcyMDk2ZWIyYTcyMzUyMWY4NWNiZg', '1517985894', '756835965', '1', '0');
+
+-- ----------------------------
+-- Table structure for zq_class
+-- ----------------------------
+DROP TABLE IF EXISTS `zq_class`;
+CREATE TABLE `zq_class` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` mediumint(8) unsigned NOT NULL,
+  `pid` smallint(5) unsigned NOT NULL,
+  `cat_name` varchar(10) NOT NULL,
+  `posttime` mediumint(8) unsigned NOT NULL,
+  `sort` smallint(5) unsigned NOT NULL DEFAULT '65535',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_class
+-- ----------------------------
+INSERT INTO `zq_class` VALUES ('1', '1', '0', 'API文档', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('2', '1', '0', '帮助文档', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('3', '1', '0', '公共文档', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('4', '1', '2', '网站CMS教程', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('5', '1', '2', '小程序教程', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('6', '1', '1', 'API使用教程', '16777215', '65535');
 
 -- ----------------------------
 -- Table structure for zq_cms
@@ -200,24 +227,6 @@ INSERT INTO `zq_goods` VALUES ('17', '2147483647', '2018年新款女装春装潮
 INSERT INTO `zq_goods` VALUES ('18', '2147483647', '2017秋冬季新款女装毛呢冬裙子2018春装中长款名媛小香风连衣裙女', 'https://img.alicdn.com/tfscom/i4/2075384612/TB1padYn6nD8KJjSspbXXbbEXXa_!!0-item_pic.jpg', '399', '255', '1', '广东 东莞', 'http://item.taobao.com/item.htm?id=560624204695', '2075384612', '353', '欧惑旗舰店', '0');
 INSERT INTO `zq_goods` VALUES ('19', '2147483647', '短款棉服女装2018冬春新款韩版宽松加厚连帽棉衣外套小个子面包服', 'https://img.alicdn.com/tfscom/i2/825236775/TB2Hik2aM685uJjSZFCXXXzlXXa_!!825236775.jpg', '289', '186', '0', '广东 广州', 'http://item.taobao.com/item.htm?id=560321390575', '825236775', '1282', '言若言诺', '0');
 INSERT INTO `zq_goods` VALUES ('20', '2147483647', '2017新款女装中长款韩版修身轻薄高端奢华超长过膝羽绒服外套冬潮', 'https://img.alicdn.com/tfscom/i8/TB1M50wjv6H8KJjSspmYXH2WXXa_M2.SS2', '698', '368', '0', '浙江 杭州', 'http://item.taobao.com/item.htm?id=563135286299', '192699001', '30304', 'zhangpei12', '0');
-
--- ----------------------------
--- Table structure for zq_goods_cat
--- ----------------------------
-DROP TABLE IF EXISTS `zq_goods_cat`;
-CREATE TABLE `zq_goods_cat` (
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `uid` mediumint(8) unsigned NOT NULL,
-  `pid` smallint(5) unsigned NOT NULL,
-  `cat_name` varchar(10) NOT NULL,
-  `posttime` mediumint(8) unsigned NOT NULL,
-  `sort` smallint(5) unsigned NOT NULL DEFAULT '65535',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of zq_goods_cat
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for zq_goods_images
@@ -354,9 +363,9 @@ CREATE TABLE `zq_open_web` (
   `zq_uid` mediumint(10) unsigned NOT NULL,
   `open_id` mediumint(10) unsigned NOT NULL,
   `status` tinyint(2) unsigned NOT NULL DEFAULT '1',
-  `app_id` mediumint(10) unsigned NOT NULL,
+  `app_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_open_web
@@ -366,6 +375,7 @@ INSERT INTO `zq_open_web` VALUES ('2', '钻群联盟1', 'www.zuanqun.cn', 'zzzz'
 INSERT INTO `zq_open_web` VALUES ('3', '钻群联盟2', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '231237');
 INSERT INTO `zq_open_web` VALUES ('4', '钻群联盟3', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '33197');
 INSERT INTO `zq_open_web` VALUES ('5', '钻群联盟3', 'www.zuanqun.cn', 'zzzz', 'zzz', '16777215', '11', '1', '1', '16777215');
+INSERT INTO `zq_open_web` VALUES ('6', '钻群联盟', 'www.zuanqun.com', '钻群联盟', '钻群联盟', '16777215', '11', '1', '1', '756835965');
 
 -- ----------------------------
 -- Table structure for zq_team_info
@@ -411,6 +421,27 @@ INSERT INTO `zq_user` VALUES ('12', 'zuanqun_1516584427', '', '74be16979710d4c4e
 INSERT INTO `zq_user` VALUES ('13', 'zuanqun_1516584429', '', '74be16979710d4c4e7c6647856088456', '1516584429', '0', '');
 INSERT INTO `zq_user` VALUES ('14', 'zuanqun_1516873420', '', '74be16979710d4c4e7c6647856088456', '1516873420', '0', '');
 INSERT INTO `zq_user` VALUES ('15', 'zuanqun_1516873425', '', '74be16979710d4c4e7c6647856088456', '1516873425', '0', '');
+
+-- ----------------------------
+-- Table structure for zq_verify_sms
+-- ----------------------------
+DROP TABLE IF EXISTS `zq_verify_sms`;
+CREATE TABLE `zq_verify_sms` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `mobile` bigint(11) unsigned NOT NULL,
+  `posttime` mediumint(10) unsigned NOT NULL,
+  `is_verify` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `lasttime` mediumint(10) unsigned NOT NULL,
+  `code` int(6) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of zq_verify_sms
+-- ----------------------------
+INSERT INTO `zq_verify_sms` VALUES ('10', '15168268464', '0', '0', '0', '496469');
+INSERT INTO `zq_verify_sms` VALUES ('11', '13175091583', '16777215', '0', '0', '634869');
+INSERT INTO `zq_verify_sms` VALUES ('12', '1317509158', '16777215', '0', '0', '656155');
 
 -- ----------------------------
 -- Table structure for zq_web_key
