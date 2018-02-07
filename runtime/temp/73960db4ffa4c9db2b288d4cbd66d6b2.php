@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/wiki/apiinfo.html";i:1517484840;s:72:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/base/base.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/wiki/apiinfo.html";i:1518010138;s:72:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/base/base.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@
         <div class="layui-fluid">
             <div class="layui-card-header"><?php echo $res['api_title']; ?></div>
             <div id="api-doc" class="layui-card-body">
-                <textarea style="display:none;"><?php echo $res['s_content']; ?></textarea>
+                <textarea style="display:none;"><?php echo $res['content']; ?></textarea>
             </div>
         </div>
     </div>

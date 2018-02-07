@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/source/index.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/source/index.html";i:1518012746;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="col-main">
-            <iframe class="res_iframe" src="/wiki/apiInfo" height="630px" id="iframe"></iframe>
+            <iframe class="res_iframe" src="/wiki/apiInfo" id="iframe"></iframe>
         </div>
     </div>
 
@@ -98,6 +98,7 @@
 
     $(function(){
         window.onload = function () {
+            console.log();
             setIframeHeight(document.getElementById('iframe'));
         };
     })
