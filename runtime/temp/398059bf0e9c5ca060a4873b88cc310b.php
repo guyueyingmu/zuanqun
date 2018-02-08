@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"C:\Object\zuanqun\web/../app/open\view\default\auth\login.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"C:\Object\zuanqun\web/../app/open\view\default\auth\login.html";i:1518084106;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +15,11 @@
             <div class="auth-input">
                 <span class="auth-input-box first">
                     <label class="auth-lable">登入</label>
-                    <input type="text" placeholder="请填写登录邮箱" class="auth-input-text" name="account">
+                    <input type="text" id="account" placeholder="请填写登录邮箱" class="auth-input-text" name="account">
                 </span>
                 <span class="auth-input-box last">
                     <label class="auth-lable">密码</label>
-                    <input type="password" placeholder="请填写登录邮箱" class="auth-input-text" name="account">
+                    <input type="password" id="password" placeholder="请填写登录邮箱" class="auth-input-text" name="account">
                 </span>
             </div>
 
@@ -40,6 +40,30 @@
         QQ号注册的老用户，<a href="javascript:;" id="o-login">点此登录</a>
     </p>
 </div>
+
+<script src="__COM__/util.js"></script>
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+<script src="__COM__/layui/layui.js"></script>
+<script>
+    $(document).on('click','#login',function(){
+        var data = {account:$('#account').val(),password:$('#password').val()};
+        console.log(data);
+        request("<?php echo url('auth/SignIn/login'); ?>",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+                localStorage.setItem('token', res.token);
+                setCookie('token',res.token);
+//                console.log(document.cookie);
+//                redirect("<?php echo url('user/user/index'); ?>");
+            } else {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2018-02-07 17:49:01
+Date: 2018-02-08 17:53:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -130,7 +130,7 @@ CREATE TABLE `zq_class` (
   `posttime` mediumint(8) unsigned NOT NULL,
   `sort` smallint(5) unsigned NOT NULL DEFAULT '65535',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_class
@@ -141,6 +141,23 @@ INSERT INTO `zq_class` VALUES ('3', '1', '0', '公共文档', '16777215', '65535
 INSERT INTO `zq_class` VALUES ('4', '1', '2', '网站CMS教程', '16777215', '65535');
 INSERT INTO `zq_class` VALUES ('5', '1', '2', '小程序教程', '16777215', '65535');
 INSERT INTO `zq_class` VALUES ('6', '1', '1', 'API使用教程', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('7', '1', '0', '商品分类', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('8', '1', '7', '全部', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('9', '1', '7', '女装', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('10', '1', '7', '男装', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('11', '1', '7', '内衣', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('12', '1', '7', '母婴', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('13', '1', '7', '化妆品', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('14', '1', '7', '居家', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('15', '1', '7', '配饰', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('16', '1', '7', '鞋品', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('17', '1', '7', '箱包', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('18', '1', '7', '儿童', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('19', '1', '7', '美食', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('20', '1', '7', '数码家电', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('21', '1', '7', '文体车品', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('22', '1', '7', '其他', '16777215', '65535');
+INSERT INTO `zq_class` VALUES ('23', '1', '7', '预告', '16777215', '65535');
 
 -- ----------------------------
 -- Table structure for zq_cms
@@ -255,16 +272,18 @@ CREATE TABLE `zq_helpdoc` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `cid` smallint(5) unsigned NOT NULL,
   `uid` mediumint(9) NOT NULL,
-  `s_content` varchar(0) NOT NULL,
-  `posttime` mediumint(8) unsigned NOT NULL,
+  `s_content` varchar(255) NOT NULL,
+  `posttime` int(11) unsigned NOT NULL,
   `is_on` tinyint(2) unsigned NOT NULL,
   `sort` smallint(6) unsigned NOT NULL DEFAULT '65535',
+  `help_title` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_helpdoc
 -- ----------------------------
+INSERT INTO `zq_helpdoc` VALUES ('1', '4', '1', '建站CMS使用最基础的需要域名以及空间', '16777215', '0', '65535', '网站CMS使用帮助手册');
 
 -- ----------------------------
 -- Table structure for zq_helpdoc_content
@@ -274,13 +293,14 @@ CREATE TABLE `zq_helpdoc_content` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `help_id` mediumint(8) unsigned NOT NULL,
   `content` text NOT NULL,
-  `posttime` mediumint(8) unsigned NOT NULL,
+  `posttime` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_helpdoc_content
 -- ----------------------------
+INSERT INTO `zq_helpdoc_content` VALUES ('1', '1', '> 建站条件\r\n\r\n1、域名\r\n2、空间 （PHP版本最好越大越好）\r\n\r\n> 建站方式\r\n\r\n注册钻群联盟账号之后可以在导购产品栏目下点击CMS建站，填写好相关网站信息后点击下载然后上传到空间根目录后\r\n执行，请注意网站空间是否有写入权限以及创建目录的权限', '16777215');
 
 -- ----------------------------
 -- Table structure for zq_noticedoc
@@ -290,10 +310,11 @@ CREATE TABLE `zq_noticedoc` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `cid` smallint(5) unsigned NOT NULL,
   `uid` mediumint(8) unsigned NOT NULL,
-  `s_content` varchar(0) NOT NULL,
-  `posttime` mediumint(8) unsigned NOT NULL,
+  `s_content` varchar(255) NOT NULL,
+  `posttime` int(11) unsigned NOT NULL,
   `is_on` tinyint(2) unsigned NOT NULL,
   `sort` smallint(5) unsigned NOT NULL DEFAULT '65535',
+  `notice_title` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -309,7 +330,7 @@ CREATE TABLE `zq_noticedoc_content` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `norice_id` mediumint(8) unsigned NOT NULL,
   `content` text NOT NULL,
-  `posttime` mediumint(8) unsigned NOT NULL,
+  `posttime` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -434,7 +455,7 @@ CREATE TABLE `zq_verify_sms` (
   `lasttime` mediumint(10) unsigned NOT NULL,
   `code` int(6) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of zq_verify_sms
@@ -442,6 +463,7 @@ CREATE TABLE `zq_verify_sms` (
 INSERT INTO `zq_verify_sms` VALUES ('10', '15168268464', '0', '0', '0', '496469');
 INSERT INTO `zq_verify_sms` VALUES ('11', '13175091583', '16777215', '0', '0', '634869');
 INSERT INTO `zq_verify_sms` VALUES ('12', '1317509158', '16777215', '0', '0', '656155');
+INSERT INTO `zq_verify_sms` VALUES ('13', '0', '16777215', '0', '0', '564584');
 
 -- ----------------------------
 -- Table structure for zq_web_key
