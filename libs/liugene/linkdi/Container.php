@@ -207,7 +207,6 @@ class Container
          * 执行类名注入方法
          */
         if($definition->isInstance()){
-
             /**
              * 断言类名是否合法
              */
@@ -262,6 +261,16 @@ class Container
          * 获取构造方法的参数
          */
         $reflectorParam = $reflectorFunc->getParameters();
+        /**
+         * 判断类构造方法是否有参数
+         */
+        if(empty($reflectorParam)){
+            /**
+             * false
+             * 返回类的实例
+             */
+            return $reflectorClass->newInstance();
+        }
         /**
          * 遍历构造方法的参数进行注入
          */

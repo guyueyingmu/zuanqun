@@ -76,7 +76,6 @@
     float: left;
     width: 357px;
     margin: 50px 0 0 26px;
-    text-align: center;
 }
 
 .news .news-box .news-col .news-col-menu {
@@ -169,8 +168,24 @@
     overflow: hidden;
     position: relative;
     text-align: center;
+}
+
+.solution  .solution-bg .solution-bg-container .bg1 {
     background: url(/index/default/img/hunhebg.png) no-repeat;
 }
+
+.solution  .solution-bg .solution-bg-container .bg2 {
+    background: url(/index/default/img/cmsbg.png) no-repeat;
+}
+
+.solution  .solution-bg .solution-bg-container .bg3 {
+    background: url(/index/default/img/appbg.png) no-repeat;
+}
+
+.solution  .solution-bg .solution-bg-container .bg4 {
+    background: url(/index/default/img/wechatbg.png) no-repeat;
+}
+
 
 .solution  .solution-bg .solution-bg-container li .mask {
     position: absolute;

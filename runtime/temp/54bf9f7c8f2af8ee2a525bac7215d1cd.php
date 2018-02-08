@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\Object\zuanqun\web/../app/index\view\default\index\index.html";i:1517531928;s:59:"C:\Object\zuanqun\app\index\view\default\common\header.html";i:1517531928;s:59:"C:\Object\zuanqun\app\index\view\default\common\footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\Object\zuanqun\web/../app/index\view\default\index\index.html";i:1518071237;s:59:"C:\Object\zuanqun\app\index\view\default\common\header.html";i:1517531928;s:59:"C:\Object\zuanqun\app\index\view\default\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -226,25 +226,25 @@
         <div class="solution-bg">
             <div class="solution-bg-container">
                 <ul>
-                    <li>
+                    <li class="bg1">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg2">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg3">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg4">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
@@ -263,36 +263,35 @@
                     钻群联盟的
                     <span>最新动态</span>
                 </div>
-                <div class="cap-more">为您提供最新网站公告、补丁更新、技术支持等信息，友价房产网源码每篇内容均经过核实</div>
+                <div class="cap-more">为您提供最新钻群联盟公告、API接口支持、技术支持等信息，钻群联盟每篇内容均经过核实</div>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">API手册</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    <?php if(is_array($api) || $api instanceof \think\Collection || $api instanceof \think\Paginator): $i = 0; $__LIST__ = $api;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$a): $mod = ($i % 2 );++$i;?>
+                    <dd><span>[2018-01-22]</span><?php echo $a['api_title']; ?></dd>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </dl>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">帮助手册</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    <?php if(is_array($help) || $help instanceof \think\Collection || $help instanceof \think\Paginator): $i = 0; $__LIST__ = $help;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$h): $mod = ($i % 2 );++$i;?>
+                    <a href="<?php echo url('index/help/item',['id' => $h['id']]); ?>" target="_blank">
+                        <dd><span>[2018-01-22]</span><?php echo $h['help_title']; ?></dd>
+                    </a>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </dl>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">钻群公告</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    <?php if(is_array($notice) || $notice instanceof \think\Collection || $notice instanceof \think\Paginator): $i = 0; $__LIST__ = $notice;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$n): $mod = ($i % 2 );++$i;?>
+                    <dd><span>[2018-01-22]</span><?php echo $n['notice_title']; ?></dd>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </dl>
             </div>
         </div>

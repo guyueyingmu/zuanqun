@@ -28,7 +28,23 @@ class Help
 
     public function index()
     {
-        return view('default/help/index');
+        $help = Component::getInstance()->get('help');
+        return view('default/help/index',[
+            'view' => $help->getHelpView()
+            ,'title' => $help->getHelpTitle()
+        ]);
     }
+
+    public function item()
+    {
+        if(is_null(input('id'))){
+            exit('缺少参数');
+        }
+        return view('default/help/item',[
+            'content' => Component::getInstance()->get('help')->getHelpItem()
+        ]);
+    }
+
+    public function titleItem(){}
 
 }

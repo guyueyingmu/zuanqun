@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\Object\zuanqun\web/../app/index\view\default\help\index.html";i:1518067830;s:59:"C:\Object\zuanqun\app\index\view\default\common\header.html";i:1517531928;s:59:"C:\Object\zuanqun\app\index\view\default\common\footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\Object\zuanqun\web/../app/index\view\default\help\item.html";i:1518062390;s:59:"C:\Object\zuanqun\app\index\view\default\common\header.html";i:1517531928;s:59:"C:\Object\zuanqun\app\index\view\default\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +10,16 @@
     <link rel="stylesheet" href="__CSS__/help.css">
     <link rel="stylesheet" href="__CSS__/footer.css">
     <link rel="stylesheet" href="__COM__/layui/css/layui.css">
+    <link href="__COM__/editor.md/css/editormd.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
+
+<style>
+    .editormd-html-preview, .editormd-preview-container {
+        margin-top: 65px;
+        padding: 0;
+    }
+</style>
 
 <div class="body">
     <!-- header -->
@@ -103,27 +111,13 @@
 
     <!-- center -->
     <div class="center">
-        <div class="col-side">
-            <div class="side-menu">
-                <dl>
-                    <dd><img src="http://static.zuanqun.com:8080/index/default/img/help.png"></dd>
-                    <?php if(is_array($title) || $title instanceof \think\Collection || $title instanceof \think\Paginator): $i = 0; $__LIST__ = $title;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$t): $mod = ($i % 2 );++$i;?>
-                    <a href="<?php echo url('index/help/index',['cid' => $t['id']]); ?>">
-                    <dt><?php echo $t['cat_name']; ?></dt>
-                    </a>
-                    <?php endforeach; endif; else: echo "" ;endif; ?>
-                </dl>
-            </div>
-        </div>
         <div class="col-main">
-            <?php if(is_array($view) || $view instanceof \think\Collection || $view instanceof \think\Paginator): $i = 0; $__LIST__ = $view;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
             <div class="col-main-container">
-                <a href="<?php echo url('index/help/item',['id' => $vo['id']]); ?>" target="_blank">
-                <div class="title"><?php echo $vo['help_title']; ?></div>
-                </a>
-                <p><?php echo $vo['s_content']; ?></p>
+                <div class="title"><?php echo $content['help_title']; ?></div>
+                <div id="doc">
+                    <textarea style="display:none;"><?php echo $content['content']; ?></textarea>
+                </div>
             </div>
-            <?php endforeach; endif; else: echo "" ;endif; ?>
         </div>
     </div>
 
@@ -199,6 +193,16 @@
 </div>
 </div>
 
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/editor.md/lib/marked.min.js"></script>
+<script src="__COM__/editor.md/lib/prettify.min.js"></script>
+<script src="__COM__/editor.md/editormd.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var testEditor;
+        testEditor = editormd.markdownToHTML("doc", );
+    })
+</script>
 
 </body>
 </html>

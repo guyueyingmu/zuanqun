@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"C:\Object\zuanqun\web/../app/console\view\default\menu\add_menu.html";i:1517988636;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:68:"C:\Object\zuanqun\web/../app/console\view\default\menu\add_menu.html";i:1518071780;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +38,7 @@
                                     <option value="0">父级菜单</option>
                                     <option value="1">API文档</option>
                                     <option value="2">帮助文档</option>
+                                    <option value="7">商品分类</option>
                                 </select>
                             </div>
                         </div>
