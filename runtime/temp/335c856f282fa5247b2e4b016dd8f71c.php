@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"C:\Object\zuanqun\web/../app/console\view\default\article\noticedoc.html";i:1517531928;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:72:"C:\Object\zuanqun\web/../app/console\view\default\article\noticedoc.html";i:1518052256;s:57:"C:\Object\zuanqun\app\console\view\default\base\base.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,17 @@
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input id="cat" type="text" name="cat" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                                <select name="cat" id="menu_tree">
+                                    <option value=""></option>
+                                    <option value="4">网站CMS教程</option>
+                                    <option value="5">小程序教程</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item layui-form-text">
+                            <div class="layui-input-block">
+                                <textarea id="content_view" name="content_view" class="layui-textarea title" placeholder="请输入文章简介"></textarea>
                             </div>
                         </div>
 

@@ -199,6 +199,17 @@
     transition: color .2s;
 }
 
+.body .nav .nav-wrap .nav-none {
+    color: #666;
+    box-shadow: 0 3px 10px rgba(101, 101, 101, 0.4);
+    width: auto;
+    height: 52px;
+    line-height: 52px;
+    display: inline-block;
+    padding: 0 17px;
+    transition: color .2s;
+}
+
 .body .class_box{
     width:1200px;
     padding-top:166px;
@@ -256,7 +267,7 @@
 .body .class_box .class_b .cb_t .ct_middle{
     float:left;
     margin-left:72px;
-    width:860px;
+    width:925px;
 }
 .body .class_box .class_b .cb_t .ct_middle ul{
     width:100%;

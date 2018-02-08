@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\Object\zuanqun\web/../app/hot\view\default\index\index.html";i:1517531928;s:57:"C:\Object\zuanqun\app\hot\view\default\common\header.html";i:1517531928;s:44:"../app/index/view/default/common/footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\Object\zuanqun\web/../app/hot\view\default\index\index.html";i:1518081639;s:57:"C:\Object\zuanqun\app\hot\view\default\common\header.html";i:1517531928;s:44:"../app/index/view/default/common/footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="__HOT_CSS__/header.css">
     <link rel="stylesheet" href="__HOT_CSS__/index.css">
     <link rel="stylesheet" href="__HOT_CSS__/footer.css">
-    <script src="__HOT_JS__/jquery.js"></script>
-    <script src="__HOT_JS__/index.js"></script>
     <link rel="stylesheet" href="__CSS__/footer.css">
     <link rel="stylesheet" href="__COM__/page.css">
 </head>
@@ -55,59 +53,22 @@
         <div class="nav">
             <div class="nav-wrap">
                 <a href="/" class="active">选品直播</a>
-                <a href="/">领券直播</a>
-                <a href="/">领券直播</a>
+                <a href="<?php echo url('open/tool/touland'); ?>" target="_blank" class="nav-none">淘客工具</a>
+                <a href="http://open.zuanqun.com:8080" target="_blank" class="nav-none">开放平台</a>
             </div>
         </div>
         <div class="class_box">
             <div class="class_b">
                 <div class="cb_o">
-                    <span>所有分类</span><span class="spec">></span><span>共48.90万商品</span>
+                    <span>所有分类</span><span class="spec">></span><span>共<?php echo $count; ?>件商品</span>
                 </div>
                 <div class="cb_t">
                     <div class="ct_left"><span>相关分类：</span></div>
                     <div class="ct_middle">
                         <ul>
-                            <li>连衣裙</li>
-                            <li>针织衫</li>
-                            <li>休闲裤</li>
-                            <li>毛衣</li>
-                            <li>毛呢外套</li>
-                            <li>半身裙</li>
-                            <li>T恤</li>
-                            <li>棉衣/棉服</li>
-                            <li>连衣裙</li>
-                            <li>针织衫</li>
-                            <li>休闲裤</li>
-                            <li>毛衣</li>
-                            <li>毛呢外套</li>
-                            <li>半身裙</li>
-                            <li>T恤</li>
-                            <li>棉衣/棉服</li>
-                            <li>连衣裙</li>
-                            <li>针织衫</li>
-                            <li>休闲裤</li>
-                            <li>毛衣</li>
-                            <li>毛呢外套</li>
-                            <li>半身裙</li>
-                            <li>T恤</li>
-                            <li>棉衣/棉服</li>
-                            <li>连衣裙</li>
-                            <li>针织衫</li>
-                            <li>休闲裤</li>
-                            <li>毛衣</li>
-                            <li>毛呢外套</li>
-                            <li>半身裙</li>
-                            <li>T恤</li>
-                            <li>棉衣/棉服</li>
-                            <li>连衣裙</li>
-                            <li>针织衫</li>
-                            <li>休闲裤</li>
-                            <li>毛衣</li>
-                            <li>毛呢外套</li>
-                            <li>半身裙</li>
-                            <li>T恤</li>
-                            <li>棉衣/棉服</li>
+                            <?php if(is_array($cat) || $cat instanceof \think\Collection || $cat instanceof \think\Paginator): $i = 0; $__LIST__ = $cat;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$c): $mod = ($i % 2 );++$i;?>
+                            <li><?php echo $c['cat_name']; ?></li>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
                         </ul>
                     </div>
                     <div class="ct_right">
@@ -121,24 +82,33 @@
         <div class="bc_wrap">
             <div class="wrap_box">
                 <div class="cw_left">
-                    <span class="color">默认排序</span>
-                <span class="spec">价格
-                    <div class="box">
-                        <div>价格从高到低</div>
-                        <div>价格从低到高</div>
-                    </div>
-                </span>
-                    <span>销量</span>
-                    <span>收入比率</span>
-                    <span>月推广量</span>
-                    <span>月支出佣金</span>
+                    <a href="<?php echo url('hot/index/index'); ?>">
+                        <span class="color">默认排序</span>
+                    </a>
+                    <a href="<?php echo url('hot/index/index',['sort' => 'zk_final_price']); ?>">
+                        <span class="spec">价格
+                            <!--<div class="box">-->
+                            <!--<div>价格从高到低</div>-->
+                            <!--<div>价格从低到高</div>-->
+                            <!--</div>-->
+                        </span>
+                    </a>
+                    <a href="<?php echo url('hot/index/index',['sort' => 'volume']); ?>">
+                        <span>销量</span>
+                    </a>
+                    <a href="<?php echo url('hot/index/index',['sort' => 'volume']); ?>">
+                        <span>月推广量</span>
+                    </a>
+                    <a href="<?php echo url('hot/index/index',['sort' => 'volume']); ?>">
+                        <span>月支出佣金</span>
+                    </a>
                 </div>
                 <div class="cw_right">
                     <span class="mi"></span>
                     <div class="mi_inner">
                         <span><</span>
-                        <span>1</span>
-                        <span>/100</span>
+                        <span><?php echo $list->currentPage(); ?></span>
+                        <span>/<?php echo $list->lastPage(); ?></span>
                         <span>></span>
                     </div>
                 </div>
@@ -164,36 +134,27 @@
                         <input type="checkbox"> 天猫旗舰店
                     </label>
                 </div>
-                <div class="wi_lis">
-                    <label>
-                        <input type="checkbox"> 店铺优惠券
-                    </label>
-                </div>
                 <div class="wi_lis wi">
                     <span>月销量</span>
                     <input type="text" class="input">
                     <span>笔及以上</span>
                     <div class="wii wiit">
                         <span>月销量</span>
-                        <input type="text" class="input">
+                        <input type="text" id="e_volume" name="volume" class="input">
                         <span>笔及以上</span>
-                        <span class="dis">确认</span>
+                        <span class="dis" id="volume">确认</span>
                     </div>
                 </div>
 
                 <div class="wi_lis wi">
-                    <span>收入比率</span>
-                    <input type="text" class="input">
-                    <span>%-</span>
+                    <span>佣金比率</span>
                     <input type="text" class="input">
                     <span>%</span>
                     <div class="wii wiit">
-                        <span>收入比率</span>
-                        <input type="text" class="input">
-                        <span>%-</span>
-                        <input type="text" class="input">
+                        <span>佣金比率大于</span>
+                        <input type="text" id="e_comm" name="comm" class="input">
                         <span>%</span>
-                        <span class="dis">确认</span>
+                        <span class="dis" id="comm">确认</span>
                     </div>
                 </div>
                 <div class="wi_lis wi">
@@ -204,11 +165,11 @@
                     <span>元</span>
                     <div class="wii wiit">
                         <span>价格</span>
-                        <input type="text" class="input">
+                        <input type="text" id="s_price" name="s_price" class="input">
                         <span>元-</span>
-                        <input type="text" class="input">
+                        <input type="text" id="e_price" name="e_price" class="input">
                         <span>元</span>
-                        <span class="dis">确认</span>
+                        <span class="dis" id="price">确认</span>
                     </div>
                 </div>
 
@@ -327,6 +288,38 @@
     </div>
 </div>
 </div>
+
+<script src="__COM__/jquery.js"></script>
+<script src="__COM__/util.js"></script>
+<script src="__COM__/layer/layer.js"></script>
+<script src="__HOT_JS__/index.js"></script>
+
+<script>
+    //销量
+    $(document).on('click','#volume',function(){
+        if($('#e_volume').val() == ''){
+            layer.msg('请填写销量数量');
+            return false;
+        }
+        var volume = $('#e_volume').val();
+        redirect("<?php echo url('hot/index/index'); ?>?volume="+volume);
+    });
+
+    //价格
+    $(document).on('click','#price',function(){
+        if($('#s_price').val() == ''){
+            layer.msg('请填写最低价格');
+            return false;
+        }
+        if($('#e_price').val() == ''){
+            layer.msg('请填写最高价格');
+            return false;
+        }
+        var s_price = $('#s_price').val();
+        var e_price = $('#e_price').val();
+        redirect("<?php echo url('hot/index/index'); ?>?s_price="+s_price+"&e_price="+e_price);
+    });
+</script>
 
 </body>
 </html>

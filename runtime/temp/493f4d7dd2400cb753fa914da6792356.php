@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\Object\zuanqun\web/../app/open\view\default\source\index.html";i:1517996073;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\Object\zuanqun\web/../app/open\view\default\source\index.html";i:1518051839;s:58:"C:\Object\zuanqun\app\open\view\default\common\header.html";i:1517531928;s:58:"C:\Object\zuanqun\app\open\view\default\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +75,7 @@
             </div>
         </div>
         <div class="col-main">
-            <iframe class="res_iframe" src="/wiki/apiInfo" id="iframe" onload="setIframeHeight(this)"></iframe>
+            <iframe class="res_iframe" src="/wiki/apiInfo" id="iframe" height="1790" onload="setIframeHeight(this)"></iframe>
         </div>
     </div>
 
@@ -94,14 +94,14 @@
 </div>
 </div>
 <script src="__COM__/util.js"></script>
-<script>
+<!--<script>-->
 
-    $(function(){
-        window.onload = function () {
-            setIframeHeight(document.getElementById('iframe'));
-        };
-    })
-</script>
+    <!--$(function(){-->
+        <!--window.onload = function () {-->
+            <!--setIframeHeight(document.getElementById('iframe'));-->
+        <!--};-->
+    <!--})-->
+<!--</script>-->
 
 </body>
 </html>

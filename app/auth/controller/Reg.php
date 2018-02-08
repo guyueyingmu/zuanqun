@@ -20,20 +20,20 @@ class Reg
                 ->setAlias('reg')
                 ->setIsSingleton(true)
                 ->setCallBack(function(){
-                    $app = new RegLogic();
-                    $app->set('reg',function(){
+                    $reg = new RegLogic();
+                    $reg->set('reg',function(){
                         return new RegModel();
                     });
-                    $app->set('webkey',function(){
+                    $reg->set('webkey',function(){
                         return new WebKey();
                     });
-                    $app->set('sendVerify',function(){
+                    $reg->set('sendVerify',function(){
                         return new Send();
                     });
-                    $app->set('regValidate',function(){
+                    $reg->set('regValidate',function(){
                         return new Register();
                     });
-                    return $app;
+                    return $reg;
                 })
             );
     }

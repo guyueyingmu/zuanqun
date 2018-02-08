@@ -5,14 +5,30 @@
 // +----------------------------------------------------------------------
 
 namespace app\hot\controller;
-use think\Loader;
+
+use app\hot\container\Component;
+use app\hot\container\Definition;
 
 class Index
 {
+
+    public function __construct()
+    {
+        Component::getInstance()
+            ->bind((new Definition())
+                ->setAlias('goods')
+                ->setIsSingleton(true)
+                ->setClassName('app\goods\controller\GetGoods')
+            );
+    }
+
     public function index()
     {
+        $goods = Component::getInstance()->get('goods');
         return view('default/index/index',[
-            'list' => Loader::controller('app\goods\controller\GetGoods')->goodsData(),
+            'list' => $goods->getGoods(),
+            'cat' => $goods->getGoodsCat(),
+            'count' => $goods->countGoods(),
         ]);
     }
 }

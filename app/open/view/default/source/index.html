@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="col-main">
-            <iframe class="res_iframe" src="/wiki/apiInfo" id="iframe"></iframe>
+            <iframe class="res_iframe" src="/wiki/apiInfo" id="iframe" height="1790" onload="setIframeHeight(this)"></iframe>
         </div>
     </div>
 
@@ -33,15 +33,14 @@
     {include file="default/common/footer" /}
 </div>
 <script src="__COM__/util.js"></script>
-<script>
+<!--<script>-->
 
-    $(function(){
-        window.onload = function () {
-            console.log();
-            setIframeHeight(document.getElementById('iframe'));
-        };
-    })
-</script>
+    <!--$(function(){-->
+        <!--window.onload = function () {-->
+            <!--setIframeHeight(document.getElementById('iframe'));-->
+        <!--};-->
+    <!--})-->
+<!--</script>-->
 
 </body>
 </html>

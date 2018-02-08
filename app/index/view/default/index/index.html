@@ -149,25 +149,25 @@
         <div class="solution-bg">
             <div class="solution-bg-container">
                 <ul>
-                    <li>
+                    <li class="bg1">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg2">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg3">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg4">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
@@ -186,36 +186,35 @@
                     钻群联盟的
                     <span>最新动态</span>
                 </div>
-                <div class="cap-more">为您提供最新网站公告、补丁更新、技术支持等信息，友价房产网源码每篇内容均经过核实</div>
+                <div class="cap-more">为您提供最新钻群联盟公告、API接口支持、技术支持等信息，钻群联盟每篇内容均经过核实</div>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">API手册</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    {volist name="api" id="a"}
+                    <dd><span>[2018-01-22]</span>{$a.api_title}</dd>
+                    {/volist}
                 </dl>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">帮助手册</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    {volist name="help" id="h"}
+                    <a href="{:url('index/help/item',['id' => $h['id']])}" target="_blank">
+                        <dd><span>[2018-01-22]</span>{$h.help_title}</dd>
+                    </a>
+                    {/volist}
                 </dl>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">钻群公告</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    {volist name="notice" id="n"}
+                    <dd><span>[2018-01-22]</span>{$n.notice_title}</dd>
+                    {/volist}
                 </dl>
             </div>
         </div>

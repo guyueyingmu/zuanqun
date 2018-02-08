@@ -16,7 +16,7 @@ class HelpDoc extends  Doc
         $data['uid'] = 1;
         $data['cid'] = input('cat');
         $data['help_title'] = input('title');
-        $data['s_content'] = input('apidoc');
+        $data['s_content'] = input('content_view');
         $data['posttime'] = time();
         return $this->get('help')->addDoc($data);
     }
