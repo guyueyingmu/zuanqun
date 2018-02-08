@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/index/index.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/index/index.html";i:1518102044;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1518102634;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,7 +71,13 @@
             <div class="banner-slider-container">
                 <div class="banner-slider-list">
                     <ol id="slider-container" style="position: relative;">
-                        <li class="slider-item"></li>
+                        <li class="slider-item">
+                            <div class="slide_con">
+                                <h2 class="slide_con_title">第三方平台 开启公测</h2>
+                                <p class="desc">全新的开放类型，让开发者帮助公众号解决垂直行业需求</p>
+                                <p class="more"><a href="javascript:void(0);" class="link-btn">了解更多</a> </p>
+                            </div>
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -136,13 +142,10 @@
     <!-- footer -->
     <div class="footer">
     <div class="footer-inner">
-        <p class="copyright">© 1998 - 2018 Tencent All Right Reserved.</p>
+        <p class="copyright">© 2017 - 2018 Zuanqun All Right Reserved.</p>
         <ul class="links">
 
-            <li class="links_item"><a href="/cgi-bin/frame?t=news/protocol_developer_tmpl" target="_blank">开发者协议</a></li>
-            <li class="links_item"><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;announce_id=1512986091&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank">运营规范</a></li>
-            <li class="links_item"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">联系腾讯</a></li>
-            <li class="links_item last_child"><a href="mailto:weixin-open@qq.com" target="_self">投诉建议</a></li>
+            <li class="links_item"><a href="/" target="_blank">开发者协议</a></li>
         </ul>
     </div>
 </div>

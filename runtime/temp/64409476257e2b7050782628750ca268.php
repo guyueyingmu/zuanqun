@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/app_key/manage.html";i:1517830384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/app_key/manage.html";i:1518103760;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +40,7 @@
                 </form>
             </div>
         </div>
-        <div class="layui-fluid link-box">
+        <div class="layui-fluid">
             <div class="layui-card-header">AppKey使用说明</div>
             <div class="layui-card-body">
                 <div class="link-info-box">

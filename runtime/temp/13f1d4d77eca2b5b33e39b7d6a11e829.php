@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/channel/template.html";i:1517830384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:86:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/channel/template.html";i:1518103766;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +39,7 @@
                 </form>
             </div>
         </div>
-        <div class="layui-fluid link-box">
+        <div class="layui-fluid">
             <div class="layui-card-header">推广文案管理</div>
             <div class="layui-card-body">
                 <div class="link-info-box">

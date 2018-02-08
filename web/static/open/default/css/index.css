@@ -30,14 +30,43 @@
 
 .center .center-banner .banner-slider-container .banner-slider-list .slider-item {
     display: block;
-    position: absolute;
+    position: relative;
     left: 0px;
     top: 0px;
-    opacity: 0;
     z-index: 0;
     height: 568px;
     overflow: hidden;
     vertical-align: top;
+}
+
+.slide_con {
+    background: transparent url(/open/default/img/index-text.png) no-repeat 0 0;
+    width: 574px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 148px;
+}
+
+.slide_con .slide_con_title {
+    padding-top: 146px;
+    color: #fff;
+}
+
+.slide_con .desc {
+    padding-top: 22px;
+    color: #fff;
+}
+
+.slide_con .more {
+    padding-top: 12px;
+}
+
+.slide_con .more .link-btn {
+    padding: 8px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+    border: 1px solid #fff;
+    color: #fff;
 }
 
 .center .center-banner .notice-box {

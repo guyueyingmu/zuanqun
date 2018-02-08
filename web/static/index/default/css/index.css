@@ -13,7 +13,42 @@
     background-position: center center;
 }
 
-/*  news */
+.slide_con {
+    background: transparent url(/index/default/img/index-text.png) no-repeat 0 0;
+    width: 574px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 258px;
+}
+
+.slide_con .slide_con_title {
+    position: relative;
+    top: 108px;
+    color: #fff;
+}
+
+.slide_con .desc {
+    position: relative;
+    top: 126px;
+    color: #fff;
+    opacity: .5;
+}
+
+.slide_con .more {
+    position: relative;
+    top: 166px;
+}
+
+.slide_con .more .link-btn {
+    padding: 8px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+    /*  news */
 
 .news {
     text-align: left;

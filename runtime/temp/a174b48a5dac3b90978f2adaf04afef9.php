@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/index/view/default/index/index.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/header.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/footer.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/index/view/default/index/index.html";i:1518103389;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/header.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/footer.html";i:1518099108;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,7 +96,20 @@
     <div class="banner">
         <div class="layui-carousel" id="zq-banner">
             <div carousel-item>
-                <div class="banner-bg"></div>
+                <div class="banner-bg">
+                    <div class="slide_con">
+                        <h2 class="slide_con_title">第三方平台 开启公测</h2>
+                        <p class="desc">全新的开放类型，让开发者帮助公众号解决垂直行业需求</p>
+                        <p class="more"><a href="javascript:void(0);" class="link-btn">了解更多</a> </p>
+                    </div>
+                </div>
+                <div class="banner-bg">
+                    <div class="slide_con">
+                        <h2 class="slide_con_title">第三方平台 开启公测</h2>
+                        <p class="desc">全新的开放类型，让开发者帮助公众号解决垂直行业需求</p>
+                        <p class="more"><a href="javascript:void(0);" class="link-btn">了解更多</a> </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -106,59 +119,59 @@
         <div class="zq-info-container">
             <h4>钻群联盟，专注于导购内容生态</h4>
             <div class="function-info">
-                <div class="function-item item-1">
+                <div class="function-item item-1 layui-anim layui-anim-scale">
                     <h3>云选品库</h3>
                     <p>精选高佣，灵活检测</p>
                 </div>
-                <div class="function-item item-2">
+                <div class="function-item item-2 layui-anim layui-anim-scale">
                     <h3>二合一转链</h3>
                     <p>灵活转链方式，易于推广</p>
                 </div>
-                <div class="function-item item-3">
+                <div class="function-item item-3 layui-anim layui-anim-scale">
                     <h3>联盟CMS</h3>
                     <p>灵活部署，一键启用</p>
                 </div>
-                <div class="function-item item-4">
+                <div class="function-item item-4 layui-anim layui-anim-scale">
                     <h3>钻石CMS</h3>
                     <p>打造属于自己的用户数据</p>
                 </div>
-                <div class="function-item item-5">
+                <div class="function-item item-5 layui-anim layui-anim-scale">
                     <h3>QQ群发</h3>
                     <p>自动群发，无人看管</p>
                 </div>
-                <div class="function-item item-6">
+                <div class="function-item item-6 layui-anim layui-anim-scale">
                     <h3>微信群发</h3>
                     <p>自动群发，无人看管</p>
                 </div>
-                <div class="function-item item-7">
+                <div class="function-item item-7 layui-anim layui-anim-scale">
                     <h3>淘口令</h3>
                     <p>移动推广，部署简单</p>
                 </div>
-                <div class="function-item item-8">
+                <div class="function-item item-8 layui-anim layui-anim-scale">
                     <h3>自定义文案</h3>
                     <p>打造个性文案推广</p>
                 </div>
-                <div class="function-item item-9">
+                <div class="function-item item-9 layui-anim layui-anim-scale">
                     <h3>自主选品</h3>
                     <p>丰富内容库，自主选取</p>
                 </div>
-                <div class="function-item item-10">
+                <div class="function-item item-10 layui-anim layui-anim-scale">
                     <h3>微信公众号</h3>
                     <p>公众号托管</p>
                 </div>
-                <div class="function-item item-11">
+                <div class="function-item item-11 layui-anim layui-anim-scale">
                     <h3>小程序淘客</h3>
                     <p>一键生成，专注推广</p>
                 </div>
-                <div class="function-item item-12">
+                <div class="function-item item-12 layui-anim layui-anim-scale">
                     <h3>APP移动程序</h3>
                     <p>专属个人品牌</p>
                 </div>
-                <div class="function-item item-13">
+                <div class="function-item item-13 layui-anim layui-anim-scale">
                     <h3>自动高佣</h3>
                     <p>精选高佣，灵活检测</p>
                 </div>
-                <div class="function-item item-14">
+                <div class="function-item item-14 layui-anim layui-anim-scale">
                     <h3>API接口</h3>
                     <p>解放大脑，创意无限</p>
                 </div>
@@ -174,38 +187,38 @@
                 <h2 class="cb_title">合作互赢</h2>
                 <p class="cb_lo">我们热忱欢迎各大媒体、网站进行各类方式的合作</p>
                 <div class="cb_inner">
-                    <div class="cb_child first">
+                    <div class="cb_child first layui-anim layui-anim-upbit">
                         <div class="ch_logo">
                             <img src="__IMG__/new_media.png" alt="">
                         </div>
-                        <div class="ch_inner">
+                        <div class="ch_inner layui-anim layui-anim-upbit">
                             <div class="ci_title">钻群号</div>
                             <p class="ci_inner">与各媒体、网站在各类文字资讯、专题报道等传播方面建立长期合作</p>
                         </div>
                     </div>
-                    <div class="cb_child">
+                    <div class="cb_child layui-anim layui-anim-upbit">
                         <div class="ch_logo">
                             <img src="__IMG__/new_adev.png" alt="">
                         </div>
-                        <div class="ch_inner">
+                        <div class="ch_inner layui-anim layui-anim-upbit">
                             <div class="ci_title">内容合作</div>
                             <p class="ci_inner">双方利用现有的广告资源进行免费互换，为彼此带来流量和品牌提升</p>
                         </div>
                     </div>
-                    <div class="cb_child">
+                    <div class="cb_child layui-anim layui-anim-upbit">
                         <div class="ch_logo">
                             <img src="__IMG__/new_friend.png" alt="">
                         </div>
-                        <div class="ch_inner">
+                        <div class="ch_inner layui-anim layui-anim-upbit">
                             <div class="ci_title">开放平台</div>
                             <p class="ci_inner">双方利用网站页面文字链接资源进行免费互链，提升网站流量与权重</p>
                         </div>
                     </div>
-                    <div class="cb_child last">
+                    <div class="cb_child last layui-anim layui-anim-upbit">
                         <div class="ch_logo">
                             <img src="__IMG__/new_part.png" alt="">
                         </div>
-                        <div class="ch_inner">
+                        <div class="ch_inner layui-anim layui-anim-upbit">
                             <div class="ci_title">其他合作方式</div>
                             <p class="ci_inner">包括但不限于线上活动支持、线下活动合作、联合报道等等</p>
                         </div>
@@ -226,25 +239,25 @@
         <div class="solution-bg">
             <div class="solution-bg-container">
                 <ul>
-                    <li>
+                    <li class="bg1">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg2">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg3">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
                         </div>
                     </li>
-                    <li>
+                    <li class="bg4">
                         <div class="mask">
                             <div class="bg"></div>
                             <div class="content"></div>
@@ -263,36 +276,35 @@
                     钻群联盟的
                     <span>最新动态</span>
                 </div>
-                <div class="cap-more">为您提供最新网站公告、补丁更新、技术支持等信息，友价房产网源码每篇内容均经过核实</div>
+                <div class="cap-more">为您提供最新钻群联盟公告、API接口支持、技术支持等信息，钻群联盟每篇内容均经过核实</div>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">API手册</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    <?php if(is_array($api) || $api instanceof \think\Collection || $api instanceof \think\Paginator): $i = 0; $__LIST__ = $api;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$a): $mod = ($i % 2 );++$i;?>
+                    <dd><span>[2018-01-22]</span><?php echo $a['api_title']; ?></dd>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </dl>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">帮助手册</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    <?php if(is_array($help) || $help instanceof \think\Collection || $help instanceof \think\Paginator): $i = 0; $__LIST__ = $help;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$h): $mod = ($i % 2 );++$i;?>
+                    <a href="<?php echo url('index/help/item',['id' => $h['id']]); ?>" target="_blank">
+                        <dd><span>[2018-01-22]</span><?php echo $h['help_title']; ?></dd>
+                    </a>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </dl>
             </div>
             <div class="news-col">
                 <dl class="news-col-menu">
-                    <dt class="news-tip">最新动态</dt>
+                    <dt class="news-tip">钻群公告</dt>
                     <dt class="more">更多</dt>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
-                    <dd><span>[2018-01-22]</span>这是一条动态的信息内容</dd>
+                    <?php if(is_array($notice) || $notice instanceof \think\Collection || $notice instanceof \think\Paginator): $i = 0; $__LIST__ = $notice;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$n): $mod = ($i % 2 );++$i;?>
+                    <dd><span>[2018-01-22]</span><?php echo $n['notice_title']; ?></dd>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
                 </dl>
             </div>
         </div>
@@ -348,7 +360,7 @@
             </div>
             <div class="footer-col-1">
                 <a href="/" class="footer-logo">
-                    <img alt="七牛云" src="https://www.qiniu.com/assets/logo-b5caafe0363dace7b5c0a00be38a4829444918c4322a6168714522ee19dcb1c1.png">
+                    <img alt="七牛云" src="http://static.zuanqun.com/index/default/img/logo.png">
                 </a>
             </div>
         </div>
@@ -378,9 +390,9 @@
         carousel.render({
             elem: '#zq-banner'
             ,width: '100%' //设置容器宽度
-            ,arrow: 'always' //始终显示箭头
+            ,arrow: 'hover' //始终显示箭头
             ,height: '570'
-            //,anim: 'updown' //切换动画方式
+            ,anim: 'fade' //切换动画方式
         });
     });
 </script>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/auth/view/default/login/login.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/auth/view/default/login/login.html";i:1518090959;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +57,7 @@
     $(document).on('click','#login',function(){
         var data = {account:$('#account').val(),password:$('#password').val()};
         console.log(data);
-        request("<?php echo url('auth/login/login'); ?>",data,function(res){
+        request("<?php echo url('auth/SignIn/login'); ?>",data,function(res){
             if (res.code == 1) {
                 console.log(res);
                 layer.msg(res.msg, {icon: res.code});

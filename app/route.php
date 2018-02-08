@@ -34,7 +34,10 @@ return [
 //        ],
         'mp'    =>   'seller',
         'open'    =>    'open',
-    ],
+        'item'  =>  [
+            ':id'=>'hot/item/index',
+        ]
+    ]
     // 下面是路由规则定义
 
 ];
