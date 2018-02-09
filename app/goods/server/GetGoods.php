@@ -1,6 +1,6 @@
 <?php
 
-namespace app\goods\controller;
+namespace app\goods\server;
 
 use app\goods\container\Component;
 use app\goods\container\Definition;

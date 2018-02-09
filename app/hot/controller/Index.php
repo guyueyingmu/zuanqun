@@ -18,7 +18,7 @@ class Index
             ->bind((new Definition())
                 ->setAlias('goods')
                 ->setIsSingleton(true)
-                ->setClassName('app\goods\controller\GetGoods')
+                ->setClassName('app\goods\server\GetGoods')
             );
     }
 
