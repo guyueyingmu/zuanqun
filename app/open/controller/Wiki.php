@@ -1,9 +1,10 @@
 <?php
 
 namespace app\open\controller;
-use app\open\container\Doc;
-use app\open\logic\ApiDoc;
-use app\open\model\ApiDoc as ApiModel;
+
+use open\container\Doc;
+use open\logic\ApiDoc;
+use open\model\ApiDoc as ApiModel;
 
 class Wiki
 {

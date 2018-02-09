@@ -2,10 +2,10 @@
 
 namespace app\open\controller;
 
-use app\open\container\Component;
-use app\open\container\Definition;
-use app\open\model\Create as CreateModel;
-use app\open\logic\Create as CreateLogic;
+use open\container\Component;
+use open\container\Definition;
+use open\model\Create as CreateModel;
+use open\logic\Create as CreateLogic;
 use liugene\linkrest\Restful;
 use app\auth\controller\AppKey;
 

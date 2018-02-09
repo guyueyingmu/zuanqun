@@ -2,13 +2,13 @@
 
 namespace app\auth\controller;
 
-use app\auth\container\Component;
-use app\auth\container\Definition;
-use app\auth\model\SignIn as SignInModel;
-use app\auth\logic\SignIn as SignInLogic;
+use auth\container\Component;
+use auth\container\Definition;
+use auth\model\SignIn as SignInModel;
+use auth\logic\SignIn as SignInLogic;
 use liugene\linkrest\Restful;
 use app\validate\center\Login;
-use app\auth\center\Auth;
+use auth\center\Auth;
 
 class SignIn
 {

@@ -2,10 +2,10 @@
 
 namespace app\auth\controller;
 
-use app\auth\container\Component;
-use app\auth\container\Definition;
-use app\auth\model\Reg as RegModel;
-use app\auth\logic\Reg as RegLogic;
+use auth\container\Component;
+use auth\container\Definition;
+use auth\model\Reg as RegModel;
+use auth\logic\Reg as RegLogic;
 use liugene\linkrest\Restful;
 use app\validate\center\Register;
 

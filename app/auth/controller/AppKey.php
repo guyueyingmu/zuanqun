@@ -2,10 +2,10 @@
 
 namespace app\auth\controller;
 
-use app\auth\container\Component;
-use app\auth\container\Definition;
-use app\auth\model\AppKey as AppKeyModel;
-use app\auth\logic\AppKey as AppKeyLogic;
+use auth\container\Component;
+use auth\container\Definition;
+use auth\model\AppKey as AppKeyModel;
+use auth\logic\AppKey as AppKeyLogic;
 use liugene\linkrest\Restful;
 
 class AppKey

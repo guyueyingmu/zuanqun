@@ -3,7 +3,7 @@
 namespace app\open\controller;
 use liugene\linkdi\Container;
 use liugene\linkdi\InstanceDefinition;
-use app\open\Logic\ApiDoc;
+use open\Logic\ApiDoc;
 use liugene\linkque\Queue;
 use liugene\linkque\Job;
 use liugene\alisms\Sms;

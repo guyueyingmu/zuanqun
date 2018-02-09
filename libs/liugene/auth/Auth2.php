@@ -103,7 +103,7 @@ class Auth2
         if(isset($this->_request[$this->method])){
             return $this->_request[$this->method];
         } else {
-            $class = '\\app\\api\\request\\' . $this->method;
+            $class = '\\api\\request\\' . $this->method;
             //实例化api接口
             $this->_request[$this->method] = new $class;;
         }

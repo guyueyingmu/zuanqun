@@ -2,10 +2,10 @@
 
 namespace app\auth\controller;
 
-use app\auth\container\Component;
-use app\auth\container\Definition;
-use app\auth\model\Send as SendModel;
-use app\auth\logic\Send as SendLogic;
+use auth\container\Component;
+use auth\container\Definition;
+use auth\model\Send as SendModel;
+use auth\logic\Send as SendLogic;
 use liugene\linkrest\Restful;
 use app\logic\Send as SendSender;
 

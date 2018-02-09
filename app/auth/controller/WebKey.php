@@ -2,10 +2,10 @@
 
 namespace app\auth\controller;
 
-use app\auth\container\Component;
-use app\auth\container\Definition;
-use app\auth\model\WebKey as WebKeyModel;
-use app\auth\logic\WebKey as WebKeyLogic;
+use auth\container\Component;
+use auth\container\Definition;
+use auth\model\WebKey as WebKeyModel;
+use auth\logic\WebKey as WebKeyLogic;
 
 class WebKey
 {

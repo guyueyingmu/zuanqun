@@ -2,10 +2,10 @@
 
 namespace app\api\controller;
 
-use app\api\container\Component;
-use app\api\container\Definition;
-use app\api\model\Router as RouterModel;
-use app\api\logic\Router as RouterLogic;
+use api\container\Component;
+use api\container\Definition;
+use api\model\Router as RouterModel;
+use api\logic\Router as RouterLogic;
 use liugene\linkrest\Restful;
 use liugene\zqsdk\Zq;
 

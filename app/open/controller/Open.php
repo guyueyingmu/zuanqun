@@ -2,10 +2,10 @@
 
 namespace app\open\controller;
 
-use app\open\container\Component;
-use app\open\container\Definition;
-use app\open\model\Open as OpenModel;
-use app\open\logic\Open as OpenLogic;
+use open\container\Component;
+use open\container\Definition;
+use open\model\Open as OpenModel;
+use open\logic\Open as OpenLogic;
 use liugene\linkrest\Restful;
 
 class Open
