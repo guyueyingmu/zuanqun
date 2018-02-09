@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"C:\Object\zuanqun\web/../app/upgrade\view\zq_cms_1\index\zq_cms_1.html";i:1517272564;s:62:"C:\Object\zuanqun\app\upgrade\view\zq_cms_1\common\header.html";i:1516754629;s:62:"C:\Object\zuanqun\app\upgrade\view\zq_cms_1\common\footer.html";i:1516754629;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"C:\Object\zuanqun\web/../app/upgrade\view\zq_cms_1\index\zq_cms_1.html";i:1517531928;s:62:"C:\Object\zuanqun\app\upgrade\view\zq_cms_1\common\header.html";i:1517531928;s:62:"C:\Object\zuanqun\app\upgrade\view\zq_cms_1\common\footer.html";i:1517531928;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

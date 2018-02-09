@@ -1,7 +1,7 @@
 <?php
 
 namespace app\upgrade\controller;
-use app\auth\center\WebAuth;
+use auth\center\WebAuth;
 use app\upgrade\model\Cms;
 use think\Loader;
 
