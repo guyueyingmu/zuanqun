@@ -13,6 +13,13 @@
     background-position: center center;
 }
 
+.banner1-bg {
+    background-image: url(/index/default/img/banner-bg.png),linear-gradient(to bottom,#000,#000);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .slide_con {
     background: transparent url(/index/default/img/index-text.png) no-repeat 0 0;
     width: 574px;
