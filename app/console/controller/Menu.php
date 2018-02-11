@@ -45,8 +45,9 @@ class Menu
 
     private function getMenu()
     {
+        $menu = Component::getInstance()->get('menu');
         Restful::request()
-            ->setData(['code' => 0, 'msg' => '',  'count' => Component::getInstance()->get('menu')->countMenu(), 'data' => Component::getInstance()->get('menu')->select()])
+            ->setData(['code' => 0, 'msg' => '',  'count' => $menu->countMenu(), 'data' => $menu->select()])
             ->send();
     }
 
@@ -64,7 +65,6 @@ class Menu
         $menu = Component::getInstance()->get('menu');
         $data = $menu->getMenuTreeData();
         $data = $menu->getMenuTree($data);
-        dump($data);die;
         foreach($data as $k => $v){
             echo $v['cat_name'];
         }

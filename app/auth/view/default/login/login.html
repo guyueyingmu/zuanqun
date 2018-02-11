@@ -22,7 +22,7 @@
                             <div class="auth-input">
                 <span class="auth-input-box first">
                     <label class="auth-lable">登入</label>
-                    <input type="text" id="account" placeholder="请填写手机号" class="auth-input-text" name="account">
+                    <input type="text" id="phone" placeholder="请填写手机号" class="auth-input-text" name="account">
                 </span>
                 <span class="auth-input-box last">
                     <label class="auth-lable">密码</label>
@@ -54,7 +54,7 @@
 <script src="__COM__/layui/layui.js"></script>
 <script>
     $(document).on('click','#login',function(){
-        var data = {account:$('#account').val(),password:$('#password').val()};
+        var data = {phone:$('#phone').val(),password:$('#password').val()};
         console.log(data);
         request("{:url('auth/SignIn/login')}",data,function(res){
             if (res.code == 1) {

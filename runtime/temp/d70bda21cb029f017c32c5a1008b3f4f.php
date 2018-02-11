@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/verify_info/index.html";i:1517830384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:87:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/verify_info/index.html";i:1518315213;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +29,18 @@
                         </div>
                     </div>
 
+                    <div class="layui-form-item layui-form-text">
+                        <div class="layui-input-block">
+                            <textarea id="team_info" name="team_info" class="layui-textarea title" placeholder="请输入团队简介"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item layui-form-text">
+                        <div class="layui-input-block">
+                            <textarea id="ad_info" name="ad_info" class="layui-textarea title" placeholder="请输入推广渠道"></textarea>
+                        </div>
+                    </div>
+
                     <div class="layui-form-item">
                         <div class="layui-inline inline-logo">
                             <div class="layui-input-inline">
@@ -48,17 +60,6 @@
                         </div>
                     </div>
 
-                    <div class="layui-form-item layui-form-text">
-                        <div class="layui-input-block">
-                            <textarea id="team_info" name="team_info" class="layui-textarea title" placeholder="请输入团队简介"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="layui-form-item layui-form-text">
-                        <div class="layui-input-block">
-                            <textarea id="ad_info" name="ad_info" class="layui-textarea title" placeholder="请输入推广渠道"></textarea>
-                        </div>
-                    </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">

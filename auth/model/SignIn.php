@@ -12,7 +12,7 @@ class SignIn
     public function chickLogin($param)
     {
         try{
-            return Db::table('zq_user')->where(['z_mobile' => $param['account']])->find();
+            return Db::table('zq_user')->where(['z_mobile' => $param['phone']])->find();
         } catch (Exception $e) {
             return false;
         }

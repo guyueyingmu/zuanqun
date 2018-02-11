@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/index/view/default/index/index.html";i:1518103389;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/header.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/footer.html";i:1518099108;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:82:"/Users/liujun/workspace/php/zuanqun/web/../app/index/view/default/index/index.html";i:1518226777;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/header.html";i:1517484840;s:77:"/Users/liujun/workspace/php/zuanqun/app/index/view/default/common/footer.html";i:1518099108;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +103,7 @@
                         <p class="more"><a href="javascript:void(0);" class="link-btn">了解更多</a> </p>
                     </div>
                 </div>
-                <div class="banner-bg">
+                <div class="banner1-bg">
                     <div class="slide_con">
                         <h2 class="slide_con_title">第三方平台 开启公测</h2>
                         <p class="desc">全新的开放类型，让开发者帮助公众号解决垂直行业需求</p>

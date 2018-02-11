@@ -39,7 +39,7 @@ class SignIn
     {
         $data = Component::getInstance()->get('sign')->handle();
         Restful::request()
-            ->setData(['code' => 1, 'msg' => $data])
+            ->setData($data)
             ->send();
     }
 

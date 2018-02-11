@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"/Users/liujun/workspace/php/zuanqun/web/../app/hot/view/default/item/index.html";i:1517484840;s:82:"/Users/liujun/workspace/php/zuanqun/app/hot/view/default/common/header-common.html";i:1517484840;s:44:"../app/index/view/default/common/footer.html";i:1517484840;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:79:"/Users/liujun/workspace/php/zuanqun/web/../app/hot/view/default/item/index.html";i:1517484840;s:82:"/Users/liujun/workspace/php/zuanqun/app/hot/view/default/common/header-common.html";i:1517484840;s:44:"../app/index/view/default/common/footer.html";i:1518099108;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -549,7 +549,7 @@
             </div>
             <div class="footer-col-1">
                 <a href="/" class="footer-logo">
-                    <img alt="七牛云" src="https://www.qiniu.com/assets/logo-b5caafe0363dace7b5c0a00be38a4829444918c4322a6168714522ee19dcb1c1.png">
+                    <img alt="七牛云" src="http://static.zuanqun.com/index/default/img/logo.png">
                 </a>
             </div>
         </div>

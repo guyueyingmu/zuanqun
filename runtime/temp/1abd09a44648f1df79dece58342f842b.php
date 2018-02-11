@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/zcard/index.html";i:1517830384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:81:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/zcard/index.html";i:1518315279;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="layui-fluid">
-            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <div class="layui-tab layui-tab-brief">
                 <ul class="layui-tab-title">
                     <li class="layui-this">充值记录</li>
                     <li>用户管理</li>

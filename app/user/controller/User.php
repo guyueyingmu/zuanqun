@@ -1,7 +1,7 @@
 <?php
 
 namespace app\user\controller;
-use app\auth\center\Check;
+use auth\center\Check;
 use app\user\container\Component;
 use app\user\container\Definition;
 use app\user\logic\User as UserLogic;
@@ -20,11 +20,11 @@ class User
                 ->setAlias('user')
                 ->setIsSingleton(true)
                 ->setCallBack(function(){
-                    $appkey = new UserLogic();
-                    $appkey->set('user',function(){
+                    $user = new UserLogic();
+                    $user->set('user',function(){
                         return new userModel();
                     });
-                    return $appkey;
+                    return $user;
                 })
             );
     }
