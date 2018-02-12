@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/hot/view/default/index/index.html";i:1518090959;s:75:"/Users/liujun/workspace/php/zuanqun/app/hot/view/default/common/header.html";i:1517484840;s:44:"../app/index/view/default/common/footer.html";i:1518099108;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/hot/view/default/index/index.html";i:1518412888;s:75:"/Users/liujun/workspace/php/zuanqun/app/hot/view/default/common/header.html";i:1517484840;s:44:"../app/index/view/default/common/footer.html";i:1518099108;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,7 +179,7 @@
             <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
             <div class="list">
                 <div class="img_logo">
-                    <a href="<?php echo url('hot/item/index'); ?>" target="_blank">
+                    <a href="<?php echo url('hot/item/index',['id' => 1]); ?>" target="_blank">
                         <img src="<?php echo $vo['pict_url']; ?>_230x230.jpg" alt="">
                     </a>
                 </div>
@@ -206,7 +206,7 @@
                     </div>
                 </div>
                 <div class="chance">
-                    <a href="<?php echo url('hot/item/index'); ?>" target="_blank">
+                    <a href="<?php echo url('hot/item/index',['id' => 1]); ?>" target="_blank">
                         <span class="chan_left">立即推广</span>
                     </a>
                     <span class="chan_right">选取</span>

@@ -321,7 +321,7 @@ class HtmlHttpHelper
     /**
      * @var string $upgrade_url
      */
-    private $upgrade_url = 'http://upgrade.zuanqun.com:8080/update.shtml';
+    private $upgrade_url = 'https://upgrade.zuanqun.cn/update.shtml';
 
     /**
      * @var string $request_url

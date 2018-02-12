@@ -6,10 +6,11 @@ use think\Loader;
 class Pcms
 {
 
-    public function index()
+    public function index($url)
     {
         return view('zq_cms_1/index/zq_cms_1',[
-            'list' => Loader::controller('app\goods\server\GetGoods')->getGoods()
+            'list' => Loader::controller('app\goods\server\GetGoods')->getGoods(),
+            'url'  => $url,
         ]);
     }
 
