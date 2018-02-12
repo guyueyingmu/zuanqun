@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:88:"/Users/liujun/workspace/php/zuanqun/web/../app/upgrade/view/zq_cms_1/index/zq_cms_1.html";i:1517238964;s:80:"/Users/liujun/workspace/php/zuanqun/app/upgrade/view/zq_cms_1/common/header.html";i:1516708550;s:80:"/Users/liujun/workspace/php/zuanqun/app/upgrade/view/zq_cms_1/common/footer.html";i:1516708550;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:88:"/Users/liujun/workspace/php/zuanqun/web/../app/upgrade/view/zq_cms_1/index/zq_cms_1.html";i:1518415276;s:80:"/Users/liujun/workspace/php/zuanqun/app/upgrade/view/zq_cms_1/common/header.html";i:1517484840;s:80:"/Users/liujun/workspace/php/zuanqun/app/upgrade/view/zq_cms_1/common/footer.html";i:1517484840;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +111,7 @@
                 <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                 <div class="goods-item">
                     <div class="goods-img">
-                        <a href="/" target="_blank">
+                        <a href="<?php echo $url; ?>" target="_blank">
                             <div class="is_new"></div>
                             <div class="goods-lq">
                                 <div class="goods-lq-price">

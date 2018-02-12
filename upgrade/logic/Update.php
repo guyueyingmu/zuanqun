@@ -35,7 +35,7 @@ class Update extends Logic
                 ->verify()){
                 echo json_encode(['content' => $this->getCms()->getContent()]);
             } else {
-                echo json_encode(['response_fail_msg' => ['code' => '10002', 'msg' =>  'verify is fail']]);
+                echo json_encode(['response_fail_msg' => ['code' => '10002', 'msg' =>  'verify is fail1']]);
             }
         } else {
             if($this->get('webAuth')->set_app_id($this->app_id)

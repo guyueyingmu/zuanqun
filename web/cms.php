@@ -51,7 +51,7 @@ if(file_exists($file)){
 
     DownLoad::getInstance()
         ->set_app_id('123')
-        ->set_app_key('40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+        ->set_app_key('ae8ed92a43eb80d0f54f086ffc05bec8b971b689')
         ->set_document_url($document_url)
         ->set_request_url($request_url)
         ->set_file($file)
