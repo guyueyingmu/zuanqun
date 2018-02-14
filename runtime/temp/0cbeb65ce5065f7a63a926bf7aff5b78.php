@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/user/index.html";i:1517830384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/user/index.html";i:1518616211;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +24,6 @@
                     </span>
                     <ul class="wiki-active">
                         <li><a class="wiki-src" href="javascript:;" c-view="/user/info">&nbsp;&nbsp;&nbsp;&nbsp;基本信息</a></li>
-                        <li><a class="wiki-src" href="javascript:;" c-view="/verify_info/index">&nbsp;&nbsp;&nbsp;&nbsp;认证中心</a></li>
                         <li><a class="wiki-src" href="javascript:;" c-view="/zcard/index">&nbsp;&nbsp;&nbsp;&nbsp;点券管理</a></li>
                     </ul>
                 </div>

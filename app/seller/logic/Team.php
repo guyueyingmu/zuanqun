@@ -1,8 +1,8 @@
 <?php
 
-namespace app\user\logic;
+namespace app\seller\logic;
 
-use app\user\base\Logic;
+use app\seller\base\Logic;
 
 class Team extends Logic
 {

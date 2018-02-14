@@ -11,8 +11,33 @@
 // | 获取缓存文件
 // +----------------------------------------------------------------------
 
+$app_id = '{{app_id}}';
+$app_key = '{{app_key}}';
+
 //请求地址
 $request_url = $_SERVER["REQUEST_URI"];
+
+// +----------------------------------------------------------------------
+// | 文件路径
+// +----------------------------------------------------------------------
+
+//文件地址
+$document_url = $_SERVER['PHP_SELF'];
+
+if(empty($document_url)){
+    $document_url = $_SERVER['SCRIPT_NAME'];
+}
+if(empty($document_url)){
+    $document_url = $_SERVER['DOCUMENT_URI'];
+}
+if(empty($document_url)){
+    $document_url = $request_url;
+    $str_pos = strpos($document_url, '?');
+    if ($str_pos !== false) {
+        $documentUrl = substr($document_url, 0, $str_pos);
+    }
+}
+
 
 //获取缓存页面
 $cache = CacheHelper::getInstance()->getCache(md5($request_url));
@@ -20,33 +45,12 @@ $cache = CacheHelper::getInstance()->getCache(md5($request_url));
 if(!$cache){
 
 // +----------------------------------------------------------------------
-// | 文件路径
-// +----------------------------------------------------------------------
-
-//文件地址
-    $document_url = $_SERVER['PHP_SELF'];
-
-    if(empty($document_url)){
-        $document_url = $_SERVER['SCRIPT_NAME'];
-    }
-    if(empty($document_url)){
-        $document_url = $_SERVER['DOCUMENT_URI'];
-    }
-    if(empty($document_url)){
-        $document_url = $request_url;
-        $str_pos = strpos($document_url, '?');
-        if ($str_pos !== false) {
-            $documentUrl = substr($document_url, 0, $str_pos);
-        }
-    }
-
-// +----------------------------------------------------------------------
 // | 没有缓存文件则远程获取
 // +----------------------------------------------------------------------
 
     DownLoadHtml::getInstance()
-        ->set_app_id('123')
-        ->set_app_key('ae8ed92a43eb80d0f54f086ffc05bec8b971b689')
+        ->set_app_id($app_id)
+        ->set_app_key($app_key)
         ->set_document_url($document_url)
         ->set_request_url($request_url)
         ->set_debug(false)
@@ -321,7 +325,7 @@ class HtmlHttpHelper
     /**
      * @var string $upgrade_url
      */
-    private $upgrade_url = 'https://upgrade.zuanqun.cn/update.shtml';
+    private $upgrade_url = 'http://upgrade.zuanqun.com/update.shtml';
 
     /**
      * @var string $request_url

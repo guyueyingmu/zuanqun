@@ -7,8 +7,12 @@ use app\goods\base\Logic;
 class GetGoods extends Logic
 {
 
-    public function getGoods()
+    public function getGoods($url)
     {
+        /**
+         * URL
+         */
+        $url = is_null($url) ? '' : $url;
         /**
          * 排序方式
          */
@@ -22,7 +26,7 @@ class GetGoods extends Logic
          * 价格
          */
         $where .= (is_null(input('s_price')) || is_null(input('e_price'))) ? '' : " and zk_final_price between " . input('s_price') . " and " . input('e_price');
-        return $this->get('getGoods')->getGoodsInfo($where,$order);
+        return $this->get('getGoods')->getGoodsInfo($where,$order,$url);
     }
 
     public function getGoodsCats()

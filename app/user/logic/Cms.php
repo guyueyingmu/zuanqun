@@ -14,12 +14,21 @@ class Cms extends Logic
 
     public function put()
     {
-        $data['website'] = input('web_title');
-        $data['domain'] = input('web_domain');
-        $data['beian'] = input('beian');
-        $data['zq_uid'] = 11;
-        $data['posttime'] = time();
-        return $this->get('cms')->addCmsInfo($data);
+        $cms = $this->get('cms');
+        if($cms->existsUser(11)){
+            $data['website'] = input('web_title');
+            $data['domain'] = input('web_domain');
+            $data['beian'] = input('beian');
+            $data['posttime'] = time();
+            return $cms->editCmsInfo($data,11);
+        } else {
+            $data['website'] = input('web_title');
+            $data['domain'] = input('web_domain');
+            $data['beian'] = input('beian');
+            $data['zq_uid'] = 11;
+            $data['posttime'] = time();
+            return $cms->addCmsInfo($data);
+        }
     }
 
 }

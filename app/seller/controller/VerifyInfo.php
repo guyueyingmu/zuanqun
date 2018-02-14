@@ -1,6 +1,6 @@
 <?php
 
-namespace app\user\controller;
+namespace app\seller\controller;
 
 class VerifyInfo
 {

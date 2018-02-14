@@ -1,11 +1,11 @@
 <?php
 
-namespace app\user\controller;
+namespace app\seller\controller;
 
-use app\user\container\Component;
-use app\user\container\Definition;
-use app\user\model\Team as TeamModel;
-use app\user\logic\Team as TeamLogic;
+use app\seller\container\Component;
+use app\seller\container\Definition;
+use app\seller\model\Team as TeamModel;
+use app\seller\logic\Team as TeamLogic;
 use liugene\linkrest\Restful;
 
 class Team

@@ -3,7 +3,7 @@
 namespace app\logic\goods\tbk;
 use zuanqun\tbk\service\TbkItemGetService;
 
-class ItemGet
+class ItemGet implements ServiceInterface
 {
 
     private $_goods;

@@ -2,7 +2,7 @@
 
 namespace app\console\base;
 
-class Logic
+abstract class Logic
 {
 
     protected $_logic_model = [];

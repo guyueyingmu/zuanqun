@@ -18,4 +18,9 @@ class Auth
         return Jwt::verify(Jwt::parse($data),$key);
     }
 
+    public function parse($data)
+    {
+        return Jwt::parse($data);
+    }
+
 }

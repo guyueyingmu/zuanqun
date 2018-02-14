@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/app_key/manage.html";i:1518103760;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/app_key/manage.html";i:1518622756;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,24 +19,24 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">AppId</label>
                         <div class="layui-input-block">
-                            <input type="text" name="AppKey" autocomplete="off" class="layui-input input-none" value="<?php echo $appkey; ?>" readonly>
+                            <input type="text" name="AppKey" class="layui-input input-none" value="<?php echo $app['app_id']; ?>" readonly>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">AppKey</label>
                         <div class="layui-input-block">
-                            <input type="text" name="AppSecret" autocomplete="off" class="layui-input input-none" readonly>
+                            <input type="text" name="AppSecret" value="<?php echo $app['app_key']; ?>"  class="layui-input input-none" readonly>
                         </div>
                     </div>
 
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <div class="link-footer">
-                                <a class="layui-btn">重置AppKey</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<div class="link-footer">-->
+                                <!--<a class="layui-btn">重置AppKey</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </form>
             </div>
         </div>

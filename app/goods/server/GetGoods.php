@@ -26,9 +26,9 @@ class GetGoods
             );
     }
 
-    public function getGoods()
+    public function getGoods($url = null)
     {
-        return Component::getInstance()->get('getGoods')->getGoods();
+        return Component::getInstance()->get('getGoods')->getGoods($url);
     }
 
     public function getGoodsCat()

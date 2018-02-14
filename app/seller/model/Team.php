@@ -1,6 +1,6 @@
 <?php
 
-namespace app\user\model;
+namespace app\seller\model;
 
 use think\Db;
 

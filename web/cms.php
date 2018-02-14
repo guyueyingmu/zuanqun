@@ -15,6 +15,8 @@
  */
 define('PROXY_VERSION','zq_cms_1');
 
+$app_id = '{{app_id}}';
+$app_key = '{{app_key}}';
 
 // +----------------------------------------------------------------------
 // | 文件路径
@@ -24,7 +26,6 @@ define('PROXY_VERSION','zq_cms_1');
 $document_url = $_SERVER['PHP_SELF'];
 //请求地址
 $request_url = $_SERVER["REQUEST_URI"];
-
 if(empty($document_url)){
     $document_url = $_SERVER['SCRIPT_NAME'];
 }
@@ -50,8 +51,8 @@ if(file_exists($file)){
 } else {
 
     DownLoad::getInstance()
-        ->set_app_id('123')
-        ->set_app_key('ae8ed92a43eb80d0f54f086ffc05bec8b971b689')
+        ->set_app_id($app_id)
+        ->set_app_key($app_key)
         ->set_document_url($document_url)
         ->set_request_url($request_url)
         ->set_file($file)
@@ -272,9 +273,9 @@ class DownLoad
         } else {
             echo '......文件下载成功.......<br>';
             echo '------5秒后跳转----------<br>';
-            echo '------<a href="' . $this->request_url . '">或者点击立即跳转</a>----------<br>';
+            echo '------<a href="' . $this->document_url . '">或者点击立即跳转</a>----------<br>';
 
-            header("refresh:5;url=" . $this->request_url);
+            header("refresh:5;url=" . $this->document_url);
             exit;
         }
     }
@@ -313,7 +314,7 @@ class HttpHelper
     /**
      * @var string
      */
-    private $upgrade_url = 'https://upgrade.zuanqun.cn/update.shtml';
+    private $upgrade_url = 'http://upgrade.zuanqun.com/update.shtml';
 
     /**
      * @var
@@ -424,7 +425,7 @@ class HttpHelper
         curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         curl_setopt($ch, CURLOPT_HTTPGET, TRUE);
         if(empty($param)){
-            $url_info = parse_url($this->request_url);
+            $url_info = parse_url($this->document_url);
             $query = [];
             if(isset($url_info['query']) && !empty($url_info['query'])){
                 parse_str($url_info['query'],$query);

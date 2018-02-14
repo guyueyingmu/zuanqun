@@ -3,6 +3,8 @@
 namespace upgrade\logic;
 
 use upgrade\base\Logic;
+use app\download\model\App;
+use auth\center\GetUser;
 
 class Update extends Logic
 {
@@ -33,7 +35,7 @@ class Update extends Logic
             if($this->get('webAuth')->set_app_id($this->app_id)
                 ->set_app_key($this->app_key)
                 ->verify()){
-                echo json_encode(['content' => $this->getCms()->getContent()]);
+                echo json_encode(['content' => $this->analyzeUrl()]);
             } else {
                 echo json_encode(['response_fail_msg' => ['code' => '10002', 'msg' =>  'verify is fail1']]);
             }
@@ -55,9 +57,22 @@ class Update extends Logic
 //        return $res;
     }
 
+    private function analyzeUrl()
+    {
+        if(input('item')){
+            return $this->get('pcms')->items()->getContent();
+        }
+        return $this->getCms()->getContent();
+    }
+
     private function getUpdate()
     {
-        return file_get_contents(ROOT_PATH . 'web/update.php');
+        $f = file_get_contents(ROOT_PATH . 'web/update.php');
+        $user = (new GetUser())->get();
+        $app = (new App())->getAppInfo(22);
+        $f = preg_replace("/{{app_id}}/",$app['app_id'],$f);
+        $f = preg_replace("/{{app_key}}/",$app['app_key'],$f);
+        return $f;
     }
 
     private function existsParam($param)

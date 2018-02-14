@@ -29,7 +29,7 @@ class AppKey
     public function manage()
     {
         return view('default/app_key/manage',[
-            'appkey' => Component::getInstance()->get('appkey')->getAppKeyInfo(),
+            'app' => Component::getInstance()->get('appkey')->getAppKeyInfo(),
         ]);
     }
 

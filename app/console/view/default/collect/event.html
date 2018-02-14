@@ -1,0 +1,85 @@
+{extend name="default/base/base" /}
+{block name="main"}
+<link rel="stylesheet" href="__COM__/form.css">
+<div class="link-body">
+    <div class="link-item">
+        <div class="layui-fluid">
+            <div class="layui-card-header">联盟定向招商采集</div>
+            <div class="layui-card-body">
+                <div class="zq-form">
+                    <form id="doc" class="layui-form" lay-filter="component-form-group">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input id="eventId" type="text" name="eventId" placeholder="请输入选品库ID" class="layui-input title">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input id="adZoneId" type="text" name="adZoneId" placeholder="请输入推广位ID" class="layui-input title">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input id="count" type="text" name="count" placeholder="请输入采集数量" class="layui-input title">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <select name="cat" id="menu_tree">
+                                    <option value=""></option>
+                                    <option value="6">入库类别</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <div class="link-footer">
+                                    <a class="layui-btn" id="push">立即采集</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use('form', function(){
+        var form = layui.form;
+
+        //各种基于事件的操作，下面会有进一步介绍
+    });
+    $(document).on('click','#push',function(){
+        if($('#eventId').val() == ''){
+            layer.msg('选品库ID不能为空');
+            return false;
+        }
+        if($('#adZoneId').val() == ''){
+            layer.msg('推广位ID不能为空');
+            return false;
+        }
+        if($('#count').val() == ''){
+            layer.msg('采集数量不能为空');
+            return false;
+        }
+        var data = $('#doc').serialize();
+        request("{:url('console/collect/collectByFavorite')}",data,function(res){
+            if (res.code == 1) {
+                console.log(res);
+                layer.msg(res.msg, {icon: res.code});
+//                console.log(document.cookie);
+//                redirect("{:url('user/user/index')}");
+            } else {
+                layer.msg(res.msg, {icon: res.code});
+            }
+        });
+    });
+</script>
+
+{/block}

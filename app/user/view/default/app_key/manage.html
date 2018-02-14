@@ -18,24 +18,24 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">AppId</label>
                         <div class="layui-input-block">
-                            <input type="text" name="AppKey" autocomplete="off" class="layui-input input-none" value="{$appkey}" readonly>
+                            <input type="text" name="AppKey" class="layui-input input-none" value="{$app['app_id']}" readonly>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">AppKey</label>
                         <div class="layui-input-block">
-                            <input type="text" name="AppSecret" autocomplete="off" class="layui-input input-none" readonly>
+                            <input type="text" name="AppSecret" value="{$app['app_key']}"  class="layui-input input-none" readonly>
                         </div>
                     </div>
 
-                    <div class="layui-form-item">
-                        <div class="layui-input-block">
-                            <div class="link-footer">
-                                <a class="layui-btn">重置AppKey</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<div class="link-footer">-->
+                                <!--<a class="layui-btn">重置AppKey</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </form>
             </div>
         </div>

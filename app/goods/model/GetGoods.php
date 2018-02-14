@@ -7,13 +7,14 @@ use think\Db;
 class GetGoods
 {
 
-    public function getGoodsInfo($where,$order)
+    public function getGoodsInfo($where,$order,$path)
     {
         return Db::table('zq_goods')
             ->where($where)
             ->order($order)
             ->paginate(10,false,[
             'type' => 'bootstrap5',
+                'path' => $path
         ]);
     }
 

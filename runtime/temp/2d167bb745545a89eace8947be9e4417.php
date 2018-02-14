@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/cms_base/index.html";i:1517830384;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/user/view/default/cms_base/index.html";i:1518621320;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +22,7 @@
                         </p>
                     </div>
                     <div class="link-down">
-                        <button class="layui-btn" lay-submit="" lay-filter="component-form-demo1"><i class="layui-icon">&#xe601;</i>点此下载程序文件</button>
+                        <button onclick="download()" class="layui-btn"><i class="layui-icon">&#xe601;</i>点此下载程序文件</button>
                     </div>
                 </div>
             </div>
@@ -113,5 +113,13 @@
             }
         });
     });
+
+    // 直接下载，用户体验好
+    function download() {
+        var $form = $('<form method="GET"></form>');
+        $form.attr('action', 'http://www.zuanqun.com/download');
+        $form.appendTo($('body'));
+        $form.submit();
+    }
 </script>
 </html>

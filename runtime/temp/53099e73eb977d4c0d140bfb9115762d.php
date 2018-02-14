@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/index.html";i:1517921539;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:84:"/Users/liujun/workspace/php/zuanqun/web/../app/console/view/default/index/index.html";i:1518603735;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +13,6 @@
     <div class="layui-header">
         <div class="layui-logo">钻群后台</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="">控制台</a></li>
-        </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
@@ -46,7 +43,36 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;注册用户</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/User_Temp/index"><i class="layui-icon">&#xe613;</i>&nbsp;注册用户</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">淘客认证</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="console" c-view="/console/Verify_Temp/index"><i class="layui-icon">&#xe613;</i>&nbsp;审核列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">开放平台</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="console" c-view="/console/Open_Temp/index"><i class="layui-icon">&#xe613;</i>&nbsp;应用列表</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Open_Temp/openUser"><i class="layui-icon">&#xe613;</i>&nbsp;开发用户</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">内容合作</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;申请列表</a></dd>
+                        <dd><a href="javascript:;" class="console"><i class="layui-icon">&#xe613;</i>&nbsp;商品审核</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">商品采集</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" class="console" c-view="/console/Collect_Temp/collect"><i class="layui-icon">&#xe613;</i>&nbsp;淘宝关键词采集</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Collect_Temp/collectCat"><i class="layui-icon">&#xe613;</i>&nbsp;淘宝分类采集</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Collect_Temp/collectFavorites"><i class="layui-icon">&#xe613;</i>&nbsp;联盟选品库采集</a></dd>
+                        <dd><a href="javascript:;" class="console" c-view="/console/Collect_Temp/collectEvent"><i class="layui-icon">&#xe613;</i>&nbsp;联盟定向招商采集</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
