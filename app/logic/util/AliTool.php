@@ -17,7 +17,8 @@ class AliTool implements UtilInterface
         if(isset($this->_service[$alias])){
             return $this->_service[$alias];
         } else {
-            $this->_service[$alias] = new $service;
+            $class = 'app\\logic\\util\\tbk\\' . $service;
+            $this->_service[$alias] = new $class;
         }
         return $this->_service[$alias];
     }

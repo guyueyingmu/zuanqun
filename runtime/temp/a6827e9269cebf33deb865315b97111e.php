@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/tool/index.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:78:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/tool-bar.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1518102634;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:80:"/Users/liujun/workspace/php/zuanqun/web/../app/open/view/default/tool/index.html";i:1518706296;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/header.html";i:1517484840;s:78:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/tool-bar.html";i:1517484840;s:76:"/Users/liujun/workspace/php/zuanqun/app/open/view/default/common/footer.html";i:1518102634;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,25 +93,25 @@
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="username" lay-verify="required" placeholder="请输入商品链接" autocomplete="off" class="layui-input title">
+                            <input id="goods-link" type="text" name="goods-link" placeholder="请输入商品链接" class="layui-input title">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="username" lay-verify="required" placeholder="请输入淘宝pid" autocomplete="off" class="layui-input title">
+                            <input type="text" name="username" placeholder="请输入淘宝pid" class="layui-input title">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">定向计划</label>
                         <div class="layui-input-block">
-                            <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="component-form-switchTest" lay-text="ON|OFF"><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>ON</em><i></i></div>
+                            <input type="checkbox" checked="" name="open" lay-skin="switch" lay-text="ON|OFF"><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>ON</em><i></i></div>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
                             <div class="link-footer">
-                                <a id="push" class="layui-btn" lay-submit="" lay-filter="component-form-demo1">立即生成</a>
+                                <a id="push" class="layui-btn" >立即生成</a>
                             </div>
                         </div>
                     </div>
@@ -141,8 +141,8 @@
             layer.msg('优惠券链接不能为空');
             return false;
         }
-        if($('#apidoc').val() == ''){
-            layer.msg('文档内容不能为空');
+        if($('#goods-link').val() == ''){
+            layer.msg('商品链接不能为空');
             return false;
         }
         var data = $('#doc').serialize();

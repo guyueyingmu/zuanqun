@@ -19,9 +19,8 @@ class Util
         }
         if(isset(static::$_instance)){
             return static::$_instance;
-        } else {
-            self::$_instance = new self;
         }
+        self::$_instance = new self;
         return self::$_instance;
     }
 

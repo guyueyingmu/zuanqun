@@ -41,8 +41,9 @@ class Create
 
     public function application()
     {
+        $create = Component::getInstance()->get('create');
         Restful::request()
-            ->setData(['code' => 0, 'msg' => '',  'count' => Component::getInstance()->get('create')->countApplication(), 'data' => Component::getInstance()->get('create')->select()])
+            ->setData(['code' => 0, 'msg' => '',  'count' => $create->countApplication(), 'data' => $create->select()])
             ->send();
     }
 

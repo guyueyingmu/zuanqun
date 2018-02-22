@@ -11,6 +11,8 @@ use liugene\linkrest\Restful;
 class AppKey
 {
 
+    private $_app;
+
     public function __construct()
     {
         Component::getInstance()
@@ -29,13 +31,14 @@ class AppKey
 
     public function create($uid,$app_id)
     {
+        $this->_app = Component::getInstance()->get('app');
         $secret = $this->resetSecret();
-        return Component::getInstance()->get('app')->create($uid,$app_id,$secret);
+        return $this->_app->create($uid,$app_id,$secret);
     }
 
     private function resetSecret()
     {
-        return Component::getInstance()->get('app')->resetSecret();
+        return $this->_app->resetSecret();
     }
 
 }
